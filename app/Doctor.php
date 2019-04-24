@@ -8,4 +8,9 @@ class Doctor extends Model
     {
         return $this->belongsToMany(Subject::class);
     }
+
+    public function questionnaires()
+    {
+        return $this->hasMany(Questionnaire::class);
+    }
 }

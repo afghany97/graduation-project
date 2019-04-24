@@ -9,4 +9,9 @@ class Subject extends Model
     {
         return $this->belongsToMany(Doctor::class);
     }
+
+    public function questionnaires()
+    {
+        return $this->hasMany(Questionnaire::class);
+    }
 }
