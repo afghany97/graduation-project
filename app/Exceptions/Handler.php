@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
+use App\Http\Controllers\Api\ApiController;
 use Exception;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -46,6 +48,14 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if($exception instanceof ApiValidationException)
+
+            return response()->json($exception->errors(),$exception->status);
+
+        if($exception instanceof ModelNotFoundException)
+
+            return (new ApiController())->notFound();
+
         return parent::render($request, $exception);
     }
 }

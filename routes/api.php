@@ -23,4 +23,6 @@ Route::group(['namespace' => 'Api'],function (){
 
     Route::post('register', 'AuthController@register');
 
+    Route::resource('questionnaires','QuestionnairesController');
+
 });
