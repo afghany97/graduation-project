@@ -1,5 +1,6 @@
 <?php
 
+use App\Subject;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
@@ -29,5 +30,11 @@ $factory->define(App\Subject::class, function (Faker $faker) {
         'name' => $faker->unique()->name,
         'code' => $faker->postcode,
         'units' => $faker->numberBetween(1,4)
+    ];
+});
+
+$factory->define(App\Doctor::class, function (Faker $faker) {
+    return [
+        'name' => $faker->unique()->name,
     ];
 });
