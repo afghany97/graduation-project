@@ -20,9 +20,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['namespace' => 'Api'],function (){
 
     Route::post('login', 'AuthController@login');
-
     Route::post('register', 'AuthController@register');
 
     Route::resource('questionnaires','QuestionnairesController');
+    Route::resource('subjects', 'SubjectsController');
 
+    Route::get('doctors/', 'DoctorsController@index');
+    Route::get('doctors/{doctor}', 'DoctorsController@show');
+    Route::post('doctors/', 'DoctorsController@store');
+    Route::post('doctors/{doctor}', 'DoctorsController@update');
+
+    Route::get('doctors/{doctor}/subjects', 'SubjectsController@index');
+    Route::post('doctors/{doctor}/subjects', 'SubjectsController@store');
+    Route::post('doctors/{doctor}/subjects/{subject}', 'SubjectsController@update');
 });
