@@ -13,10 +13,10 @@ class SubjectsController extends ApiController
      * QuestionnairesController constructor.
      */
 
-    public function __construct()
-    {
-        $this->middleware('auth:api');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth:api');
+//    }
 
     public function index(Doctor $doctor = null)
     {
