@@ -17,6 +17,12 @@ class SubjectsController extends ApiController
 //    {
 //        $this->middleware('auth:api');
 //    }
+    public function allsubjects()
+    {
+        $subjects = Subject::all();
+
+        return $this->fetched(compact('subjects'));
+    }
 
     public function index(Doctor $doctor = null)
     {
@@ -30,9 +36,9 @@ class SubjectsController extends ApiController
         return $this->fetched(compact('subject'));
     }
 
-    public function update(Doctor $doctor, Subject $subject, SubjectsRequest $subjectsRequest)
+    public function update(Subject $subject, SubjectsRequest $subjectsRequest)
     {
-        $subject = $doctor->subjects()->where('subject_id', $subject->id)->update(
+        $subject = $subject->where('id', $subject->id)->update(
             dataFromRequest([
                 'name',
                 'code',
