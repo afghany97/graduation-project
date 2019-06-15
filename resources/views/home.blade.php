@@ -14,7 +14,7 @@
 
                             <img src="website/imgs/test.png" class=" card-img-top img-fluid img-fluid" alt="...">
 
-                            <a href="#" class="poll-icon">
+                            <a href="/questionnaire/create" class="poll-icon">
                                 <i class="fas fa-poll"></i>
                             </a>
 

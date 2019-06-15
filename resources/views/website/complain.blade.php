@@ -46,7 +46,7 @@
                                         <div class="form-group">
 
                                             <select name="complain_type" id="complain_type"
-                                                    class="custom-select custom-select-md">
+                                                    class="custom-select custom-select-md" required>
                                                 <option selected disabled>Types of Complain</option>
                                                 <option value="Individual">Individual complain</option>
                                                 <option value="Collective">Collective complaint</option>
@@ -58,7 +58,7 @@
 
                                             <input type="text" class="form-control" id="topic"
                                                    name="topic" aria-describedby="problemTopic"
-                                                   placeholder="Problem Topic">
+                                                   placeholder="Problem Topic" required>
                                         </div>
 
                                     </div>
@@ -68,7 +68,8 @@
                                         <div class="form-group">
 
                                         <textarea class="form-control" id="description" rows="3"
-                                                  name="description" placeholder="Problem Description"></textarea>
+                                                  name="description" placeholder="Problem Description"
+                                                  required></textarea>
                                         </div>
 
                                         <button type="submit" formmethod="post" formaction="/complain/create"
