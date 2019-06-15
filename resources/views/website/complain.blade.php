@@ -25,7 +25,7 @@
 
                         <form>
                             <div class="row">
-                                <form method="post" action="/complain/create">
+                                <form method="post" action="{{Request::root()}}/complain/create">
                                     {{csrf_field()}}
                                     <div class="col-md-6 wow bounceInRight" data-wow-duration="1.5s">
 
@@ -72,7 +72,8 @@
                                                   required></textarea>
                                         </div>
 
-                                        <button type="submit" formmethod="post" formaction="/complain/create"
+                                        <button type="submit" formmethod="post"
+                                                formaction="{{Request::root()}}/complain/create"
                                                 class="btn btn-primary">Submit
                                         </button>
                                     </div>
