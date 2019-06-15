@@ -35,6 +35,8 @@ Route::group(['namespace' => 'Api'],function (){
 
     Route::get('doctors/{doctor}/subjects', 'SubjectsController@getdoctorsubject');
     Route::post('doctors/{doctor}/subjects', 'SubjectsController@storesubject');
+    Route::get('users/{user}/subjects', 'SubjectsController@getUserSubject');
+
 
 
 });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Doctor;
 use App\Http\Requests\Api\SubjectsRequest;
 use App\Subject;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class SubjectsController extends ApiController
@@ -40,6 +41,12 @@ class SubjectsController extends ApiController
     {
         $subjects = $this->getSubjects($doctor);
 
+        return $this->fetched(compact('subjects'));
+    }
+
+    public function getUserSubject(User $user = null)
+    {
+        $subjects = $this->getSubjectUser($user);
         return $this->fetched(compact('subjects'));
     }
 
@@ -81,6 +88,11 @@ class SubjectsController extends ApiController
     public function getSubjects(Doctor $doctor = null)
     {
         return $subjects = $doctor ? $doctor->subjects : Subject::all();
+    }
+
+    public function getSubjectUser(User $user = null)
+    {
+        return $subjects = $user ? $user->subjects : Subject::all();
     }
 
 
