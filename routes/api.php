@@ -23,16 +23,18 @@ Route::group(['namespace' => 'Api'],function (){
     Route::post('register', 'AuthController@register');
 
     Route::resource('questionnaires','QuestionnairesController');
-    Route::resource('subjects', 'SubjectsController');
+    Route::post('subjects/', 'SubjectsController@store');
+    Route::get('subjects/', 'SubjectsController@index');
+    Route::get('subjects/{subject}', 'SubjectsController@show');
+    Route::post('subjects/{subject}', 'SubjectsController@update');
 
     Route::get('doctors/', 'DoctorsController@index');
     Route::get('doctors/{doctor}', 'DoctorsController@show');
     Route::post('doctors/', 'DoctorsController@store');
     Route::post('doctors/{doctor}', 'DoctorsController@update');
 
-    Route::get('doctors/{doctor}/subjects', 'SubjectsController@index');
-    Route::post('doctors/{doctor}/subjects', 'SubjectsController@store');
+    Route::get('doctors/{doctor}/subjects', 'SubjectsController@getdoctorsubject');
+    Route::post('doctors/{doctor}/subjects', 'SubjectsController@storesubject');
 
-    Route::post('subjects/', 'SubjectsController@allsubjects');
-    Route::post('subjects/{subject}', 'SubjectsController@update');
+
 });

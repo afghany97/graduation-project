@@ -13,18 +13,30 @@ class SubjectsController extends ApiController
      * QuestionnairesController constructor.
      */
 
-//    public function __construct()
-//    {
-//        $this->middleware('auth:api');
-//    }
-    public function allsubjects()
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
+    public function store(SubjectsRequest $request)
+    {
+        $subject = Subject::create(
+            dataFromRequest([
+                'name', 'code', 'units'
+            ])
+        );
+
+        return $this->created(compact('subject'));
+    }
+
+    public function index()
     {
         $subjects = Subject::all();
 
         return $this->fetched(compact('subjects'));
     }
 
-    public function index(Doctor $doctor = null)
+    public function getdoctorsubject(Doctor $doctor = null)
     {
         $subjects = $this->getSubjects($doctor);
 
@@ -49,7 +61,7 @@ class SubjectsController extends ApiController
         return $this->updated(compact('subject'));
     }
 
-    public function store(Doctor $doctor, SubjectsRequest $subjectsRequest)
+    public function storesubject(Doctor $doctor, SubjectsRequest $subjectsRequest)
     {
         $subject = $doctor->subjects()->create(
             dataFromRequest([

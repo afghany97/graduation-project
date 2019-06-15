@@ -1,0 +1,220 @@
+/*fonts*/
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
+
+body {
+    background: url('../imgs/bk.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'oxygen', sans-serif
+
+}
+
+.layout {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .1);
+    position: absolute;
+}
+
+.content {
+    margin-top: 150px;
+}
+
+.content .col-lg-4 {
+    padding: 0;
+}
+
+
+/*start style of left divtion  that contain decription of site services*/
+
+
+.services-description {
+    height: 350px;
+    background: rgba(0, 95, 213, 0.7);
+    color: #fff;
+    padding: 25px;
+
+}
+
+.services-description h1 {
+    letter-spacing: 2px;
+    font-size: 35px;
+}
+
+.services-description p {
+    font-size: 18px;
+}
+
+.services-description a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #FFF;
+    background-color: #FF0057;
+    border-radius: 25px;
+    text-decoration: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+
+/*end of left divtion style*/
+
+
+/*start style of right divtion  that contain login form*/
+
+.login-form {
+    position: absolute;
+    background-color: #FFF;
+    padding: 25px 40px;
+    height: 380px;
+    top: -15px;
+    box-shadow: -20px 0 15px rgba(0, 0, 0, .3);
+    width: 100%;
+}
+
+.login-form h2 {
+    text-align: center;
+    color: #262626;
+    margin-bottom: 30px;
+}
+
+.login-form h2 span {
+    color: rgba(0, 95, 213, 0.7);
+}
+
+
+.login-form input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border: 2px solid #CCC;
+    border-radius: 25px;
+    outline: none;
+    font-size: 15px;
+}
+
+
+.login-form input:hover,
+.login-form input:valid {
+    border: 2px solid rgba(0, 95, 213, 0.7);
+}
+
+.login-form input[type="submit"] {
+    color: #FFF;
+    background: rgba(0, 95, 213, 0.7);
+    font-size: 16px;
+    transition: .5s;
+}
+
+.login-form input[type="submit"]:hover {
+    background: #FF0057;
+    border: 2px solid #FF0057;
+}
+
+.login-form a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgba(0, 95, 213, 0.7);
+}
+
+/*end of right divtion style*/
+
+
+/*mobile screen styles*/
+
+@media (max-width: 567px) {
+    body {
+        perspective: 1000px;
+    }
+
+    .content {
+        width: 300px;
+        height: 400px;
+        margin: 90px auto;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: all 1s ease-in-out;
+
+    }
+
+    /*this class will added to content elment by jquery to perform fliping animation*/
+    .flip {
+        transform: rotateY(180deg);
+    }
+
+
+    .content .mobile-flip-card {
+        height: 400px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .services-description,
+    .login-form {
+        height: 400px;
+        top: 0;
+        backface-visibility: hidden;
+    }
+
+
+    .mobile-flip-card .services-description {
+        z-index: 1;
+    }
+
+    .services-description a {
+
+        padding: 10px 40px;
+        margin-top: 10px;
+    }
+
+    .mobile-flip-card .login-form {
+        z-index: 2;
+        transform: rotateY(180deg);
+    }
+}
+
+
+/*styles to medium screen*/
+
+@media (min-width: 568px) and (max-width: 1024px) {
+
+    .services-description h1 {
+        letter-spacing: 2px;
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+
+    .services-description p {
+        font-size: 20px;
+
+    }
+
+    .login-form {
+        background-color: rgba(255, 255, 255, 0.9)
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

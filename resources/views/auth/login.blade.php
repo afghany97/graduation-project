@@ -1,80 +1,107 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-@section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
+    <title></title>
 
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
+    <!--page reset library-->
+    {!! Html::style("website/css/normalize.css") !!}
+    {!! Html::style("website/css/all.min.css") !!}
+    {!! Html::style("website/css/login-style.css") !!}
+    {!! Html::style("website/css/bootstrap.css") !!}
 
-                            <div class="form-group row">
-                                <label for="c_id"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('student ID') }}</label>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700i" rel="stylesheet">
 
-                                <div class="col-md-6">
-                                    <input id="c_id" type="text"
-                                           class="form-control{{ $errors->has('c_id') ? ' is-invalid' : '' }}"
-                                           name="c_id" value="{{ old('c_id') }}" required autofocus>
+    <!--page will be compatible with all browsers -->
+    <!--[if lt IE 9]>
 
-                                    @if ($errors->has('c_id'))
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('c_id') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
+    {!! Html::script("website/js/html5shiv.js") !!}
+    <![endif]-->
+    {!! Html::script("website/js/respond.min.js") !!}
+</head>
 
-                            <div class="form-group row">
-                                <label for="password"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+<body>
 
-                                <div class="col-md-6">
-                                    <input id="password" type="password"
-                                           class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                           name="password" required>
 
-                                    @if ($errors->has('password'))
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
+<div class="layout">
 
-                            <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember"
-                                               id="remember" {{ old('remember') ? 'checked' : '' }}>
+    <div class="content">
+        <div class="container">
 
-                                        <label class="form-check-label" for="remember">
-                                            {{ __('Remember Me') }}
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="row">
 
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Login') }}
-                                    </button>
+                <div class="offset-lg-2"></div>
+                <div class="col-lg-4 mobile-flip-card">
+                    <div class="services-description">
 
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
-                                    @endif
-                                </div>
-                            </div>
-                        </form>
+                        <h1>HTI Services</h1>
+
+                        <p class="lead">This site provide some services to HTI,s students</p>
+
+                        <p class="lead">
+                            Students can complain about anything they want
+                            and also can do the questionnaire to can access their results
+                        </p>
+                        <a href="#">Read More</a>
                     </div>
                 </div>
+
+
+                <div class="col-lg-4  mobile-flip-card">
+
+                    <div class="login-form">
+
+                        <h2>Sign <span>In</span></h2>
+
+
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
+                            <div class="form-group">
+                                <input class="form-control{{ $errors->has('c_id') ? ' is-invalid' : '' }}" type="text"
+                                       id="c_id" name="c_id" value="{{ old('c_id') }}" required autofocus
+                                       placeholder="ID"
+                                       maxlength="8"/>
+                                @if ($errors->has('c_id'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('c_id') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" id="password" name="password"
+                                       class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                       placeholder="Password" maxlength="15" required/>
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+
+                            <input type="submit" name="submit" value="Sign In">
+                        </form>
+
+                        <a href="#">Forget Password!?</a>
+
+                    </div>
+                </div>
+
+                <div class="offset-lg-2"></div>
             </div>
         </div>
     </div>
-@endsection
+</div>
+
+{!! Html::script("website/js/jquery-3.3.1.min.js") !!}
+{!! Html::script("website/js/bootstrap.js") !!}
+{!! Html::script("website/js/all.min.js") !!}
+{!! Html::script("website/js/login-page.js") !!}
+</body>
+</html>
