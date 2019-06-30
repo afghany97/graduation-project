@@ -4,6 +4,12 @@ namespace App;
 
 class Subject extends Model
 {
+
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
+
     public function doctors()
     {
         return $this->belongsToMany(Doctor::class);

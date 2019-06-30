@@ -14,7 +14,7 @@
 
                             <img src="website/imgs/test.png" class=" card-img-top img-fluid img-fluid" alt="...">
 
-                            <a href="{{Request::root()}}/questionnaire/create" class="poll-icon">
+                            <a href="{{Request::root()}}/questionnaire/create/{{$subject->name}}" class="poll-icon">
                                 <i class="fas fa-poll"></i>
                             </a>
 

@@ -6,7 +6,76 @@
     <section class="poll">
 
         <div class="container">
+            <div class="description">
 
+                <p class="h5">please fill this form is required
+                    :</p>
+
+                <div class="row">
+                    <ul class="list-unstyled">
+
+                        <li class="col-md-12">
+                            <p>-<strong>Subject name:</strong> {{$subject->name}}</p>
+                        </li>
+
+                        <li class="col-md-12">
+                            <p>-<strong>Subject code:</strong> {{$subject->code}}</p>
+                        </li>
+                        <li class="col-md-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <p>-<strong>Select group number:</strong></p>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Choose...</option>
+                                    <option value="1" required>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+
+                                </select>
+                            </div>
+                        </li>
+                        <li class="col-md-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <p>-<strong>Select Doctor:</strong> Dr..</p>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Choose...</option>
+                                    @foreach($doctors as $doctor)
+                                        <option value="{{$doctor->id}}">{{$doctor->name}}</option>
+                                    @endforeach
+
+
+                                </select>
+                            </div>
+
+                        </li>
+
+                        <li class="col-md-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <p>-<strong>Select Doctor assistant:</strong> eng.</p>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Choose...</option>
+                                    <option value="1" required>mohamed abdelhady</option>
+                                    <option value="2">mahmoud ahmed</option>
+                                    <option value="3">ahmed ali</option>
+                                    <option value="4">ahmed sameh</option>
+
+                                </select>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+            </div>
+            <hr>
             <div class="description">
 
                 <p class="h5">Students should choose the grade of assessment according to the following instructions

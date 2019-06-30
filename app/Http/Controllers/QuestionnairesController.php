@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Doctor;
+use App\Subject;
 use Illuminate\Http\Request;
 
 class QuestionnairesController extends Controller
@@ -10,8 +12,15 @@ class QuestionnairesController extends Controller
     {
         $this->middleware('auth');
     }
-    public function create()
+//    public function create()
+//    {
+//        return view('website.questionnaire');
+//    }
+
+    public function create(Subject $subject)
     {
-        return view('website.questionnaire');
+        $doctors = $subject->doctors;
+
+        return view('website.questionnaire', compact('subject', 'doctors'));
     }
 }

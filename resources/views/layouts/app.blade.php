@@ -53,11 +53,6 @@
                     <a class="nav-link" href="/complain/create">Complains</a>
                 </li>
 
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/questionnaire/create">Questionnaire</a>
-                </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="#">Result</a>
                 </li>

@@ -21,6 +21,6 @@ Route::get('/home', 'SubjectsController@index')->name('home');
 Route::get('/complain/create', 'ComplainsController@create');
 Route::post('/complain/create', 'ComplainsController@store');
 
-Route::get('/questionnaire/create', 'QuestionnairesController@create');
-
+//Route::get('/questionnaire/create', 'QuestionnairesController@create');
+Route::get('/questionnaire/create/{subject}', 'QuestionnairesController@create');
 
