@@ -21,8 +21,10 @@ class CreateDoctorsTable extends Migration
 
         Schema::create('doctor_subject', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('doctor_id')->references('id')->on('doctors');
-            $table->unsignedInteger('subjects_id')->references('id')->on('subjects');
+            $table->unsignedInteger('doctor_id');
+            $table->foreign('doctor_id')->references('id')->on('doctors')->onDelete('cascade');
+            $table->unsignedInteger('subject_id');
+            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
             $table->timestamps();
         });
 

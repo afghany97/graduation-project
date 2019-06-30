@@ -1,0 +1,183 @@
+body {
+    background: #f8f9fa;
+}
+
+
+/*start navbar*/
+.navbar {
+    background-color: #1F2D3D !important;
+
+}
+
+nav .navbar-brand {
+
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 2px
+}
+
+nav .navbar-brand .logo-color {
+    color: rgb(0, 95, 213);
+    font-weight: 400
+}
+
+@media (min-width: 1024px) {
+    nav ul li {
+        margin-right: 20px;
+    }
+
+}
+
+/*end navbar*/
+
+
+/*start of poll section*/
+
+
+.poll {
+    margin-top: 75px;
+}
+
+.poll .container {
+    background: #FFF;
+    padding: 50px 40px;
+}
+
+
+/*discription style*/
+
+.poll .description {
+    border: 2px solid #CCC;
+    border-radius: 15px;
+    padding: 20px 15px;
+}
+
+.poll .description .h5 {
+    margin-bottom: 30px;
+}
+
+.poll .description .row p:first-child {
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+
+.poll .description .row p .num {
+    width: 20px;
+    height: 20px;
+    background: #000;
+    color: #FFF;
+    border-radius: 50%;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+}
+
+
+.poll-form {
+    margin-top: 40px
+}
+
+
+.poll-form .btn {
+    margin-right: 20px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 13px;
+    padding: 0;
+    background: #eee;
+    border: 1px solid #DDD;
+    color: #292929;
+    font-size: 14px;
+}
+
+.poll-form .btn-secondary:not(:disabled):not(.disabled).active {
+    background: #000;
+    color: #FFF;
+    border: none;
+}
+
+.poll-form .btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+
+}
+
+.poll-form .btn-group > .btn:not(:first-child) {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+
+}
+
+.poll-form textarea {
+    border: 1px solid #CCC;
+    resize: none;
+    width: 50%;
+}
+
+
+.submit-button {
+    display: block;
+    margin: 30px auto;
+    width: 200px;
+}
+
+
+#up-button {
+    position: fixed;
+    display: none;
+    bottom: 10px;
+    right: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(41, 128, 226, .9);
+    color: #FFF;
+}
+
+
+@media (max-width: 500px) {
+    .poll-form ul li p {
+        margin-bottom: 10px;
+    }
+
+    .poll-form .btn-group {
+        margin-bottom: 25px;
+    }
+
+    .poll-form textarea {
+        width: 100%;
+    }
+
+    #up-button {
+        right: 8px;
+    }
+
+}
+
+
+/*end of poll section*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

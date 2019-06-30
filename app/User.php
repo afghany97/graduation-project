@@ -42,4 +42,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Questionnaire::class);
     }
+
+    public function subjects()
+    {
+        return $this->belongsToMany(Subject::class);
+    }
+
+    public function complains()
+    {
+        return $this->hasMany(Complain::class);
+    }
+
 }

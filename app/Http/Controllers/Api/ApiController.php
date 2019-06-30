@@ -31,7 +31,6 @@ class ApiController extends Controller
 
         return $this;
     }
-
     public function setIsSuccessful(bool $success)
     {
         $this->isSuccessful = $success;

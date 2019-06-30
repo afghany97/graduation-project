@@ -1,0 +1,130 @@
+body {
+    background: url('../imgs/sub.jpg') fixed center center no-repeat;
+    background-size: cover;
+}
+
+
+/*start navbar*/
+.navbar {
+    background-color: #1F2D3D !important;
+
+}
+
+nav .navbar-brand {
+
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 2px
+}
+
+nav .navbar-brand .logo-color {
+    color: rgb(0, 95, 213);
+    font-weight: 400
+}
+
+@media (min-width: 1024px) {
+    nav ul li {
+        margin-right: 20px;
+    }
+
+}
+
+/*end navbar*/
+
+
+.layout {
+    background: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*start of subjects section*/
+
+.subjects {
+    margin-top: 100px;
+}
+
+.subjects h2 {
+
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    width: 200px;
+    display: block;
+    margin: 0px auto 50px;
+    border-radius: 5px;
+}
+
+.subjects .card {
+    margin-bottom: 30px;
+    overflow: hidden;
+    border: none
+}
+
+.subjects .card .poll-icon {
+    display: block;
+    z-index: 4;
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    margin: 0 auto;
+    margin-left: -41px;
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    color: #fff;
+    text-decoration: none;
+    line-height: 70px;
+    text-align: center;
+}
+
+.subjects .card:hover .poll-icon {
+    top: 50%;
+    margin-top: -40px;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    -ms-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
+
+/*black overlay that apear in hover*/
+.subjects .mask {
+    opacity: 0.85;
+    filter: alpha(opacity=85);
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(24, 26, 28);
+    position: absolute;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+
+.subjects .card:hover .mask {
+    top: 0;
+}
+
+
+.subjects .card .card-body {
+    background: #f8f9fa;
+    color: #000;
+}
+
+
+@media (min-width: 376px) and (max-width: 1024px) {
+    .subjects .card .card-body h5 {
+        font-size: 17px;
+    }
+}
+
+
+/*end of subjects section*/
