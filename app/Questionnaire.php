@@ -18,4 +18,9 @@ class Questionnaire extends Model
     {
         return $this->belongsTo(Doctor::class);
     }
+
+    public function TeachingAssistant()
+    {
+        return $this->belongsTo(TeachingAssistant::class);
+    }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDoctorsTable extends Migration
+class CreateTeachingAssistantsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,19 @@ class CreateDoctorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('doctors', function (Blueprint $table) {
+        Schema::create('teaching_assistants', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
         });
 
-        Schema::create('doctor_subject', function (Blueprint $table) {
+
+        Schema::create('subject_teaching_assistant', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('doctor_id');
-            $table->foreign('doctor_id')->references('id')->on('doctors')->onDelete('cascade');
-            $table->unsignedInteger('subject_id');
-            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
+            $table->unsignedInteger('teaching_assistant_id')->references('id')->on('teaching_assistants')->onDelete('cascade');
+            $table->unsignedInteger('subject_id')->references('id')->on('subjects')->onDelete('cascade');
             $table->timestamps();
         });
-
     }
 
     /**
@@ -37,8 +35,7 @@ class CreateDoctorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('doctor_subject');
-        Schema::dropIfExists('doctors');
-
+        Schema::dropIfExists('subject_teaching_assistant');
+        Schema::dropIfExists('teaching_assistants');
     }
 }

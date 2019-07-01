@@ -39,3 +39,9 @@ $factory->define(App\Doctor::class, function (Faker $faker) {
         'name' => $faker->unique()->name,
     ];
 });
+
+$factory->define(App\TeachingAssistant::class, function (Faker $faker) {
+    return [
+        'name' => $faker->unique()->name,
+    ];
+});
