@@ -1,161 +1,295 @@
-body {
+body
+{
     background: #f8f9fa;
 }
 
 
 /*start navbar*/
-.navbar {
+.navbar
+{
     background-color: #1F2D3D !important;
 
 }
 
-nav .navbar-brand {
-
+nav .navbar-brand
+{
+    
     font-size: 25px;
     font-weight: 600;
-    letter-spacing: 2px
+    letter-spacing: 2px;
 }
 
-nav .navbar-brand .logo-color {
-    color: rgb(0, 95, 213);
+nav .navbar-brand .logo-color
+{
+    color: rgb(0,95,213);
     font-weight: 400
 }
 
-@media (min-width: 1024px) {
-    nav ul li {
+@media (min-width:1024px)
+{
+    nav ul li
+    {
         margin-right: 20px;
     }
 
 }
-
 /*end navbar*/
+
+
 
 
 /*start of poll section*/
 
 
-.poll {
+
+
+.poll
+{
     margin-top: 75px;
+    
+    direction: rtl;
 }
 
-.poll .container {
+.poll .container
+{
     background: #FFF;
     padding: 50px 40px;
+    color: #e21212;
 }
+
+
 
 
 /*discription style*/
+.poll h2
+{
+    margin-bottom: 50px;
+    text-decoration: underline;
+}
 
-.poll .description {
-    border: 2px solid #CCC;
+.poll .instruction
+{
+    border: 2px solid #e21212;
     border-radius: 15px;
     padding: 20px 15px;
+    text-align: right;
 }
 
-.poll .description .h5 {
-    margin-bottom: 30px;
+.poll .instruction .h5
+{
+    margin-bottom: 10px;
+    float: right;
+    display: block;
+}
+.poll .instruction .row p
+{
+    float: right;
+    
 }
 
-.poll .description .row p:first-child {
+.poll .instruction .row p:first-child
+{
     margin-bottom: 10px;
     margin-left: 30px;
 }
 
-.poll .description .row p .num {
+.poll .instruction .row p .num
+{
     width: 20px;
     height: 20px;
-    background: #000;
-    color: #FFF;
+    color: #e21212;
     border-radius: 50%;
     font-size: 14px;
     display: inline-block;
     text-align: center;
-    margin-right: 10px;
+    margin-left: 10px;
+    border: 1px solid #e21212;
+}
+
+/***************************************************/
+.poll .subject-data
+{
+    border: 2px solid #e21212;
+    border-radius: 15px;
+    padding: 20px 15px;
+    text-align: right;
+}
+
+.poll .subject-data .h5
+{
+    margin-bottom: 10px;
+    float: right;
+    display: block;
+}
+.poll .subject-data .row p
+{
+    float: right;
+    
+}
+
+.poll .subject-data .row p:first-child
+{
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+
+.poll .subject-data .row p .num
+{
+    color: #e21212;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
 }
 
 
-.poll-form {
-    margin-top: 40px
+
+
+
+.poll-form
+{
+    margin-top: 40px;
+}
+.poll-form li
+{
+    margin-bottom: 15px;
+    list-style: none;
+}
+
+.poll-form li p,.poll-form u
+{
+    float: right;
+    display: block; 
+    text-align: right;
 }
 
 
-.poll-form .btn {
+.poll-form .btn
+{
     margin-right: 20px;
     border-radius: 50%;
     width: 20px;
-    height: 20px;
-    font-size: 13px;
+    height: 20px;   
+    font-size: 12px;
     padding: 0;
-    background: #eee;
-    border: 1px solid #DDD;
-    color: #292929;
+    background: #fff;
+    border: 1px solid #e21212;
+    color: #e21212; 
     font-size: 14px;
 }
 
-.poll-form .btn-secondary:not(:disabled):not(.disabled).active {
-    background: #000;
+.poll-form .btn-secondary:not(:disabled):not(.disabled).active
+{
+    background: #e21212;
     color: #FFF;
     border: none;
 }
 
-.poll-form .btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
+.poll-form .btn-group > .btn:not(:last-child):not(.dropdown-toggle)
+{
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
-
+    
 }
 
-.poll-form .btn-group > .btn:not(:first-child) {
+.poll-form .btn-group > .btn:not(:first-child)
+{
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
-
+    
 }
 
-.poll-form textarea {
-    border: 1px solid #CCC;
+.poll-form textarea
+{
+    border: 1px solid #e21212;
     resize: none;
     width: 50%;
 }
 
+.poll-form hr
+{
+    background-color: #e21212
+}
 
-.submit-button {
+.poll-form #sub-button
+{
     display: block;
-    margin: 30px auto;
-    width: 200px;
+    margin:30px auto;
+    width:200px;
+    background: #e21212;
+    border: none;
+    height: 40px;   
+    font-size: 12px;
+    color: #fff; 
+    font-size: 14px;
+    border-radius: 5px;
 }
 
 
-#up-button {
+#up-button
+{
     position: fixed;
-    display: none;
+    display:none;
     bottom: 10px;
-    right: 100px;
+    left: 40px;
     padding: 10px;
     border-radius: 5px;
     border: none;
-    background: rgba(41, 128, 226, .9);
+    background: rgba(41, 128, 226,.9);
     color: #FFF;
 }
 
 
-@media (max-width: 500px) {
-    .poll-form ul li p {
+
+
+
+
+
+
+
+
+@media (max-width:500px)
+{
+    .poll h2
+    {
+        font-size: 25px;
+    }
+    
+    .poll-form ul
+    {
+        padding-right: 5px;
+    }
+    .poll-form ul li p
+    {
         margin-bottom: 10px;
     }
-
-    .poll-form .btn-group {
+    
+    .poll-form .btn-group
+    {
         margin-bottom: 25px;
     }
-
-    .poll-form textarea {
+    
+    .poll-form textarea
+    {
         width: 100%;
     }
-
-    #up-button {
+  
+    #up-button
+    {
         right: 8px;
     }
-
+  
+    .poll .instruction
+    {
+        margin-bottom: 20px;
+    }
+    
+    .poll .instruction ul,
+    .poll .subject-data ul
+    {
+        padding-right: 5px;
+    }
 }
-
+    
 
 /*end of poll section*/
 

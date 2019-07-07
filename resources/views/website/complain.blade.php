@@ -6,6 +6,8 @@
 @endsection
 @section('content')
     <section class="complain">
+        <div class="layout">
+
 
         <div class="container text-center">
 
@@ -32,9 +34,9 @@
                                         <div class="form-group">
 
                                             <select name="department" id="department"
-                                                    class="custom-select custom-select-md ">
-                                                <option selected disabled>Department</option>
-                                                <option value="Computer Science">Computer Science</option>
+                                                    class="custom-select custom-select-md" required>
+                                                <option value="" selected disabled>Department</option>
+                                                <option  required value="Computer Science">Computer Science</option>
                                                 <option value="Engineering">Engineering</option>
                                                 <option value="Management Arabic"> Management Arabic</option>
                                                 <option value="Management English"> Management English</option>
@@ -47,8 +49,8 @@
 
                                             <select name="complain_type" id="complain_type"
                                                     class="custom-select custom-select-md" required>
-                                                <option selected disabled>Types of Complain</option>
-                                                <option value="Individual">Individual complain</option>
+                                                <option  value="" selected disabled>Types of Complain</option>
+                                                <option  required value="Individual">Individual complain</option>
                                                 <option value="Collective">Collective complaint</option>
                                             </select>
 
@@ -85,7 +87,7 @@
                 </div>
             </div>
         </div>
-    </section>
+        </div></section>
 @endsection
 @section('footer')
     {!! Html::script('website/js/wow.min.js') !!}

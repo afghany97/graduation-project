@@ -1,85 +1,106 @@
-body {
-    background: url('../imgs/banner_contact.png') fixed center center no-repeat;
-    background-size: cover;
+body
+{
+    
     overflow: hidden
 }
 
 
+
 /*start navbar*/
-.navbar {
+.navbar
+{
     background-color: #1F2D3D !important;
 
 }
 
-nav .navbar-brand {
-
+nav .navbar-brand
+{
+    
     font-size: 25px;
     font-weight: 600;
     letter-spacing: 2px
 }
 
-nav .navbar-brand .logo-color {
-    color: rgb(0, 95, 213);
+nav .navbar-brand .logo-color
+{
+    color: rgb(0,95,213);
     font-weight: 400;
 }
 
-@media (min-width: 1024px) {
-    nav ul li {
+@media (min-width:1024px)
+{
+    nav ul li
+    {
         margin-right: 20px;
     }
 
 }
-
 /*end navbar*/
 
 
+
 /*start complain section*/
-.complain {
-    margin-top: 75px;
-    background: rgba(0, 0, 0, .3);
+.complain
+{
+    background: url('../imgs/banner_contact.png') fixed center center no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
     height: 100%;
     width: 100%;
     position: absolute;
     color: #FFF;
 }
 
-.complain .text {
-
+.layout
+{
+    background-color:rgba(0,0,0,0.4);
+    margin-top: 75px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    color: #FFF;
+    
 }
 
-.complain svg {
+.complain svg
+{
     margin-top: 30px;
-
+    
 }
 
 
-.complain .complain-form {
+
+.complain .complain-form
+{
     padding: 30px;
-    background: rgba(0, 0, 0, .4);
+    background: rgba(0,0,0,.4);
     border-radius: 5px;
     margin-top: 30px;
-
+    
 }
 
 .complain .complain-form input,
 .complain .complain-form textarea,
-.complain .complain-form select {
-    background: rgba(255, 255, 255, 0.9);
+.complain .complain-form select
+{
+    background:  rgba(255, 255, 255, 0.9);
     border: 2px solid #FFF;
 
 }
 
-.complain .complain-form button {
+.complain .complain-form button
+{
     width: 100%;
     height: 40px;
 }
 
-.complain .complain-form textarea {
+.complain .complain-form textarea
+{
     margin-top: 0px;
     height: 93px;
     resize: none;
 }
-
 /*end complain section*/
 
 

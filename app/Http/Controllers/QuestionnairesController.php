@@ -20,7 +20,8 @@ class QuestionnairesController extends Controller
     public function create(Subject $subject)
     {
         $doctors = $subject->doctors;
+        $assistants=$subject->TeachingAssistant;
 
-        return view('website.questionnaire', compact('subject', 'doctors'));
+        return view('website.questionnaire', compact('subject', 'doctors','assistants'));
     }
 }
