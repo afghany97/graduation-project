@@ -18,13 +18,20 @@ class CreateQuestionnairesTable extends Migration
             $table->unsignedInteger('subject_id');
             $table->unsignedInteger('doctor_id');
             $table->unsignedInteger('user_id');
-            $table->integer('classroom');
-            $table->integer('doctor');
-            $table->integer('doctor_assistant');
-            $table->integer('material');
-            $table->integer('sections');
-            $table->integer('exams');
-            $table->integer('content');
+
+            foreach (config('questionnaires') as $key => $array){
+
+                foreach ($array as $item){
+
+                    if($key == 'others')
+
+                        $table->string($item)->nullable();
+
+                    else
+
+                        $table->integer($item);
+                }
+            }
             $table->timestamps();
         });
     }
