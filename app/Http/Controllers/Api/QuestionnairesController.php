@@ -25,10 +25,11 @@ class QuestionnairesController extends ApiController
 
     public function store(QuestionnairesRequest $questionnairesRequest)
     {
+        $attributes = array_merge(['subject_id','doctor_id'], Questionnaire::attributes());
 
         $questionnaire = auth()->user()->questionnaires()->create(
 
-            dataFromRequest(['subject_id', 'doctor_id', 'doctor', 'classroom', 'doctor_assistant', 'material', 'sections', 'exams', 'content'])
+            dataFromRequest($attributes)
 
         );
 

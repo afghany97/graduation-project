@@ -23,4 +23,17 @@ class Questionnaire extends Model
     {
         return $this->belongsTo(TeachingAssistant::class);
     }
+
+    public static function attributes()
+    {
+        $attributes = [];
+
+        foreach (config('questionnaires') as $key => $array)
+
+            foreach ($array as $item)
+
+                array_push($attributes,$item);
+
+            return $attributes;
+    }
 }

@@ -21,16 +21,28 @@ class QuestionnairesRequest extends ApiRequest
      */
     public function rules()
     {
-        return [
+        $roles = [
+
             'subject_id' => 'required|numeric',
+
             'doctor_id' => 'required|numeric',
-            'classroom' => 'required|numeric',
-            'doctor' => 'required|numeric',
-            'doctor_assistant' => 'required|numeric',
-            'material' => 'required|numeric',
-            'sections' => 'required|numeric',
-            'exams' => 'required|numeric',
-            'content' => 'required|numeric',
+
         ];
+
+        foreach (config('questionnaires') as $key => $array)
+
+            foreach ($array as $item){
+
+                if($key == 'others')
+
+                    $roles[$item] = 'string';
+
+                else
+
+                    $roles[$item] = 'required|numeric|min:1|max:5';
+
+            }
+
+        return $roles;
     }
 }
