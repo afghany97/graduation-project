@@ -110,9 +110,10 @@
 
                                         <span class="num">
 
-                                            <select class="custom-select" id="inputGroupSelect01" name="doctor_id">
+                                            <select class="custom-select" id="inputGroupSelect01" name="doctor_id"
+                                                    required>
 
-                                                <option selected disabled>اختر دكتور الماده</option>
+                                                <option value="" selected disabled>اختر دكتور الماده</option>
 
                                                 @foreach($doctors as $doctor)
 
@@ -134,12 +135,11 @@
 
                                         <span class="num">
 
-                                            <select class="custom-select" id="inputGroupSelect01">
+                                            <select class="custom-select" id="inputGroupSelect01" required>
 
-                                                <option selected>اختر معيد الماده</option>
+                                                <option value="" selected disabled>اختر معيد الماده</option>
 
-                                                @foreach($assistants as $assistant)
-
+                                                    @foreach($assistants as $assistant)
                                                     <option value="{{$assistant->id}}">{{$assistant->name}}</option>
 
                                                 @endforeach
@@ -214,9 +214,9 @@
 
                                             <div>
 
-                                                    <label class="btn btn-secondary">
+                                                <label class="btn btn-secondary">
 
-                                                    <input type="radio" name="{{$item}}" value="1" /> 1
+                                                    <input type="radio" name="{{$item}}" value="1" required/> 1
 
                                                 </label>
 
