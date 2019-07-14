@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Doctor;
+use App\Http\Requests\Api\QuestionnairesRequest;
+use App\Http\Requests\CreateQuestionnaireRequest;
+use App\Questionnaire;
 use App\Subject;
-use Illuminate\Http\Request;
 
 class QuestionnairesController extends Controller
 {
@@ -12,10 +13,11 @@ class QuestionnairesController extends Controller
     {
         $this->middleware('auth');
     }
-//    public function create()
-//    {
-//        return view('website.questionnaire');
-//    }
+
+    /**
+     * @param Subject $subject
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
 
     public function create(Subject $subject)
     {
@@ -24,5 +26,27 @@ class QuestionnairesController extends Controller
         $assistants=$subject->TeachingAssistant;
 
         return view('questionnaires.create', compact('subject', 'doctors','assistants'));
+    }
+
+    /**
+     * @param Subject $subject
+     * @param CreateQuestionnaireRequest $formRequest
+     * @return \Illuminate\Http\RedirectResponse
+     */
+
+    public function store(Subject $subject, CreateQuestionnaireRequest $formRequest)
+    {
+        $attributes = array_merge(['subject_id','doctor_id'], Questionnaire::attributes());
+
+        $questionnaire = auth()->user()->questionnaires()->create(
+
+            dataFromRequest($attributes)
+
+        );
+
+        flash()->success("Questionnaire");
+
+        return redirect()->route('home');
+
     }
 }

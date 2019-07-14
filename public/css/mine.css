@@ -1,0 +1,11 @@
+.flash{
+    position: fixed;
+    right : 30px;
+    bottom: 10px;
+    z-index: 2;
+}
+.alert-flash{
+    position: fixed;
+    right : 25px;
+    bottom : 25px;
+}

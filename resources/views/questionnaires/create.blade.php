@@ -16,6 +16,8 @@
 
             <hr>
 
+            <form method="post" action="{{route('questionnaires.store',$subject)}}">
+
             <div class="row">
 
                 <div class="col-md-6">
@@ -108,7 +110,7 @@
 
                                         <span class="num">
 
-                                            <select class="custom-select" id="inputGroupSelect01">
+                                            <select class="custom-select" id="inputGroupSelect01" name="doctor_id">
 
                                                 <option selected disabled>اختر دكتور الماده</option>
 
@@ -160,7 +162,11 @@
 
             </div>
 
-            <form class="poll-form">
+{{--            form was here--}}
+
+                @csrf
+
+                <div class="poll-form">
 
                 @foreach(config('questionnaires') as $key => $array)
 
@@ -176,7 +182,27 @@
 
                                 <li>
 
-                                    <div class='row'>
+                                    @if($key == "others")
+
+                                        <div class='row'>
+
+                                            <div class="col-md-8">
+
+                                                <p>{{config('questionnaires_translation')[$item]}}</p>
+
+                                            </div>
+
+                                            <div class="col-md-4">
+
+                                                <input type="text" name="{{$item}}" class="form-control">
+
+                                            </div>
+
+                                        </div>
+
+                                    @else
+
+                                        <div class='row'>
 
                                         <div class="col-lg-8 col-sm-6">
 
@@ -186,43 +212,33 @@
 
                                         <div class="col-lg-4 col-sm-6">
 
-                                            <div class="btn-group btn-group-toggle" data-toggle="buttons" requried>
+                                            <div>
 
-                                                <label class="btn btn-secondary">
+                                                    <label class="btn btn-secondary">
 
-                                                    <input type="radio" name="{{$item}}" value="1"
-
-                                                           autocomplete="off" required> 1
+                                                    <input type="radio" name="{{$item}}" value="1" /> 1
 
                                                 </label>
 
                                                 <label class="btn btn-secondary">
 
-                                                    <input type="radio" name="{{$item}}" value="2"
-
-                                                           autocomplete="off"> 2
+                                                    <input type="radio" name="{{$item}}" value="2" /> 2
 
                                                 </label>
 
                                                 <label class="btn btn-secondary">
 
-                                                    <input type="radio" name="{{$item}}" value="3"
-
-                                                           autocomplete="off"> 3
+                                                    <input type="radio" name="{{$item}}" value="3" /> 3
                                                 </label>
 
                                                 <label class="btn btn-secondary">
 
-                                                    <input type="radio" name="{{$item}}" value="4"
-
-                                                           autocomplete="off"> 4
+                                                    <input type="radio" name="{{$item}}" value="4" /> 4
                                                 </label>
 
                                                 <label class="btn btn-secondary">
 
-                                                    <input type="radio" name="{{$item}}" value="5"
-
-                                                           autocomplete="off"> 5
+                                                    <input type="radio" name="{{$item}}" value="5" /> 5
 
                                                 </label>
 
@@ -231,6 +247,8 @@
                                         </div>
 
                                     </div>
+
+                                    @endif
 
                                 </li>
 
@@ -244,8 +262,11 @@
 
                 @endforeach
 
+                    <input type="hidden" name="subject_id" value="{{$subject->id}}">
 
                 <button type="submit" id="sub-button" class="btn btn-primary submit-button">Submit</button>
+
+                </div>
 
             </form>
 

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
+    <meta name="csrf-token" content="{{csrf_token()}}">
+
     <title>Subjects</title>
 
     <!--page reset library-->
@@ -13,6 +15,8 @@
     {!! Html::style('website/css/bootstrap.css') !!}
     {!! Html::style('website/css/all.min.css') !!}
     {!! Html::style('website/css/subject-page-style.css') !!}
+    {!! Html::style('css/mine.css') !!}
+
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700i" rel="stylesheet">
 
     {!! Html::script('website/js/respond.min.js') !!}
@@ -21,12 +25,14 @@
 <body>
 <!--start of navbar -->
 
+<div id="app">
+
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark fixed-top">
 
     <div class="container">
         <!--site logo -->
         <a class="navbar-brand" href="#">
-            <img class="" src="{{Request::root()}}/website/imgs/logo.png" width="50" height="50" alt="HTI logo">
+            <img class="" src="{{asset('website/imgs/logo.png')}}" width="50" height="50" alt="HTI logo">
 
             <a class="navbar-brand" href="#">HTI<span class="logo-color"> Services</span></a>
         </a>
@@ -46,7 +52,7 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="/home">Subjects <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{route('subjects.index')}}">Subjects <span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item">
@@ -92,11 +98,18 @@
 
 @yield('content')
 
+<flash-message message="{{session('flash')}}" class-name="{{session('class')}}"></flash-message>
 
+
+@include('layouts._errors')
+
+</div>
 
 <!--end of subjects section -->
 
 <!--page will be compatible with all browsers -->
+
+{!! Html::script('js/app.js') !!}
 
 <!--[if lt IE 9]>
 {!! Html::script('website/js/html5shiv.js') !!}

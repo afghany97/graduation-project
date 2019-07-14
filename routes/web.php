@@ -17,10 +17,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'SubjectsController@index')->name('home');
+Route::get('/home', function (){
+
+    return redirect()->route('subjects.index');
+
+})->name('home');
+
+Route::resource('subjects','SubjectsController');
+
+Route::get('questionnaire/create/{subject}', 'QuestionnairesController@create')->name('questionnaires.create');
+
+Route::post('questionnaire/{subject}','QuestionnairesController@store')->name('questionnaires.store');
+
+
 Route::get('/complain/create', 'ComplainsController@create');
 Route::post('/complain/create', 'ComplainsController@store');
-
-//Route::get('/questionnaire/create', 'QuestionnairesController@create');
-Route::get('/questionnaire/create/{subject}', 'QuestionnairesController@create');
-
