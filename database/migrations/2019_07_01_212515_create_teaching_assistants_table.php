@@ -18,14 +18,6 @@ class CreateTeachingAssistantsTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
-
-
-        Schema::create('subject_teaching_assistant', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('teaching_assistant_id')->references('id')->on('teaching_assistants')->onDelete('cascade');
-            $table->unsignedInteger('subject_id')->references('id')->on('subjects')->onDelete('cascade');
-            $table->timestamps();
-        });
     }
 
     /**
