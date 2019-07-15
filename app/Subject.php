@@ -29,4 +29,10 @@ class Subject extends Model
     {
         return $this->hasMany(Questionnaire::class);
     }
+
+    public function isQuestionnaired()
+    {
+        return $this->questionnaires()->where('user_id', auth()->id())->exists();
+    }
+
 }

@@ -49566,8 +49566,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\workspace\php\laravel\graduation-project\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\workspace\php\laravel\graduation-project\resources\sass\app.scss */"./resources/sass/app.scss");
+        __webpack_require__(/*! E:\new_projects\graduation-project\resources\js\app.js */"./resources/js/app.js");
+        module.exports = __webpack_require__(/*! E:\new_projects\graduation-project\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

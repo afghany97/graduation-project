@@ -10,7 +10,7 @@
 
                 @foreach($subjects as $subject)
                     <div class="col-lg-3 col-md-4 col-sm-12">
-                        <div class="card">
+                        <div class="card {{$subject->isQuestionnaired() ? 'dis': ''}}">
 
                             <img src="website/imgs/test.png" class=" card-img-top img-fluid img-fluid" alt="...">
 
@@ -22,6 +22,8 @@
 
                             <div class="card-body">
                                 <h5 class="card-title text-center">{{$subject->name}}</h5>
+
+
                             </div>
 
                     </div>

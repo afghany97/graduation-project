@@ -20,6 +20,12 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700i" rel="stylesheet">
 
     {!! Html::script('website/js/respond.min.js') !!}
+
+    <style>
+        .dis {
+            pointer-events: none;
+        }
+    </style>
 </head>
 
 <body>
