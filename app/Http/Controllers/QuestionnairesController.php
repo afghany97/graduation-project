@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Assistant;
+use App\Doctor;
+use App\Group;
 use App\Http\Requests\Api\QuestionnairesRequest;
 use App\Http\Requests\CreateQuestionnaireRequest;
 use App\Questionnaire;
 use App\Subject;
+use Illuminate\Support\Facades\DB;
 
 class QuestionnairesController extends Controller
 {
@@ -21,11 +25,15 @@ class QuestionnairesController extends Controller
 
     public function create(Subject $subject)
     {
-        $doctors = $subject->doctors;
+        $row = Db::table('registrations')->where('user_id',auth()->id())->where('subject_id',$subject->id)->first();
 
-        $assistants=$subject->TeachingAssistant;
+        $doctor = Doctor::find($row->doctor_id);
 
-        return view('questionnaires.create', compact('subject', 'doctors','assistants'));
+        $assistant = Assistant::find($row->assistant_id);
+
+        $group = Group::find($row->group_id);
+
+        return view('questionnaires.create', compact('subject', 'doctor','assistant','group'));
     }
 
     /**
@@ -36,7 +44,7 @@ class QuestionnairesController extends Controller
 
     public function store(Subject $subject, CreateQuestionnaireRequest $formRequest)
     {
-        $attributes = array_merge(['subject_id','doctor_id'], Questionnaire::attributes());
+        $attributes = array_merge(['subject_id','doctor_id','assistant_id'], Questionnaire::attributes());
 
         $questionnaire = auth()->user()->questionnaires()->create(
 

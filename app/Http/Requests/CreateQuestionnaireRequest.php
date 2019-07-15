@@ -29,6 +29,8 @@ class CreateQuestionnaireRequest extends FormRequest
 
             'doctor_id' => 'required|numeric',
 
+            'assistant_id' => 'required|numeric',
+
         ];
 
         foreach (config('questionnaires') as $key => $array)
