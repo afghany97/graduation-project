@@ -34,7 +34,7 @@ class Subject extends Model
 
     public function students()
     {
-        return $this->belongsToMany(User::class,'registrations','user_id','user_id');
+        return $this->belongsToMany(User::class,'registrations');
     }
 
     /**
@@ -44,5 +44,34 @@ class Subject extends Model
     public function questionnaires()
     {
         return $this->hasMany(Questionnaire::class);
+    }
+
+    /**
+     * only call from user object
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+
+    public function doctor()
+    {
+        return $this->belongsToMany(Doctor::class,'registrations',null,null,null,null,'doctor_id');
+    }
+
+    /**
+     * only call from user object
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+
+    public function assistant()
+    {
+        return $this->belongsToMany(Assistant::class,'registrations',null,null,null,null,'assistant_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+
+    public function group()
+    {
+        return $this->belongsToMany(Group::class,'registrations',null,null,null,null,'group_id');
     }
 }
