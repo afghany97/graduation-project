@@ -45,3 +45,9 @@ $factory->define(App\TeachingAssistant::class, function (Faker $faker) {
         'name' => $faker->unique()->name,
     ];
 });
+
+$factory->define(App\Group::class, function (Faker $faker) {
+    return [
+        'number' => $faker->unique()->numberBetween(1,20),
+    ];
+});
