@@ -15,9 +15,9 @@ class Subject extends Model
         return $this->belongsToMany(Doctor::class);
     }
 
-    public function TeachingAssistant()
+    public function assistant()
     {
-        return $this->belongsToMany(TeachingAssistant::class);
+        return $this->belongsToMany(Assistant::class);
     }
 
     public function users()

@@ -19,9 +19,9 @@ class Questionnaire extends Model
         return $this->belongsTo(Doctor::class);
     }
 
-    public function TeachingAssistant()
+    public function assistant()
     {
-        return $this->belongsTo(TeachingAssistant::class);
+        return $this->belongsTo(Assistant::class);
     }
 
     public static function attributes()

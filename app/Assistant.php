@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TeachingAssistant extends Model
+class Assistant extends Model
 {
     public function subjects()
     {
