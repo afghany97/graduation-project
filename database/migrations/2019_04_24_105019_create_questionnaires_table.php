@@ -20,6 +20,7 @@ class CreateQuestionnairesTable extends Migration
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('assistant_id');
 
+            $table->unique(['user_id','subject_id']);
 
             foreach (config('questionnaires') as $key => $array){
 
