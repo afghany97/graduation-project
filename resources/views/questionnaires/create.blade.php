@@ -45,7 +45,7 @@
 
     <section class="poll">
 
-        < class="container">
+        <div class="container">
 
             <h2 class="text-center">نموذج تقويم المقرر الدراسي</h2>
 
