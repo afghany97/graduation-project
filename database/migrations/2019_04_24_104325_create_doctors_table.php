@@ -18,16 +18,6 @@ class CreateDoctorsTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
-
-        Schema::create('doctor_subject', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('doctor_id');
-            $table->foreign('doctor_id')->references('id')->on('doctors')->onDelete('cascade');
-            $table->unsignedInteger('subject_id');
-            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
-            $table->timestamps();
-        });
-
     }
 
     /**
@@ -37,8 +27,6 @@ class CreateDoctorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('doctor_subject');
         Schema::dropIfExists('doctors');
-
     }
 }

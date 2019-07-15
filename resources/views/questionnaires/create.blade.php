@@ -45,13 +45,15 @@
 
     <section class="poll">
 
-        <div class="container">
+        < class="container">
 
             <h2 class="text-center">نموذج تقويم المقرر الدراسي</h2>
 
             <hr>
 
             <form method="post" action="{{route('questionnaires.store',$subject)}}">
+
+                @csrf
 
                 <div class="row">
 
@@ -135,7 +137,7 @@
 
                                     <li class="col-md-12">
 
-                                        <p>رقم المجموعه :<span class="num">3</span></p>
+                                        <p>رقم المجموعه :<span class="num">{{$group->number}}</span></p>
 
                                     </li>
 
@@ -145,18 +147,9 @@
 
                                             <span class="num">
 
-                                            <select class="custom-select" id="inputGroupSelect01" name="doctor_id"
-                                                    required>
+                                        <p>{{$doctor->name}}</p>
 
-                                                <option value="" selected disabled>اختر دكتور الماده</option>
-
-                                                @foreach($doctors as $doctor)
-
-                                                    <option value="{{$doctor->id}}">{{$doctor->name}}</option>
-
-                                                @endforeach
-
-                                            </select>
+                                        <input type="hidden" value="{{$doctor->id}}" name="doctor_id">
 
                                         </span>
 
@@ -170,16 +163,9 @@
 
                                             <span class="num">
 
-                                            <select class="custom-select" id="inputGroupSelect01" required>
+                                        <p>{{$assistant->name}}</p>
 
-                                                <option value="" selected disabled>اختر معيد الماده</option>
-
-                                                    @foreach($assistants as $assistant)
-                                                    <option value="{{$assistant->id}}">{{$assistant->name}}</option>
-
-                                                @endforeach
-
-                                            </select>
+                                        <input type="hidden" value="{{$assistant->id}}" name="assistant_id">
 
                                         </span>
 
@@ -196,10 +182,6 @@
                     </div>
 
                 </div>
-
-                {{--            form was here--}}
-
-                @csrf
 
                 <div class="poll-form">
 

@@ -40,8 +40,14 @@ $factory->define(App\Doctor::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(App\TeachingAssistant::class, function (Faker $faker) {
+$factory->define(App\Assistant::class, function (Faker $faker) {
     return [
         'name' => $faker->unique()->name,
+    ];
+});
+
+$factory->define(App\Group::class, function (Faker $faker) {
+    return [
+        'number' => $faker->unique()->numberBetween(1, 20),
     ];
 });

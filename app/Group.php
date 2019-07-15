@@ -2,7 +2,7 @@
 
 namespace App;
 
-class Doctor extends Model
+class Group extends Model
 {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -14,21 +14,11 @@ class Doctor extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-
-    public function questionnaires()
-    {
-        return $this->hasMany(Questionnaire::class);
-    }
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
 
-    public function assistants()
+    public function students()
     {
-        return $this->belongsToMany(Assistant::class, 'registrations');
+        return $this->belongsToMany(User::class, 'registrations', 'user_id', 'user_id');
     }
-
 }

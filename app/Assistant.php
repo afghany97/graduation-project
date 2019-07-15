@@ -2,7 +2,9 @@
 
 namespace App;
 
-class Doctor extends Model
+use Illuminate\Database\Eloquent\Model;
+
+class Assistant extends Model
 {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -21,14 +23,4 @@ class Doctor extends Model
     {
         return $this->hasMany(Questionnaire::class);
     }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-
-    public function assistants()
-    {
-        return $this->belongsToMany(Assistant::class, 'registrations');
-    }
-
 }
