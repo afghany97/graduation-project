@@ -10,20 +10,36 @@ class Subject extends Model
         return 'name';
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+
     public function doctors()
     {
-        return $this->belongsToMany(Doctor::class);
+        return $this->belongsToMany(Doctor::class,'registrations');
     }
 
-    public function assistant()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+
+    public function assistants()
     {
-        return $this->belongsToMany(Assistant::class);
+        return $this->belongsToMany(Assistant::class,'registrations');
     }
 
-    public function users()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+
+    public function students()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class,'registrations','user_id','user_id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
 
     public function questionnaires()
     {
