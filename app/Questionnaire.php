@@ -48,8 +48,23 @@ class Questionnaire extends Model
 
             foreach ($array as $item)
 
-                array_push($attributes,$item);
+                array_push($attributes, $item);
 
-            return $attributes;
+        return $attributes;
+    }
+
+    public static function attributesWithOutOthers()
+    {
+        $attributes = [];
+
+        foreach (config('questionnaires') as $key => $array)
+
+            foreach ($array as $item)
+
+                if ($key != 'others')
+
+                    array_push($attributes, $item);
+
+        return $attributes;
     }
 }
