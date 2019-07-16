@@ -91,4 +91,41 @@ class QuestionnaireEvaluation
         return $result;
     }
 
+    public function phase_c()
+    {
+        $result = $this->phase_b();
+
+        $output = [];
+
+        $avg = 0;
+
+        $factor = 4;
+
+        $keys = [
+            "evolution_system",
+            "doctor",
+            "lectures",
+            "targeted_learning_outcomes",
+            "opinions_about_course",
+        ];
+
+        foreach (config('questionnaire_rules') as $rule)
+        {
+            $temp = 0;
+
+            foreach ($keys as $key)
+            {
+                $temp += $result[$key . '_' . config('questionnaire_rules_translation')[$rule]];
+            }
+
+            $output[config('questionnaire_rules_translation')[$rule]] = number_format((float)  $temp / count($keys), 2, '.', '');
+
+            $avg += $temp / count($keys) * $factor--;
+        }
+
+        $output['avg'] = (int)round($avg / 4);
+
+        return $output;
+
+    }
 }
