@@ -17,7 +17,7 @@ function user()
 {
     foreach (config('auth.guards') as $guard => $value)
 
-        if(auth($guard)->check())
+        if (auth($guard)->check())
 
             return auth($guard)->user();
 
@@ -30,13 +30,13 @@ function user()
  * @return array values of given keys in second array given
  */
 
-function data(array $keys, array $source) : array
+function data(array $keys, array $source): array
 {
-    $result = [] ;
+    $result = [];
 
     foreach (array_unique($keys) as $key)
 
-        if(isset($source[$key]))
+        if (isset($source[$key]))
 
             $result[$key] = $source[$key];
 
@@ -48,9 +48,9 @@ function data(array $keys, array $source) : array
  * @return array values of given keys in request object
  */
 
-function dataFromRequest(array $keys) : array
+function dataFromRequest(array $keys): array
 {
-    return data($keys,request()->all());
+    return data($keys, request()->all());
 }
 
 /**
@@ -60,11 +60,11 @@ function dataFromRequest(array $keys) : array
  * @return Flash|void
  */
 
-function flash($message = null,$class = 'success',$key = null)
+function flash($message = null, $class = 'success', $key = null)
 {
     $instance = new Flash($key);
 
-    if(!func_num_args())
+    if (!func_num_args())
 
         return $instance;
 
@@ -78,9 +78,16 @@ function flash($message = null,$class = 'success',$key = null)
  * @return float|int
  */
 
-function percentage($number, $total,$precision = 2)
+function percentage($number, $total, $precision = 2)
 {
-    return round($number * 100 / $total,$precision);
+    try {
+
+        return round($number * 100 / $total, $precision);
+
+    } catch (ErrorException $exception) {
+
+        abort(400,"Cannot divide by zero");
+    }
 }
 
 /**
