@@ -53,7 +53,7 @@ class User extends Authenticatable
 
     public function subjects()
     {
-        return $this->belongsToMany(Subject::class, 'registrations');
+        return $this->belongsToMany(Subject::class, 'registrations')->withPivot(['doctor_id','assistant_id','group_id']);
     }
 
     /**
