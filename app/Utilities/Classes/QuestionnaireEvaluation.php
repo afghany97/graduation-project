@@ -14,6 +14,12 @@ class QuestionnaireEvaluation
     private $subject;
 
     /**
+     * @var total
+     */
+
+    private $total;
+
+    /**
      * QuestionnaireEvaluation constructor.
      * @param Subject $subject
      */
@@ -21,6 +27,8 @@ class QuestionnaireEvaluation
     public function __construct(Subject $subject)
     {
         $this->subject = $subject;
+
+        $this->total = Questionnaire::where('subject_id',$this->subject->id)->count();
     }
 
     public function phase_a()
@@ -33,7 +41,7 @@ class QuestionnaireEvaluation
             {
                 $result[$attribute . '_' . config('questionnaire_rules_translation')[$rule]] =
 
-                    percentage(Questionnaire::where($attribute, $rule)->where('subject_id', $this->subject->id)->count(), Questionnaire::where('subject_id', $this->subject->id)->count());
+                    percentage(Questionnaire::where($attribute, $rule)->where('subject_id', $this->subject->id)->count(), $this->total);
             }
         }
 
@@ -55,20 +63,22 @@ class QuestionnaireEvaluation
 
                 foreach (config('questionnaire_rules') as $rule)
                 {
-                    ${$category . '_' . config('questionnaire_rules_translation')[$rule]} = 0;
+                    $name = $category . '_' . config('questionnaire_rules_translation')[$rule];
+
+                    $$name = 0;
 
                     foreach ($categoryAttributes as $attribute)
                     {
-                        ${$category . '_' . config('questionnaire_rules_translation')[$rule]} += Questionnaire::where($attribute, $rule)->where('subject_id', $this->subject->id)->count();
+                        $$name += Questionnaire::where($attribute, $rule)->where('subject_id', $this->subject->id)->count();
                     }
 
-                    $result[$category . '_' . config('questionnaire_rules_translation')[$rule]] = percentage(
+                    $result[$name] = percentage(
 
-                        ${$category . '_' . config('questionnaire_rules_translation')[$rule]},
+                        $$name,
 
-                        count(config('questionnaires')[$category]) * Questionnaire::where('subject_id', $this->subject->id)->count()
+                        count(config('questionnaires')[$category]) * $this->total
                     );
-                    $temp += $result[$category . '_' . config('questionnaire_rules_translation')[$rule]] * $factor--;
+                    $temp += $result[$name] * $factor--;
 
 
                 }
