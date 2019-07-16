@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Str;
+use App\Subject;
 use Faker\Generator as Faker;
 
 /*
@@ -14,13 +14,10 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
+$factory->define(Subject::class, function (Faker $faker) {
     return [
-
-//        'id' => $faker->name->Null(),
-        'c_id' => $faker->unique()->randomNumber(8),
-        'email_verified_at' => now(),
-        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
-        'remember_token' => Str::random(10),
+        'name' => $faker->unique()->name,
+        'code' => $faker->postcode,
+        'units' => $faker->numberBetween(1,4)
     ];
 });
