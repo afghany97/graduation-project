@@ -8,10 +8,13 @@ class DatabaseSeeder extends Seeder
         AssistantsSeeder::class,
         DoctorsSeeder::class,
         GroupsSeeder::class,
+        DepartmentsSeeder::class,
         StudentsSeeder::class,
         SubjectsSeeder::class,
         RegistrationsSeeder::class,
-        QuestionnairesSeeder::class
+        QuestionnairesSeeder::class,
+        DepartmentDoctorSeeder::class,
+        DepartmentAssistantSeeder::class,
     ];
 
     /**

@@ -80,4 +80,9 @@ class Subject extends Model
     {
         return $this->belongsToMany(Group::class, 'registrations', null, null, null, null, 'group_id');
     }
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
 }

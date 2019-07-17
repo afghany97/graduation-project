@@ -23,4 +23,9 @@ class Assistant extends Model
     {
         return $this->hasMany(Questionnaire::class);
     }
+
+    public function departments()
+    {
+        return $this->belongsToMany(Department::class);
+    }
 }

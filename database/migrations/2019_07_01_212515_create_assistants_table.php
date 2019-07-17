@@ -18,6 +18,18 @@ class CreateAssistantsTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
+
+        Schema::create('department_assistant', function (Blueprint $table) {
+            $table->increments('id');
+
+            $table->unsignedInteger('department_id');
+            $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
+
+            $table->unsignedInteger('assistant_id');
+            $table->foreign('assistant_id')->references('id')->on('assistants')->onDelete('cascade');
+
+
+        });
     }
 
     /**
@@ -27,6 +39,7 @@ class CreateAssistantsTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('department_assistant');
         Schema::dropIfExists('assistants');
     }
 }

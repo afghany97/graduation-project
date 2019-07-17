@@ -11,11 +11,14 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes();
+
 
 Route::get('/home', function (){
 
@@ -32,3 +35,8 @@ Route::post('questionnaire/{subject}','QuestionnairesController@store')->name('q
 
 Route::get('/complain/create', 'ComplainsController@create');
 Route::post('/complain/create', 'ComplainsController@store');
+
+Route::get('adminpanel', 'AdminController@index');
+
+
+

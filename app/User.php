@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Passport\HasApiTokens;
+use phpDocumentor\Reflection\DocBlock\Tags\Deprecated;
 
 class User extends Authenticatable
 {
@@ -65,4 +66,8 @@ class User extends Authenticatable
         return $this->hasMany(Complain::class);
     }
 
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
 }
