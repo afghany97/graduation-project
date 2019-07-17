@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\Api\QuestionnairesRequest;
 use App\Questionnaire;
+use App\Subject;
+use App\Utilities\Classes\QuestionnaireEvaluation;
 
 class QuestionnairesController extends ApiController
 {
@@ -16,16 +18,18 @@ class QuestionnairesController extends ApiController
         $this->middleware('auth:api');
     }
 
-    public function index()
+    public function show(Subject $subject)
     {
-        $questionnaires = Questionnaire::all();
+        $evaluation = new QuestionnaireEvaluation($subject);
+
+        $questionnaires = $evaluation->calculate();
 
         return $this->fetched(compact('questionnaires'));
     }
 
     public function store(QuestionnairesRequest $questionnairesRequest)
     {
-        $attributes = array_merge(['subject_id','doctor_id'], Questionnaire::attributes());
+        $attributes = array_merge(['subject_id','doctor_id','assistant_id'], Questionnaire::attributes());
 
         $questionnaire = auth()->user()->questionnaires()->create(
 

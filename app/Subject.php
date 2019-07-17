@@ -52,6 +52,11 @@ class Subject extends Model
         return $this->questionnaires()->where('user_id', auth()->id())->exists();
     }
 
+    public function hasQuestionnaires()
+    {
+        return !! $this->questionnaires()->count();
+    }
+
     /**
      * only call from user object
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
