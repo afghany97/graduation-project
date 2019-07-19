@@ -4,13 +4,18 @@ return [
 
     'departments' => [
         [
-            'name' => 'computer science'
+            'name' => 'computer science',
+            'manager_id' => 1
         ],
         [
-            'name' => 'engineering'
+            'name' => 'engineering',
+            'manager_id' => 2
+
         ],
         [
-            'name' => 'business management'
+            'name' => 'business management',
+            'manager_id' => 3
+
         ],
     ],
 
@@ -47,24 +52,28 @@ return [
             'name' => 'eid',
             'email' => 'eid@admin.com',
             'password' => '123456',
+            'department_id' => 1,
             'role' => 1
         ],
         [
             'name' => 'ranya',
             'email' => 'ranya@admin.com',
             'password' => '123456',
+            'department_id' => 2,
             'role' => 1
         ],
         [
             'name' => 'hosny',
             'email' => 'hosny@admin.com',
             'password' => '123456',
+            'department_id' => 3,
             'role' => 1
         ],
         [
             'name' => 'afghany',
             'email' => 'afghany@admin.com',
             'password' => 'afghany',
+            'department_id' => null,
             'role' =>2
         ]
     ],

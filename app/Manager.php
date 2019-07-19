@@ -16,4 +16,9 @@ class Manager extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password', 'role'
     ];
+
+    public function department()
+    {
+        return $this->hasOne(Department::class);
+    }
 }
