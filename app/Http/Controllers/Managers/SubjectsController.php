@@ -21,7 +21,6 @@ class SubjectsController extends MangerController
 
         $categoriesRules = $evaluation->categoriesRules();
 
-
         return view('managers.subjects.show',compact('doctor','subject','categoriesRules'));
     }
 
