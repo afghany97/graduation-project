@@ -14,9 +14,8 @@ return [
     */
 
     'roles' => [
-        'student' => 1,
-        'department_manager' => 2,
-        'chancellor' => 3,
+        'department_manager' => 1,
+        'chancellor' => 2,
     ],
 
     'defaults' => [

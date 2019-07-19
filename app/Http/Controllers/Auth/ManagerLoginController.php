@@ -38,7 +38,14 @@ class ManagerLoginController extends Controller
 
         if (Auth::guard($this->guard)->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
 
-            return redirect()->intended(route('manager.dashboard'));
+            if(Auth::guard($this->guard)->user()->role == config('auth.roles.department_manager'))
+            {
+                return redirect()->intended(route('manager.dashboard'));
+            }
+            else
+            {
+                return redirect()->intended(route('manager.dashboard'));
+            }
 
         }
 
