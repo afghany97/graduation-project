@@ -42,6 +42,32 @@ return [
         ]
     ],
 
+    'managers' => [
+        [
+            'name' => 'eid',
+            'email' => 'eid@admin.com',
+            'password' => '123456',
+            'role' => 1
+        ],
+        [
+            'name' => 'ranya',
+            'email' => 'ranya@admin.com',
+            'password' => '123456',
+            'role' => 1
+        ],
+        [
+            'name' => 'hosny',
+            'email' => 'hosny@admin.com',
+            'password' => '123456',
+            'role' => 1
+        ],
+        [
+            'name' => 'afghany',
+            'email' => 'afghany@admin.com',
+            'password' => 'afghany',
+            'role' =>2
+        ]
+    ],
     'doctors' => [
         [
             'name' => 'eid'

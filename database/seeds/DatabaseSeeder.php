@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         QuestionnairesSeeder::class,
         DepartmentDoctorSeeder::class,
         DepartmentAssistantSeeder::class,
+        ManagersSeeder::class,
     ];
 
     /**
