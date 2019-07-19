@@ -74,7 +74,7 @@ return [
             'email' => 'afghany@admin.com',
             'password' => 'afghany',
             'department_id' => null,
-            'role' =>2
+            'role' => 2,
         ]
     ],
     'doctors' => [

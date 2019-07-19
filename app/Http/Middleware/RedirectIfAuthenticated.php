@@ -20,7 +20,15 @@ class RedirectIfAuthenticated
         switch ($guard) {
             case 'managers':
                 if (Auth::guard($guard)->check()) {
-                    return redirect()->route('manager.dashboard');
+
+                    if(Auth::guard($guard)->user()->role == config('auth.roles.department_manager'))
+                    {
+                        return redirect()->route('manager.department_manager.dashboard');
+                    }
+                    else
+                    {
+                        return redirect()->route('manager.chancellor.dashboard');
+                    }
                 }
                 break;
             default:

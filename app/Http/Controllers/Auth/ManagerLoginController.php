@@ -40,11 +40,11 @@ class ManagerLoginController extends Controller
 
             if(Auth::guard($this->guard)->user()->role == config('auth.roles.department_manager'))
             {
-                return redirect()->intended(route('manager.dashboard'));
+                return redirect()->intended(route('manager.department_manager.dashboard'));
             }
             else
             {
-                return redirect()->intended(route('manager.dashboard'));
+                return redirect()->intended(route('manager.chancellor.dashboard'));
             }
 
         }

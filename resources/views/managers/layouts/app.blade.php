@@ -10,7 +10,7 @@
 
         <meta name="csrf-token" content="{{csrf_token()}}">
 
-        <title>@yield('title')</title>
+        <title>Dashboard | @yield('title')</title>
 
         <!-- Tell the browser to be responsive to screen width -->
 
