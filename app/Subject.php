@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Utilities\Classes\QuestionnaireEvaluation;
+
 class Subject extends Model
 {
 
@@ -89,5 +91,14 @@ class Subject extends Model
     public function department()
     {
         return $this->belongsTo(Department::class);
+    }
+
+    public function getAverageEvaluation()
+    {
+        $keys = ['opinions_about_course','targeted_learning_outcomes','lectures',];
+
+        $evaluation = (new QuestionnaireEvaluation($this))->categoriesRules();
+
+        return (int)round(array_sum(array_intersect_key($evaluation,array_flip($keys))) / count($keys));
     }
 }

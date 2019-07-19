@@ -10,5 +10,6 @@ class ChancellorController extends MangerController
     {
         $this->authorize('isChancellor',new Manager);
 
+        return view('managers.chancellor.index');
     }
 }

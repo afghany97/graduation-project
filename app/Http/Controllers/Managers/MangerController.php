@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 
 class MangerController extends Controller
 {
-
     /**
      * MangerController constructor.
      */
@@ -15,8 +14,4 @@ class MangerController extends Controller
         $this->middleware('auth:managers');
     }
 
-    public function index()
-    {
-        return view('managers.dashboard');
-    }
 }

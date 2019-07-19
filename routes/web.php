@@ -39,8 +39,17 @@ Route::post('/complain/create', 'ComplainsController@store');
 
 
 Route::prefix('managers')->group(function () {
+    Route::get('login', 'Auth\ManagerLoginController@login')->name('manager.auth.login');
+
+    Route::post('login', 'Auth\ManagerLoginController@loginAdmin')->name('manager.auth.loginAdmin');
+
+    Route::post('logout', 'Auth\ManagerLoginController@logout')->name('manager.auth.logout');
 
     Route::get('/department-manager', 'Managers\DepartmentManagerController@index')->name('manager.department_manager.dashboard');
+
+    Route::get('doctors/{doctor}/subjects','Managers\SubjectsController@index')->name('manager.doctors.index');
+
+    Route::get('doctors/{doctor}/subjects/{subject}','Managers\SubjectsController@show')->name('manager.doctors.show');
 
     Route::get('/chancellor', 'Managers\ChancellorController@index')->name('manager.chancellor.dashboard');
 
@@ -50,9 +59,5 @@ Route::prefix('managers')->group(function () {
 
     //    Route::post('register', 'AdminController@store')->name('manager.register.store');
 
-    Route::get('login', 'Auth\ManagerLoginController@login')->name('manager.auth.login');
 
-    Route::post('login', 'Auth\ManagerLoginController@loginAdmin')->name('manager.auth.loginAdmin');
-
-    Route::post('logout', 'Auth\ManagerLoginController@logout')->name('manager.auth.logout');
 });

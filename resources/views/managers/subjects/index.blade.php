@@ -2,7 +2,7 @@
 
 @section('title')
 
-    {{ucwords($department->name)}} Department
+    {{ucwords($doctor->name)}} Subjects
 
 @endsection
 
@@ -12,7 +12,7 @@
 
         <h1>
 
-            {{ucwords($department->name)}} Doctors
+            {{ucwords($doctor->name)}} Subjects
 
         </h1>
 
@@ -20,17 +20,13 @@
 
     <section class="content">
 
-        @foreach($doctors as $doctor)
+        @foreach($subjects as $subject)
 
             <div class="box">
 
                 <div class="box-header with-border">
 
-                    <a href="{{route('manager.doctors.index',$doctor)}}">
-
-                        <h3 class="box-title">{{$doctor->name}}</h3>
-
-                    </a>
+                    <h3 class="box-title">{{$subject->name}}</h3>
 
                     <div class="box-tools pull-right">
 
@@ -50,7 +46,9 @@
 
                 <div class="box-body">
 
-                    The average evaluation of {{$doctor->name}} is {{$doctor->getAverageEvaluation()}} %
+                    The average evaluation of {{$subject->name}} is {{$subject->getAverageEvaluation()}} %
+
+                    <a href="{{route('manager.doctors.show',[$doctor,$subject])}}">show details</a>
 
                 </div>
 
@@ -59,5 +57,6 @@
         @endforeach
 
     </section>
+
 
 @endsection

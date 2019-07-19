@@ -10,5 +10,10 @@ class DepartmentManagerController extends MangerController
     {
         $this->authorize('isDepartmentManager',new Manager);
 
+        $department = user()->department;
+
+        $doctors = $department->doctors;
+
+        return view('managers.department_manager.index',compact('doctors','department'));
     }
 }

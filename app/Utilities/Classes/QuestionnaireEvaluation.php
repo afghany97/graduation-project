@@ -31,7 +31,7 @@ class QuestionnaireEvaluation
         $this->total = Questionnaire::where('subject_id',$this->subject->id)->count();
     }
 
-    private function attributesRules()
+    public function attributesRules()
     {
         $result = [];
 
@@ -48,7 +48,7 @@ class QuestionnaireEvaluation
         return $result;
     }
 
-    private function categoriesRules()
+    public function categoriesRules()
     {
         $result = [];
 
@@ -91,7 +91,7 @@ class QuestionnaireEvaluation
         return $result;
     }
 
-    private function doctorEvaluation()
+    public function doctorEvaluation()
     {
         $result = $this->categoriesRules();
 
