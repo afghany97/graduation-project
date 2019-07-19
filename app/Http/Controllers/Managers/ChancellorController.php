@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Managers;
 
+use App\Department;
 use App\Manager;
 
 class ChancellorController extends MangerController
@@ -10,6 +11,8 @@ class ChancellorController extends MangerController
     {
         $this->authorize('isChancellor',new Manager);
 
-        return view('managers.chancellor.index');
+        $departments = Department::all()->load('doctors');
+
+        return view('managers.chancellor.index',compact('departments'));
     }
 }
