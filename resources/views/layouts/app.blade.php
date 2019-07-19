@@ -121,8 +121,8 @@
 {!! Html::script('website/js/html5shiv.js') !!}
 
 <![endif]-->
-{!! Html::script('website/js/jquery-3.3.1.min.js') !!}
-{!! Html::script('website/js/bootstrap.js') !!}
+{{--{!! Html::script('website/js/jquery-3.3.1.min.js') !!}--}}
+{{--{!! Html::script('website/js/bootstrap.js') !!}--}}
 {!! Html::script('website/js/all.min.js') !!}
 {!! Html::script('website/js/subject-page.js') !!}
 @yield('footer')
