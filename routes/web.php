@@ -36,7 +36,14 @@ Route::post('questionnaire/{subject}','QuestionnairesController@store')->name('q
 Route::get('/complain/create', 'ComplainsController@create');
 Route::post('/complain/create', 'ComplainsController@store');
 
-Route::get('adminpanel', 'AdminController@index');
 
 
-
+Route::prefix('managers')->group(function () {
+    Route::get('/', 'Managers\MangerController@index')->name('manager.dashboard');
+//    Route::get('dashboard', 'MangerController@index')->name('manager.dashboard');
+//    Route::get('register', 'AdminController@create')->name('manager.register');
+//    Route::post('register', 'AdminController@store')->name('manager.register.store');
+    Route::get('login', 'Auth\ManagerLoginController@login')->name('manager.auth.login');
+    Route::post('login', 'Auth\ManagerLoginController@loginAdmin')->name('manager.auth.loginAdmin');
+    Route::post('logout', 'Auth\ManagerLoginController@logout')->name('manager.auth.logout');
+});

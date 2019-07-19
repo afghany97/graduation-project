@@ -13,6 +13,12 @@ return [
     |
     */
 
+    'roles' => [
+        'student' => 1,
+        'department_manager' => 2,
+        'chancellor' => 3,
+    ],
+
     'defaults' => [
         'guard' => 'web',
         'passwords' => 'users',
@@ -45,6 +51,11 @@ return [
             'driver' => 'passport',
             'provider' => 'users',
         ],
+
+        'managers' => [
+            'driver' => 'session',
+            'provider' => 'managers',
+        ],
     ],
 
     /*
@@ -68,6 +79,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+
+        'managers' => [
+            'driver' => 'eloquent',
+            'model' => App\Manager::class,
         ],
 
         // 'users' => [
@@ -94,6 +110,11 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'managers' => [
+            'provider' => 'managers',
             'table' => 'password_resets',
             'expire' => 60,
         ],

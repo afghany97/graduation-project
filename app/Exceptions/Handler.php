@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use App\Http\Controllers\Api\ApiController;
 use Exception;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -57,5 +58,22 @@ class Handler extends ExceptionHandler
             return (new ApiController())->notFound();
 
         return parent::render($request, $exception);
+    }
+
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        if ($request->expectsJson()) {
+            return response()->json(['error' => 'Unauthenticated.'], 401);
+        }
+        $guard = array_get($exception->guards(), 0);
+        switch ($guard) {
+            case 'managers':
+                $login = 'manager.auth.login';
+                break;
+            default:
+                $login = 'login';
+                break;
+        }
+        return redirect()->guest(route($login));
     }
 }
