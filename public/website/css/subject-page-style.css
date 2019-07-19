@@ -126,7 +126,7 @@ nav .navbar-brand .logo-color
 
 .subjects .card .card-body
 {
-    background: #f8f9fa;
+    background: rgba(177, 177, 178, 0.57);
     color: #000;
 }
 

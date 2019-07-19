@@ -12,8 +12,6 @@
                     <div class="col-lg-3 col-md-4 col-sm-12">
                         <div class="card {{$subject->isQuestionnaired() ? 'dis': ''}}">
 
-                            <img src="website/imgs/test.png" class=" card-img-top img-fluid img-fluid" alt="...">
-
                             <a href="{{route('questionnaires.create',$subject)}}" class="poll-icon">
                                 <i class="fas fa-poll"></i>
                             </a>
