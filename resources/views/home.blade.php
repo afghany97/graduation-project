@@ -70,7 +70,7 @@
 
 @endsection
 
-@section('js')
+@section('footer')
 
     <script src="{{asset('website/js/confirmation-message.js')}}"></script>
 

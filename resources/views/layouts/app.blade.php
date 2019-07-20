@@ -1,16 +1,21 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
+
     <meta charset="utf-8"/>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
     <meta name="csrf-token" content="{{csrf_token()}}">
 
     <title>Subjects</title>
 
-    <!--page reset library-->
     @yield('header')
+
     {!! Html::style('website/css/normalize.css') !!}
     {!! Html::style('website/css/bootstrap.css') !!}
     {!! Html::style('website/css/all.min.css') !!}
@@ -26,9 +31,11 @@
             pointer-events: none;
         }
     </style>
+
 </head>
 
 <body>
+
 <!--start of navbar -->
 
 <div id="app">
@@ -62,7 +69,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/complain/create">Complains</a>
+                    <a class="nav-link" href="{{route('complains.create')}}">Complains</a>
                 </li>
 
                 <li class="nav-item">
@@ -72,7 +79,7 @@
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->c_id }} <span class="caret"></span>
+                        {{  Auth::user()->c_id}} <span class="caret"></span>
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -125,7 +132,6 @@
 {{--{!! Html::script('website/js/bootstrap.js') !!}--}}
 {!! Html::script('website/js/all.min.js') !!}
 {!! Html::script('website/js/subject-page.js') !!}
-@yield('js')
 @yield('footer')
 </body>
 </html>

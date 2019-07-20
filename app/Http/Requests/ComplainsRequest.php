@@ -24,9 +24,8 @@ class ComplainsRequest extends Request
     public function rules()
     {
         return [
-            'user_id' => 'required|numeric',
-            'department' => 'required|string',
-            'complain_type' => 'required|string',
+            'department_id' => 'required|numeric',
+            'type' => 'required|string',
             'topic' => 'required|string',
             'description' => 'required|string',
 

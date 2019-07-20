@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title></title>
+    <title>Students Login</title>
 
     <!--page reset library-->
     {!! Html::style("website/css/normalize.css") !!}
@@ -48,6 +48,7 @@
                             and also can do the questionnaire to can access their results
                         </p>
                         <a href="#">Read More</a>
+                        <a href="{{route('complains.create')}}">Create Complain</a>
                     </div>
                 </div>
 

@@ -30,4 +30,9 @@ class Department extends Model
     {
         return $this->hasOne(Manager::class);
     }
+
+    public function complains()
+    {
+        return $this->hasMany(Complain::class);
+    }
 }

@@ -2,18 +2,14 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
 class Complain extends Model
 {
-    protected $guarded = [];
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
 
-    public function students()
+    public function department()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(Department::class);
     }
 }

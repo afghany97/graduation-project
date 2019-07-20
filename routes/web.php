@@ -32,8 +32,7 @@ Route::get('questionnaire/create/{subject}', 'QuestionnairesController@create')-
 
 Route::post('questionnaire/{subject}','QuestionnairesController@store')->name('questionnaires.store');
 
-Route::get('/complain/create', 'ComplainsController@create');
-Route::post('/complain/create', 'ComplainsController@store');
+Route::resource('complains','ComplainsController');
 
 
 
