@@ -13,7 +13,7 @@
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('subjects.index');
 });
 
 
@@ -39,6 +39,7 @@ Route::post('/complain/create', 'ComplainsController@store');
 
 
 Route::prefix('managers')->group(function () {
+
     Route::get('login', 'Auth\ManagerLoginController@login')->name('manager.auth.login');
 
     Route::post('login', 'Auth\ManagerLoginController@loginAdmin')->name('manager.auth.loginAdmin');
