@@ -125,6 +125,7 @@
 {{--{!! Html::script('website/js/bootstrap.js') !!}--}}
 {!! Html::script('website/js/all.min.js') !!}
 {!! Html::script('website/js/subject-page.js') !!}
+@yield('js')
 @yield('footer')
 </body>
 </html>

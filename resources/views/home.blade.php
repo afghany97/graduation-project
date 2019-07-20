@@ -2,6 +2,32 @@
 
 @section('content')
 
+    <div class="pop-background text-center lead">
+
+        <div class="confirmation-box">
+
+            <h3 >Confirmation</h3>
+
+            <hr/>
+
+            <p>Are You <span>Ahmed Sameh</span> !?</p>
+
+            <p>Is Your ID is <span>42016071</span> !?</p>
+
+            <button class="ok-button btn btn-success" href="#">OK</button>
+
+            <button class="cancel-button btn btn-danger">Cancel</button>
+
+            <form id="logout-form" action="{{ route('manager.auth.logout') }}" method="POST" style="display: none;">
+
+                {{ csrf_field() }}
+
+            </form>
+
+        </div>
+
+    </div>
+
     <section class="subjects">
 
         <div class="container">
@@ -41,5 +67,11 @@
         </div>
 
     </section>
+
+@endsection
+
+@section('js')
+
+    <script src="{{asset('website/js/confirmation-message.js')}}"></script>
 
 @endsection
