@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
 
         Laravel\Passport\PassportServiceProvider::class,
 
@@ -227,6 +228,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
 
     ],
 

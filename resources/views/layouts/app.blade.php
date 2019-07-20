@@ -126,5 +126,8 @@
 {!! Html::script('website/js/all.min.js') !!}
 {!! Html::script('website/js/subject-page.js') !!}
 @yield('footer')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+        integrity="sha256-KsRuvuRtUVvobe66OFtOQfjP8WA2SzYsmm4VPfMnxms=" crossorigin="anonymous"></script>
+@include('sweet::alert')
 </body>
 </html>
