@@ -23,27 +23,32 @@ return [
         [
             'c_id' => '42015085',
             'password' => 'afghany',
-            'department_id' => 1
+            'department_id' => 1,
+            'name' => 'afghany',
         ],
         [
             'c_id' => '42015039',
             'password' => 'belal',
-            'department_id' => 1
+            'department_id' => 1,
+            'name' => 'belal',
         ],
         [
             'c_id' => '42015098',
             'password' => 'abora',
-            'department_id' => 1
+            'department_id' => 1,
+            'name' => 'mahmoud',
         ],
         [
             'c_id' => '42016071',
             'password' => 'sameh',
-            'department_id' => 1
+            'department_id' => 1,
+            'name' => 'ahmed',
         ],
         [
             'c_id' => '4201662',
             'password' => 'nehal',
-            'department_id' => 1
+            'department_id' => 1,
+            'name' => 'nehal',
         ]
     ],
 

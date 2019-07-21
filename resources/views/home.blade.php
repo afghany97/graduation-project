@@ -10,9 +10,9 @@
 
             <hr/>
 
-            <p>Are You <span>Ahmed Sameh</span> !?</p>
+            <p>Are You <span>{{auth()->user()->name}}</span> !?</p>
 
-            <p>Is Your ID is <span>42016071</span> !?</p>
+            <p>Is Your ID is <span>{{auth()->user()->c_id}}</span> !?</p>
 
             <button class="ok-button btn btn-success" href="#">OK</button>
 
