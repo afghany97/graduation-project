@@ -33,7 +33,11 @@ class QuestionnairesController extends Controller
 
         $group = Group::find($row->group_id);
 
-        return view('questionnaires.create', compact('subject', 'doctor', 'assistant', 'group'));
+        $attributes = Questionnaire::attributes();
+
+        $attributes_ar = config('questionnaires_translation');
+
+        return view('questionnaires.create', compact('subject', 'doctor', 'assistant', 'group','attributes','attributes_ar'));
     }
 
     /**

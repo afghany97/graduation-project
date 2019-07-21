@@ -39,6 +39,14 @@
         }
     </style>
 
+
+    <script>
+
+        window.data = <?= json_encode(['attributes' => $attributes]); ?>;
+
+        window.data_ar = <?= json_encode(['attributes' => $attributes_ar]); ?>;
+
+    </script>
 @endsection
 
 @section('content')
@@ -51,7 +59,7 @@
 
             <hr>
 
-            <form method="post" action="{{route('questionnaires.store',$subject)}}">
+            <form method="post" action="{{route('questionnaires.store',$subject)}}" id="questionnaire-form">
 
                 @csrf
 
@@ -233,7 +241,7 @@
 
 
                                                         <label>
-                                                            <input type="radio" name="{{$item}}" value="1" required/>
+                                                            <input type="radio" name="{{$item}}" value="1"/>
                                                             <span class="sradio">1</span>
                                                         </label>
 
@@ -285,7 +293,7 @@
 
                     <input type="hidden" name="subject_id" value="{{$subject->id}}">
 
-                    <button type="submit" id="sub-button" class="btn btn-primary submit-button">Submit</button>
+                    <button type="submit" id="sub-button" class="btn btn-primary submit-button">Save</button>
 
                 </div>
 
@@ -302,5 +310,7 @@
 @section('footer')
 
     {!! Html::script('website/js/poll-page.js') !!}
+
+    {!! Html::script('website/js/questionnaires-confirmation.js') !!}
 
 @endsection

@@ -7,6 +7,13 @@
 
 require('./bootstrap');
 
+window.flash = function(message,className = "success"){
+    window.Events.fire('flash',{message,className});
+};
+
+
+import swal from 'sweetalert';
+
 window.Vue = require('vue');
 
 window.Events = new class{
