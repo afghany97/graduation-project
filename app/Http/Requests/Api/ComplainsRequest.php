@@ -23,8 +23,8 @@ class ComplainsRequest extends ApiRequest
     public function rules()
     {
         return [
-            'department' => 'required|string',
-            'complain_type' => 'required|string',
+            'department_id' => 'required|numeric',
+            'type' => 'required|string',
             'topic' => 'required|string',
             'description' => 'required|string',
 
