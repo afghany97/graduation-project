@@ -2,19 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use App\Subject;
-use Illuminate\Http\Request;
-
 class SubjectsController extends Controller
 {
+    /**
+     * SubjectsController constructor.
+     */
+
     public function __construct()
     {
         $this->middleware('auth');
     }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+
     public function index()
     {
-        $subjects = auth()->user()->subjects()->get();
-        return view('home', compact('subjects'));
+        $student = auth()->user();
+
+        $subjects = $student->subjects()->get();
+
+        return view('home', compact('subjects','student'));
     }
 }

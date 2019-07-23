@@ -2,65 +2,167 @@
 
 @section('content')
 
-    <div class="pop-background text-center lead">
-
-        <div class="confirmation-box">
-
-            <h3 >Confirmation</h3>
-
-            <hr/>
-
-            <p>Are You <span>{{auth()->user()->name}}</span> !?</p>
-
-            <p>Is Your ID is <span>{{auth()->user()->c_id}}</span> !?</p>
-
-            <button class="ok-button btn btn-success" href="#">OK</button>
-
-            <button class="cancel-button btn btn-danger">Cancel</button>
-
-            <form id="logout-form" action="{{ route('manager.auth.logout') }}" method="POST" style="display: none;">
-
-                {{ csrf_field() }}
-
-            </form>
-
-        </div>
-
-    </div>
 
     <section class="subjects">
 
         <div class="container">
 
-            <h2 class="text-center">Subjects</h2>
+            <h2 class="text-center">بطاقه التسجيل</h2>
 
-            <div class="row">
+            <div class="details">
 
-                @foreach($subjects as $subject)
+                <div class="row">
 
-                    <div class="col-lg-8 col-md-8 col-sm-8 mx-auto">
+                    <div class="col-6">
 
-                        <div class="card {{$subject->isQuestionnaired() ? 'dis': ''}}">
+                        <p>
+                            المعهد التكنولوجي العالي
 
-                            <a href="{{route('questionnaires.create',$subject)}}" class="poll-icon">
+                            <br/>
 
-                                <i class="fas fa-poll"></i>
+                            قسم علوم حاسب
 
-                            </a>
+                        </p>
 
-                            <div class="mask"></div>
+                    </div>
 
-                            <div class="card-body">
+                    <div class="col-6">
 
-                                <h5 class="card-title text-center">{{$subject->name}}</h5>
+                        <p class="text-left">
 
-                            </div>
+                            التاريخ : <span>{{date('Y-m-d')}}</span>
+                        </p>
 
                     </div>
 
                 </div>
 
-                @endforeach
+                <hr/>
+
+                <div class="row">
+
+                    <div class="col-md-6 col-sm-12">
+
+                        <p>رقم الطالب : <span>{{$student->c_id}}</span></p>
+
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+
+                        <p>اسم الطالب : <span>{{$student->name}}</span></p>
+
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+
+                        <p>المرحله : <span>{{$student->department->name}}</span></p>
+
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+
+                        <p>المعدل التراكمي : <span>5555.5555</span></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-12">
+
+                    <form method="get" id="form">
+
+                        <table class="text-center mx-auto" border="1">
+
+                            <thead>
+
+                            <tr>
+                                <td>م</td>
+
+                                <td colspan="2">المقرر</td>
+
+                                <td>المجموعه</td>
+
+                                <td></td>
+
+                            </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                            @php
+
+                                $counter = 1;
+
+                            @endphp
+
+                            @foreach($subjects as $subject)
+
+                                <tr>
+
+                                    <td>
+
+                                        <p>{{$counter++}}</p>
+
+                                    </td>
+
+                                    <td>
+
+                                        <p>{{$subject->code}}</p>
+
+                                    </td>
+
+                                    <td>
+
+                                        <p>{{$subject->name}}</p>
+
+                                    </td>
+
+                                    <td>
+
+                                        <p>{{$subject->group[0]->number}}</p>
+
+                                    </td>
+
+                                    <td>
+
+                                        <input type="radio" name="subject" value="{{$subject->name}}">
+
+                                    </td>
+
+                                </tr>
+
+                            @endforeach
+
+                            </tbody>
+
+                        </table>
+
+                        <hr>
+
+                        <div class="row" style="float: left">
+
+                            <div class="col-md-6">
+
+                                <button class="btn btn-primary" id="cancel_btn">Cancel</button>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <button class="btn btn-success" type="submit" id="submit_btn">Submit</button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
 
             </div>
 
@@ -72,6 +174,6 @@
 
 @section('footer')
 
-    <script src="{{asset('website/js/confirmation-message.js')}}"></script>
+    {!! Html::script('website/js/subjects-form.js') !!}
 
 @endsection
