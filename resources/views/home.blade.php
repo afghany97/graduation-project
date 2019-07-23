@@ -61,7 +61,7 @@
 
                     <div class="col-md-6 col-sm-12">
 
-                        <p>المعدل التراكمي : <span>5555.5555</span></p>
+                        <p>المعدل التراكمي : <span>{{$student->gpa}}</span></p>
 
                     </div>
 

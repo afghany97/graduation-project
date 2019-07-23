@@ -18,7 +18,25 @@ class StudentsSeeder extends Seeder
 
         foreach (config('default.students') as $student)
         {
-            $data = array_merge(['c_id' => $student['c_id'], 'department_id' => array_random($departments)['id'],'name' => $student['name']], ['password' => bcrypt($student['password'])]);
+            $data = array_merge(
+
+                [
+                    'c_id' => $student['c_id'],
+
+                    'department_id' => array_random($departments)['id'],
+
+                    'name' => $student['name'],
+
+                    'gpa' => $student['gpa']
+
+                ],
+
+                [
+                    'password' => bcrypt($student['password'])
+
+                ]
+
+            );
 
             User::create($data);
         }

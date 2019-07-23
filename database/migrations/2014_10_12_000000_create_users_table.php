@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->integer('c_id')->unique();
             $table->unsignedInteger('department_id');
             $table->string('name');
+            $table->float('gpa');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
