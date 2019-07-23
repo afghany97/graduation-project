@@ -31,4 +31,8 @@ Route::group(['namespace' => 'Api'],function (){
 
     Route::resource('complains', 'ComplainsController');
 
+    Route::get('departments/{department}/doctors','DoctorsController@show');
+
+    Route::get('departments/{department}/complains','ComplainsController@show');
+
 });

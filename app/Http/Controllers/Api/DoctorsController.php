@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Department;
 use App\Doctor;
-use App\Http\Requests\Api\DoctorsRequest;
-use App\Subject;
-use Illuminate\Support\Facades\Auth;
 
 class DoctorsController extends ApiController
 {
@@ -25,32 +23,11 @@ class DoctorsController extends ApiController
         return $this->fetched(compact('doctors'));
     }
 
-    public function show(Doctor $doctor)
+    public function show(Department $department)
     {
-        return $this->fetched(compact('doctor'));
+        $doctors = $department->doctors;
+
+        return $this->fetched(compact('doctors'));
     }
-
-    public function store(DoctorsRequest $doctorsRequest)
-    {
-        $doctor = Doctor::create(
-            dataFromRequest([
-                'name',
-            ])
-        );
-
-        return $this->created(compact('doctor'));
-    }
-
-    public function update(Doctor $doctor, DoctorsRequest $doctorsRequest)
-    {
-        $doctor = $doctor->update(
-            dataFromRequest([
-                'name',
-            ])
-        );
-
-        return $this->updated(compact('doctor'));
-    }
-
 
 }
