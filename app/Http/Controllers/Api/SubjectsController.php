@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Assistant;
+use App\converters\SubjectsConverter;
 use App\Doctor;
 
 class SubjectsController extends ApiController
@@ -16,7 +17,7 @@ class SubjectsController extends ApiController
         $this->middleware('auth:api');
     }
 
-    public function index()
+    public function index(SubjectsConverter $converter)
     {
         $subjects = auth()->user()->subjects;
 
@@ -37,6 +38,8 @@ class SubjectsController extends ApiController
 
             $subject->assistant = $assistant;
         }
+
+        $subjects = $converter->convertCollections($subjects);
 
         return $this->fetched(compact('subjects'));
     }
