@@ -55,7 +55,7 @@
 
                     <div class="col-md-6 col-sm-12">
 
-                        <p>المرحله : <span>{{$student->department->name}}</span></p>
+                        <p>القسم : <span>{{$student->department->name}}</span></p>
 
                     </div>
 
