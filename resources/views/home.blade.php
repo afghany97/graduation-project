@@ -102,7 +102,7 @@
 
                             @foreach($subjects as $subject)
 
-                                <tr>
+                                <tr class="{{ $subject->isQuestionnaired() ? "alert-success" : ""}}">
 
                                     <td>
 
@@ -130,7 +130,7 @@
 
                                     <td>
 
-                                        <input type="radio" name="subject" value="{{$subject->name}}">
+                                        <input type="radio" name="subject" value="{{$subject->name}}" {{$subject->isQuestionnaired() ? "disabled" : ""}}>
 
                                     </td>
 
@@ -146,13 +146,19 @@
 
                         <div class="row" style="float: left">
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
 
                                 <button class="btn btn-primary" id="cancel_btn">Cancel</button>
 
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
+
+                                <a href="http://hti.edu.eg/en/student-results.aspx" class="btn btn-default" {{\App\Subject::isAllQuestionnaired($subjects) ? "" : "disabled"}}>show result</a>
+
+                            </div>
+
+                            <div class="col-md-4">
 
                                 <button class="btn btn-success" type="submit" id="submit_btn">Submit</button>
 

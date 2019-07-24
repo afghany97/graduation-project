@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Utilities\Classes\QuestionnaireEvaluation;
+use Illuminate\Support\Collection;
 
 class Subject extends Model
 {
@@ -100,5 +101,16 @@ class Subject extends Model
         $evaluation = (new QuestionnaireEvaluation($this))->categoriesRules();
 
         return (int)round(array_sum(array_intersect_key($evaluation,array_flip($keys))) / count($keys));
+    }
+
+    public static function isAllQuestionnaired(Collection $subjects)
+    {
+        foreach ($subjects as $subject)
+
+            if(!$subject->isQuestionnaired())
+
+                return false;
+
+        return true;
     }
 }

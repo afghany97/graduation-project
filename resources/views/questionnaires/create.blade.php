@@ -293,7 +293,7 @@
 
                     <input type="hidden" name="subject_id" value="{{$subject->id}}">
 
-                    <button type="submit" id="sub-button" class="btn btn-primary submit-button">Save</button>
+                    <button type="submit" id="sub-button" class="btn btn-success">Save</button>
 
                 </div>
 

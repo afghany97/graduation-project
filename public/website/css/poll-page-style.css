@@ -215,13 +215,17 @@ nav .navbar-brand .logo-color
     display: block;
     margin:30px auto;
     width:200px;
-    background: #e21212;
+    /*background: #e21212;*/
     border: none;
     height: 40px;   
     font-size: 12px;
-    color: #fff; 
+    /*color: #fff; */
     font-size: 14px;
     border-radius: 5px;
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
+
 }
 
 
