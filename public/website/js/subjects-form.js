@@ -17,7 +17,7 @@ $("document").ready(function (){
 
         if(subject_name != undefined && typeof subject_name == 'string'){
 
-            window.location.href = `/questionnaire/create/${subject_name}`;
+            window.location.href = `questionnaire/create/${subject_name}`;
         }else{
             flash('رجاء اختار الماده','danger');
         }
