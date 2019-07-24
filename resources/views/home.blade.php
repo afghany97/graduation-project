@@ -154,7 +154,7 @@
 
                             <div class="col-md-4">
 
-                                <a href="http://hti.edu.eg/en/student-results.aspx" class="btn btn-default" {{\App\Subject::isAllQuestionnaired($subjects) ? "" : "disabled"}}>show result</a>
+                                <a href="http://hti.edu.eg/en/student-results.aspx" class="btn btn-default {{\App\Subject::isAllQuestionnaired($subjects) ? "" : "dis"}}" >show result</a>
 
                             </div>
 
