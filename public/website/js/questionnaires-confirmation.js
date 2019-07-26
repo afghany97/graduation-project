@@ -7,7 +7,7 @@ $("document").ready(function (){
 
         swal("Are you sure ?", {
             buttons: {
-                yes: "Yes",
+                yes: "okay",
                 no:"Cancel",
             },
         })

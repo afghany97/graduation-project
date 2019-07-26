@@ -53,7 +53,7 @@
 
     <section class="poll">
 
-        <div class="container">
+        <div class="container " style="border: 5px double #E21212; margin-top:100px ;margin-bottom:50px">
 
             <h2 class="text-center">نموذج تقويم المقرر الدراسي</h2>
 
@@ -74,7 +74,9 @@
                             <br/>
 
                             <br/>
-
+                            <div class="row">
+                                <p style="margin-right:50px"><strong> *علي الطلاب اختيار الدائرة التي تعبر عن رأيه بموضوعيه حسب الجدول التالي.  </strong></p>
+                            </div>
                             <div class="row">
 
                                 <ul class="list-unstyled">
@@ -231,7 +233,7 @@
 
                                                 <div class="col-lg-8 col-sm-6">
 
-                                                    <p>{{config('questionnaires_translation')[$item]}}</p>
+                                                    <p>*{{config('questionnaires_translation')[$item]}}</p>
 
                                                 </div>
 
@@ -293,7 +295,7 @@
 
                     <input type="hidden" name="subject_id" value="{{$subject->id}}">
 
-                    <button type="submit" id="sub-button" class="btn btn-success">Save</button>
+                    <button type="submit" id="sub-button" class="btn btn-primary">Submit</button>
 
                 </div>
 

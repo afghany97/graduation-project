@@ -144,23 +144,23 @@
 
                         <hr>
 
-                        <div class="row" style="float: left">
+                        <div class="row" style="float: right">
 
                             <div class="col-md-4">
 
-                                <button class="btn btn-primary" id="cancel_btn">Cancel</button>
+                                <button class="btn btn-danger" id="cancel_btn">Cancel</button>
 
                             </div>
 
                             <div class="col-md-4">
 
-                                <a href="http://hti.edu.eg/en/student-results.aspx" class="btn btn-default {{\App\Subject::isAllQuestionnaired($subjects) ? "" : "dis"}}" >show result</a>
+                                <a href="http://hti.edu.eg/en/student-results.aspx" class="btn btn-primary {{\App\Subject::isAllQuestionnaired($subjects) ? "" : "dis"}}" >show result</a>
 
                             </div>
 
                             <div class="col-md-4">
 
-                                <button class="btn btn-success" type="submit" id="submit_btn">Submit</button>
+                                <button class="btn btn-primary" type="submit" id="submit_btn">Git Questionnaire</button>
 
                             </div>
 

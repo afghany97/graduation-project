@@ -39,107 +39,101 @@
 
 <body>
 
-    <section class="complain">
+<section class="complain">
 
-        <div class="layout">
+    <div class="layout">
 
-            <div class="container text-center">
+        <div class="container text-center">
 
-                <div class="text">
+            <div class="text">
 
-                    <i class="fa fa-headphones fa-2x"></i>
+                <i class="fa fa-headphones fa-2x"></i>
 
-                    <h1 class="text-center">Contact <span>Us</span></h1>
+                <h1 class="text-center">Contact <span>Us</span></h1>
 
-                    <p class="text-center lead">Feel Free To Contact Us At Any Time</p>
+                <p class="text-center lead">Feel Free To Contact Us At Any Time</p>
 
-                </div>
+            </div>
 
-                <div class="row">
+            <div class="row">
 
-                    <div class="col-md-12">
+                <div class="col-md-12">
 
-                        <div class="complain-form">
+                    <div class="complain-form">
 
-                            <form>
+                        <form>
 
-                                <div class="row">
+                            <div class="row">
 
-                                    <form method="post" action="{{route('complains.store')}}">
+                                <form method="post" action="{{route('complains.store')}}">
 
-                                        @csrf
+                                    @csrf
 
-                                        <div class="col-md-6 wow bounceInRight" data-wow-duration="1.5s">
+                                    <div class="col-md-6 wow bounceInRight" data-wow-duration="1.5s">
 
-                                            <div class="form-group">
+                                        <div class="form-group">
 
-                                                <select name="department_id" id="department"
-                                                        class="custom-select custom-select-md" required>
+                                            <select name="department_id" id="department"
+                                                    class="custom-select custom-select-md" required>
 
-                                                    <option value="" selected disabled>Select Department</option>
+                                                <option value="" selected disabled>Select Department</option>
 
-                                                    @foreach($departments as $department)
+                                                @foreach($departments as $department)
 
-                                                        <option value="{{$department->id}}">{{$department->name}}</option>
+                                                    <option value="{{$department->id}}">{{$department->name}}</option>
 
-                                                    @endforeach
+                                                @endforeach
 
-                                                </select>
-
-                                            </div>
-
-                                            <div class="form-group">
-
-                                                <select name="type" id="complain_type"
-                                                        class="custom-select custom-select-md" required>
-
-                                                    <option value="" selected disabled>Select type of Complain</option>
-
-                                                    <option value="individual">Individual complain</option>
-
-                                                    <option value="collective">Collective complaint</option>
-
-                                                </select>
-
-                                            </div>
-
-                                            <div class="form-group">
-
-                                                <input type="text" class="form-control" id="topic"
-
-                                                       name="topic" aria-describedby="problemTopic"
-
-                                                       placeholder="Problem Topic" required>
-                                            </div>
+                                            </select>
 
                                         </div>
 
-                                        <div class="col-md-6 wow bounceInLeft" data-wow-duration="1.5s">
+                                        <div class="form-group">
 
-                                            <div class="form-group">
+                                            <select name="type" id="complain_type"
+                                                    class="custom-select custom-select-md" required>
 
-                                                <textarea class="form-control" id="description" rows="3"
+                                                <option value="" selected disabled>Select type of Complain</option>
 
-                                                          name="description" placeholder="Problem Description"
+                                                <option value="individual">Individual complain</option>
 
-                                                          required>
+                                                <option value="collective">Collective complaint</option>
 
-                                                </textarea>
-
-                                            </div>
-
-                                            <button type="submit" formmethod="post"  formaction="{{route('complains.store')}}" class="btn btn-primary">Submit
-                                            </button>
+                                            </select>
 
                                         </div>
 
-                                    </form>
+                                        <div class="form-group">
 
-                                </div>
+                                            <input type="text" class="form-control" id="topic"
 
-                            </form>
+                                                   name="topic" aria-describedby="problemTopic"
 
-                        </div>
+                                                   placeholder="Problem Topic" required>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-group shadow-textarea">
+
+                                            <textarea class="form-control z-depth-1" id="description" rows="3"
+                                                      placeholder="Write description here..." name="description" required></textarea>
+
+                                        </div>
+
+                                        <button type="submit" formmethod="post"
+                                                formaction="{{route('complains.store')}}" class="btn btn-primary">Submit
+                                        </button>
+
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                        </form>
 
                     </div>
 
@@ -149,11 +143,13 @@
 
         </div>
 
-    </section>
+    </div>
 
-    <flash-message message="{{session('flash')}}" class-name="{{session('class')}}"></flash-message>
+</section>
 
-    @include('layouts._errors')
+<flash-message message="{{session('flash')}}" class-name="{{session('class')}}"></flash-message>
+
+@include('layouts._errors')
 
 
 {!! Html::script('js/app.js') !!}
@@ -163,13 +159,13 @@
 
 <![endif]-->
 
-    {!! Html::script('website/js/all.min.js') !!}
+{!! Html::script('website/js/all.min.js') !!}
 
-    {!! Html::script('website/js/subject-page.js') !!}
+{!! Html::script('website/js/subject-page.js') !!}
 
-    {!! Html::script('website/js/wow.min.js') !!}
+{!! Html::script('website/js/wow.min.js') !!}
 
-    {!! Html::script('website/js/complain-page.js') !!}
+{!! Html::script('website/js/complain-page.js') !!}
 
 </body>
 

@@ -52,7 +52,7 @@
 
                     <div class="login-form">
 
-                        <h2>Student <span>Login</span></h2>
+                        <h2>Student Login</h2>
 
                         <form method="POST" action="{{ route('login') }}">
 
@@ -112,7 +112,7 @@
                             </div>
 
 
-                            <button class="btn btn-success" style="float: right;">Submit</button>
+                            <button class="btn btn-primary" style="float: right;">Submit</button>
 
                         </form>
 
