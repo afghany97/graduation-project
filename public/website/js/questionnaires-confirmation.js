@@ -5,7 +5,7 @@ $("document").ready(function (){
 
         event.preventDefault();
 
-        swal("Are you sure ?", {
+        swal(`Are you sure to make questionnaire for ${window.subject.subject.name}?`, {
             buttons: {
                 yes: "okay",
                 no:"Cancel",

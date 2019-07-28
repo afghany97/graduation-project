@@ -46,6 +46,8 @@
 
         window.data_ar = <?= json_encode(['attributes' => $attributes_ar]); ?>;
 
+        window.subject = <?= json_encode(['subject' => $subject]); ?>;
+
     </script>
 @endsection
 
