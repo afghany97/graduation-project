@@ -6,8 +6,8 @@
 }
 .alert-flash{
     position: fixed;
-    right : 25px;
-    bottom : 25px;
+    left : 40%;
+    bottom : 50%;
 }
 .pop-background
 {
