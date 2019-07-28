@@ -48,6 +48,10 @@ class QuestionnairesController extends Controller
 
     public function store(Subject $subject, CreateQuestionnaireRequest $formRequest)
     {
+        if($subject->isQuestionnaired())
+
+            return back()->withErrors("this subject was questionnaired before");
+
         $attributes = array_merge(['subject_id', 'doctor_id', 'assistant_id'], Questionnaire::attributes());
 
         $questionnaire = auth()->user()->questionnaires()->create(

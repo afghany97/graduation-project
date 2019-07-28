@@ -29,6 +29,12 @@ class QuestionnairesController extends ApiController
 
     public function store(QuestionnairesRequest $questionnairesRequest)
     {
+        $subject = Subject::find(request('subject_id'));
+
+        if($subject->isQuestionnaired())
+
+            return $this->responseWithError(['message' => 'this subject was questionnaired before']);
+
         $attributes = array_merge(['subject_id','doctor_id','assistant_id'], Questionnaire::attributes());
 
         $questionnaire = auth()->user()->questionnaires()->create(
