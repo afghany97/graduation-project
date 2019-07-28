@@ -297,7 +297,7 @@
 
                     <input type="hidden" name="subject_id" value="{{$subject->id}}">
 
-                    <button type="submit" id="sub-button" class="btn btn-primary">Submit</button>
+                    <button type="submit" id="sub-button" class="btn btn-primary" disabled>Submit</button>
 
                 </div>
 
@@ -315,6 +315,8 @@
 
     {!! Html::script('website/js/poll-page.js') !!}
 
-    {!! Html::script('website/js/questionnaires-confirmation.js') !!}
+{{--    {!! Html::script('website/js/questionnaires-confirmation.js') !!}--}}
+
+    {!! Html::script('website/js/questionnaires-submit-button.js') !!}
 
 @endsection
