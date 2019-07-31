@@ -232,15 +232,30 @@ nav .navbar-brand .logo-color
 #up-button
 {
     position: fixed;
-    display:none;
-    bottom: 10px;
+    bottom: 60px;
     left: 40px;
-    padding: 10px;
+    padding: 5px 10px;
     border-radius: 5px;
     border: none;
     background: rgba(41, 128, 226,.9);
     color: #FFF;
+    cursor: pointer;
+    z-index: 99999;
 }
+#down-button
+{
+    position: fixed;
+    bottom: 10px;
+    left: 40px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(41, 128, 226,.9);
+    color: #FFF;
+    cursor: pointer;
+    z-index: 99999;
+}
+
 
 
 
@@ -276,10 +291,10 @@ nav .navbar-brand .logo-color
     {
         width: 100%;
     }
-  
-    #up-button
+
+    #up-button,#down-button
     {
-        right: 8px;
+        left: 5px;
     }
   
     .poll .instruction

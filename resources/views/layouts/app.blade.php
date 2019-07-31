@@ -47,7 +47,7 @@
         <a class="navbar-brand" href="#">
             <img class="" src="{{asset('website/imgs/logo.png')}}" width="50" height="50" alt="HTI logo">
 
-            <a class="navbar-brand" href="#">HTI Services</a>
+            <a class="navbar-brand" href="#">HTI Management System</a>
         </a>
 
 

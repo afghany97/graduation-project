@@ -57,6 +57,10 @@
 
         <div class="container " style="border: 5px double #E21212; margin-top:100px ;margin-bottom:50px">
 
+            <button id="up-button"><i class="fas fa-angle-up fa-lg"></i></button>
+            <button id="down-button"><i class="fas fa-angle-down fa-lg"></i></button>
+
+
             <h2 class="text-center">نموذج تقويم المقرر الدراسي</h2>
 
             <hr>
@@ -303,7 +307,6 @@
 
             </form>
 
-            <button id="up-button">Up</button>
 
         </div>
 

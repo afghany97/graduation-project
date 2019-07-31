@@ -38,7 +38,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="#"><b>HTI</b>Services</a>
+        <a href="#"><b>HTI Management System</b></a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">

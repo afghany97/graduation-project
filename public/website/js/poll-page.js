@@ -1,20 +1,18 @@
-/* global $*/
+/* global $ document*/
 
-$(document).ready(function () {
+$(document).ready(function(){
 
-    $(window).scroll(function () {
 
-        if ($(this).scrollTop() > 100) {
-            $('#up-button').fadeIn();
-        } else {
-            $('#up-button').fadeOut();
-        }
+    $('#up-button').click(function(){
+
+        $("html, body").animate({ scrollTop: 0 }, 600);
+        return false;
 
     });
 
-    $('#up-button').click(function () {
+    $('#down-button').click(function(){
 
-        $("html, body").animate({scrollTop: 0}, 600);
+        $("html, body").animate({ scrollTop: 4010 }, 600);
         return false;
 
     });

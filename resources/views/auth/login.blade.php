@@ -112,7 +112,7 @@
                             </div>
 
 
-                            <button class="btn btn-primary" style="float: right;">Submit</button>
+                            <button class="btn btn-primary" style="float: right;">Login </button>
 
                         </form>
 
