@@ -37,6 +37,45 @@
 
 <body>
 
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark fixed-top">
+
+    <div class="container">
+        <!--site logo -->
+        <a class="navbar-brand" href="#">
+            <img class="" src="{{asset('website/imgs/logo.png')}}" width="50" height="50" alt="HTI logo">
+
+            <a class="navbar-brand" href="#">HTI Management System</a>
+        </a>
+
+
+        <!--navbar button in mobile screen -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hti-nav"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <!--navbar items-->
+
+        <div class="collapse navbar-collapse" id="hti-nav">
+
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('login')}}">Student Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('manager.auth.login')}}">Managers Login</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
 
 <div class="layout">
 
@@ -115,6 +154,7 @@
                             <button class="btn btn-primary" style="float: right;">Login </button>
 
                         </form>
+
 
                     </div>
 

@@ -1,142 +1,180 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
+    <meta charset="utf-8"/>
 
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-    <meta name="csrf-token" content="{{csrf_token()}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{config('app.name')}} Managers | Log in</title>
+    <title>Students Login</title>
 
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="{{asset('manager/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('manager/bower_components/font-awesome/css/font-awesome.min.css')}}">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="{{asset('manager/bower_components/Ionicons/css/ionicons.min.css')}}">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('manager/dist/css/AdminLTE.min.css')}}">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="{{asset('manager/plugins/iCheck/square/blue.css')}}">
+    {!! Html::style("website/css/normalize.css") !!}
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    {!! Html::style("website/css/all.min.css") !!}
+
+    {!! Html::style("website/css/login-style.css") !!}
+
+    {!! Html::style("website/css/bootstrap.css") !!}
+
+    {!! Html::style("css/mine.css") !!}
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700i" rel="stylesheet">
+
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    {!! Html::script("website/js/html5shiv.js") !!}
+
     <![endif]-->
 
-    <!-- Google Font -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    {!! Html::script("website/js/respond.min.js") !!}
 </head>
-<body class="hold-transition login-page">
-<div class="login-box">
-    <div class="login-logo">
-        <a href="#"><b>HTI Management System</b></a>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark fixed-top">
+
+    <div class="container">
+        <!--site logo -->
+        <a class="navbar-brand" href="#">
+            <img class="" src="{{asset('website/imgs/logo.png')}}" width="50" height="50" alt="HTI logo">
+
+            <a class="navbar-brand" href="#">HTI Management System</a>
+        </a>
+
+
+        <!--navbar button in mobile screen -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hti-nav"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <!--navbar items-->
+
+        <div class="collapse navbar-collapse" id="hti-nav">
+
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('login')}}">Student Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('manager.auth.login')}}">Managers Login</a>
+                </li>
+
+            </ul>
+
+        </div>
+
     </div>
-    <!-- /.login-logo -->
-    <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
 
-        <form action="{{route('manager.auth.loginAdmin')}}" method="post">
-            @csrf
+</nav>
 
-            <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
+<div class="layout">
 
-                <input type="email" class="form-control" placeholder="Email" name="email" value="{{old('email') ? old('email') : ''}}">
+    <div class="content">
 
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-
-                @if ($errors->has('email'))
-
-                    <span class="help-block">
-
-                            <strong>{{ $errors->first('email') }}</strong>
-
-                    </span>
-
-                @endif
-
-            </div>
-
-            <div class="form-group has-feedback {{ $errors->has('password') ? ' has-error' : '' }}">
-
-                <input type="password" class="form-control" placeholder="Password" name="password">
-
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-
-                @if ($errors->has('password'))
-
-                    <span class="help-block">
-
-                            <strong>{{ $errors->first('password') }}</strong>
-
-                    </span>
-
-                @endif
-
-            </div>
+        <div class="container">
 
             <div class="row">
 
-                <div class="col-xs-8">
+                <div class="offset-lg-4"></div>
 
-                    <div class="checkbox icheck">
+                <div class="col-lg-4  mobile-flip-card">
 
-                        <label>
+                    <div class="login-form">
 
-                            <input type="checkbox" name="remember" {{old('remember') ? 'checked' : ''}}> Remember Me
+                        <h2>Managers Login</h2>
 
-                        </label>
+                        <form method="POST" action="{{ route('manager.auth.loginAdmin') }}">
+
+                            @csrf
+
+                            <div class="form-group">
+
+                                <div class="row">
+
+                                    <div class="col-3">
+
+                                        <p style="margin-top: 10px;font: bold 13px Verdana, Arial;
+    color: #555454;">Username</p>
+
+                                    </div>
+
+                                    <div class="col-9">
+
+                                        <input style="border-radius: 0 !important;" class="form-control" type="email"
+                                               id="username" name="email" value="{{ old('email') }}" required autofocus
+                                               maxlength="20"/>
+
+                                    </div>
+
+                                </div>
+
+                                @if ($errors->has('email'))
+
+                                    <span class="error-feedback" role="alert">
+
+                                        <strong>{{ $errors->first('email') }}</strong>
+
+                                    </span>
+
+                                @endif
+
+                            </div>
+                            <div class="row">
+
+                                <div class="col-3">
+
+                                    <p style="margin-top: 10px;font: bold 13px Verdana, Arial;
+    color: #555454;">Password</p>
+
+                                </div>
+
+                                <div class="col-9">
+
+                                    <input style="border-radius: 0 !important;" type="password" id="password" name="password"
+
+                                           class="form-control"
+
+                                           maxlength="15" required/>
+
+                                </div>
+
+                            </div>
+
+
+                            <button class="btn btn-primary" style="float: right;">Login </button>
+
+                        </form>
+
 
                     </div>
 
                 </div>
 
-                <div class="col-xs-4">
-
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-
-                </div>
-
             </div>
 
-        </form>
+        </div>
 
     </div>
 
 </div>
 
+{!! Html::script("website/js/jquery-3.3.1.min.js") !!}
 
-<!-- jQuery 3 -->
+{!! Html::script("website/js/bootstrap.js") !!}
 
-<script src="{{asset('manager/bower_components/jquery/dist/jquery.min.js')}}"></script>
+{!! Html::script("website/js/all.min.js") !!}
 
-<!-- Bootstrap 3.3.7 -->
-
-<script src="{{asset('manager/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-
-<!-- iCheck -->
-
-<script src="{{asset('manager/plugins/iCheck/icheck.min.js')}}"></script>
-
-<script>
-
-    $(function () {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%' /* optional */
-        });
-    });
-
-</script>
+{!! Html::script("website/js/login-page.js") !!}
 
 </body>
 
