@@ -35,4 +35,11 @@ Route::group(['namespace' => 'Api'],function (){
 
     Route::get('departments/{department}/complains','ComplainsController@show');
 
+
+    Route::group(['namespace' => 'Managers','prefix' => 'managers'],function (){
+
+        Route::post('login', 'AuthController@login');
+
+    });
+
 });

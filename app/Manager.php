@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 
 class Manager extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable,HasApiTokens;
 
     protected $hidden = [
         'password', 'remember_token',
