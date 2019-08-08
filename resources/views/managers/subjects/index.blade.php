@@ -46,7 +46,7 @@
 
                 <div class="box-body">
 
-                    The average evaluation of {{$subject->name}} is {{$subject->getAverageEvaluation()}} %
+                    The average evaluation of {{$subject->name}} is {{$subject->getAverageEvaluation($doctor->id)}} %
 
                     <a href="{{route('manager.doctors.show',[$doctor,$subject])}}">show details</a>
 

@@ -40,11 +40,12 @@ class Doctor extends Model
 
     public function getAverageEvaluation()
     {
-        $total = 0;
 
+        $total = 0;
         foreach ($this->subjects as $subject)
         {
-            $total += (new QuestionnaireEvaluation($subject))->doctorEvaluation()['avg'];
+            $doctor=$subject->pivot->doctor_id;
+            $total += (new QuestionnaireEvaluation($subject,$doctor))->doctorEvaluation()['avg'];
         }
 
         return (int)round($total / $this->subjects->count());
