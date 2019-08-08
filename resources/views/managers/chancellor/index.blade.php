@@ -50,7 +50,7 @@
 
                 <div class="box-body">
 
-                    Managed by Dr.{{$department->manager->name}}
+                    Managed by Dr {{$department->manager->name}}
 
                 </div>
 
