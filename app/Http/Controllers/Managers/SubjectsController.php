@@ -17,7 +17,8 @@ class SubjectsController extends MangerController
 
     public function show(Doctor $doctor,Subject $subject)
     {
-        $evaluation = new QuestionnaireEvaluation($subject);
+
+        $evaluation = new QuestionnaireEvaluation($subject,$doctor->id);
 
         $categoriesRules = $evaluation->categoriesRules();
 
