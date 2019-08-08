@@ -28,7 +28,7 @@
 
                     <a href="{{route('manager.subjects.index',$doctor)}}">
 
-                        <h3 class="box-title">Dr:{{$doctor->name}}</h3>
+                        <h3 class="box-title">Dr {{$doctor->name}}</h3>
 
                     </a>
 
@@ -50,7 +50,7 @@
 
                 <div class="box-body">
 
-                    The average evaluation of Dr: {{$doctor->name}} is {{$doctor->getAverageEvaluation()}} %
+                    The average evaluation of Dr {{$doctor->name}} is {{$doctor->getAverageEvaluation()}} %
 
                 </div>
 
