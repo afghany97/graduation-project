@@ -10,8 +10,7 @@ class SubjectsController extends MangerController
 {
     public function index(Doctor $doctor)
     {
-        $subjects = $doctor->subjects;
-
+        $subjects = $doctor->subjects->unique();
         return view('managers.subjects.index',compact('subjects','doctor'));
     }
 
