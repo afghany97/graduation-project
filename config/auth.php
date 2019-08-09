@@ -55,6 +55,13 @@ return [
             'driver' => 'session',
             'provider' => 'managers',
         ],
+
+        'managers-api' => [
+            'driver' => 'jwt',
+            'provider' => 'managers',
+        ],
+
+
     ],
 
     /*

@@ -91,6 +91,12 @@ class ApiController extends Controller
         return $this->setStatus(self::HTTP_BAD_REQUEST)->responseWithError([trans('auth.failed')]);
     }
 
+    public function unauthorized()
+    {
+        return $this->setStatus(self::HTTP_UNAUTHORIZED)->responseWithError(['message' => 'this action is unauthorized']);
+    }
+
+
     public function authenticated(array $data,$headers = [])
     {
         return $this->setStatus(self::HTTP_OK)->successResponse($data,$headers);

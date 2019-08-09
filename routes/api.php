@@ -35,10 +35,19 @@ Route::group(['namespace' => 'Api'],function (){
 
     Route::get('departments/{department}/complains','ComplainsController@show');
 
-
     Route::group(['namespace' => 'Managers','prefix' => 'managers'],function (){
 
         Route::post('login', 'AuthController@login');
+
+        Route::get('chancellor', 'ChancellorController@index');
+
+        Route::get('department-manager', 'DepartmentManagerController@index');
+
+        Route::get('doctors/{doctor}/subjects','SubjectsController@index');
+
+        Route::get('doctors/{doctor}/subjects/{subject}','SubjectsController@show');
+
+        Route::get('departments/{department}/doctors','DoctorsController@index');
 
     });
 
