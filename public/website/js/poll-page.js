@@ -16,5 +16,9 @@ $(document).ready(function(){
         return false;
 
     });
+	
+	 if ($(window).innerWidth() <= 498) {
+           $(".brand-name").text("HTI System");
+        } 
 
 });

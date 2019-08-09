@@ -1,139 +1,117 @@
-<!DOCTYPE html>
+@extends('layouts.app')
+@section('header')
 
-<html>
-
-<head>
-
-    <meta charset="utf-8"/>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-
-    <meta name="csrf-token" content="{{csrf_token()}}">
-
-    <title>Create Complain</title>
-
-    {!! Html::style('website/css/normalize.css') !!}
-    {!! Html::style('website/css/bootstrap.css') !!}
-    {!! Html::style('website/css/all.min.css') !!}
-    {!! Html::style('website/css/subject-page-style.css') !!}
-    {!! Html::style('css/mine.css') !!}
     {!! Html::style('website/css/hover.css') !!}
 
     {!! Html::style('website/css/animate.css') !!}
 
     {!! Html::style('website/css/complain-page-style.css') !!}
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700i" rel="stylesheet">
 
-    {!! Html::script('website/js/respond.min.js') !!}
+@endsection
+@section('content')
 
-    <style>
-        .dis {
-            pointer-events: none;
-        }
-    </style>
 
-</head>
+    <section class="complain">
 
-<body>
+        <div class="layout">
 
-<section class="complain">
+            <div class="container text-center">
 
-    <div class="layout">
+                <div class="text" style="margin-top: 100px">
 
-        <div class="container text-center">
+                    <i class="fa fa-headphones fa-2x"></i>
 
-            <div class="text">
+                    <h1 class="text-center">Contact <span>Us</span></h1>
 
-                <i class="fa fa-headphones fa-2x"></i>
+                    <p class="text-center lead">Feel Free To Contact Us At Any Time</p>
 
-                <h1 class="text-center">Contact <span>Us</span></h1>
+                </div>
 
-                <p class="text-center lead">Feel Free To Contact Us At Any Time</p>
+                <div class="row">
 
-            </div>
+                    <div class="col-md-12">
 
-            <div class="row">
+                        <div class="complain-form">
 
-                <div class="col-md-12">
+                            <form>
 
-                    <div class="complain-form">
+                                <div class="row">
 
-                        <form>
+                                    <form method="post" action="{{route('complains.store')}}">
 
-                            <div class="row">
+                                        @csrf
 
-                                <form method="post" action="{{route('complains.store')}}">
+                                        <div class="col-md-6 wow bounceInRight" data-wow-duration="1.5s">
 
-                                    @csrf
+                                            <div class="form-group">
 
-                                    <div class="col-md-6 wow bounceInRight" data-wow-duration="1.5s">
+                                                <select name="department_id" id="department"
+                                                        class="custom-select custom-select-md" required>
 
-                                        <div class="form-group">
+                                                    <option value="" selected disabled>Select Department</option>
 
-                                            <select name="department_id" id="department"
-                                                    class="custom-select custom-select-md" required>
+                                                    @foreach($departments as $department)
 
-                                                <option value="" selected disabled>Select Department</option>
+                                                        <option
+                                                            value="{{$department->id}}">{{$department->name}}</option>
 
-                                                @foreach($departments as $department)
+                                                    @endforeach
 
-                                                    <option value="{{$department->id}}">{{$department->name}}</option>
+                                                </select>
 
-                                                @endforeach
+                                            </div>
 
-                                            </select>
+                                            <div class="form-group">
+
+                                                <select name="type" id="complain_type"
+                                                        class="custom-select custom-select-md" required>
+
+                                                    <option value="" selected disabled>Select type of Complain</option>
+
+                                                    <option value="individual">Individual complain</option>
+
+                                                    <option value="collective">Collective complaint</option>
+
+                                                </select>
+
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <input type="text" class="form-control" id="topic"
+
+                                                       name="topic" aria-describedby="problemTopic"
+
+                                                       placeholder="Problem Topic" required>
+                                            </div>
 
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="col-md-6">
 
-                                            <select name="type" id="complain_type"
-                                                    class="custom-select custom-select-md" required>
-
-                                                <option value="" selected disabled>Select type of Complain</option>
-
-                                                <option value="individual">Individual complain</option>
-
-                                                <option value="collective">Collective complaint</option>
-
-                                            </select>
-
-                                        </div>
-
-                                        <div class="form-group">
-
-                                            <input type="text" class="form-control" id="topic"
-
-                                                   name="topic" aria-describedby="problemTopic"
-
-                                                   placeholder="Problem Topic" required>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-md-6">
-
-                                        <div class="form-group shadow-textarea">
+                                            <div class="form-group shadow-textarea">
 
                                             <textarea class="form-control z-depth-1" id="description" rows="3"
-                                                      placeholder="Write description here..." name="description" required></textarea>
+                                                      placeholder="Write description here..." name="description"
+                                                      required></textarea>
+
+                                            </div>
+
+                                            <button type="submit" formmethod="post"
+                                                    formaction="{{route('complains.store')}}" class="btn btn-primary">
+                                                Submit
+                                            </button>
 
                                         </div>
 
-                                        <button type="submit" formmethod="post"
-                                                formaction="{{route('complains.store')}}" class="btn btn-primary">Submit
-                                        </button>
+                                    </form>
 
-                                    </div>
+                                </div>
 
-                                </form>
+                            </form>
 
-                            </div>
-
-                        </form>
+                        </div>
 
                     </div>
 
@@ -143,30 +121,17 @@
 
         </div>
 
-    </div>
+    </section>
+@endsection
 
-</section>
+@section('footer')
+    {!! Html::script('website/js/wow.min.js') !!}
 
-<flash-message message="{{session('flash')}}" class-name="{{session('class')}}"></flash-message>
+    {!! Html::script('website/js/complain-page.js') !!}
 
-@include('layouts._errors')
+@endsection
 
 
-{!! Html::script('js/app.js') !!}
 
-<!--[if lt IE 9]>
-{!! Html::script('website/js/html5shiv.js') !!}
 
-<![endif]-->
 
-{!! Html::script('website/js/all.min.js') !!}
-
-{!! Html::script('website/js/subject-page.js') !!}
-
-{!! Html::script('website/js/wow.min.js') !!}
-
-{!! Html::script('website/js/complain-page.js') !!}
-
-</body>
-
-</html>

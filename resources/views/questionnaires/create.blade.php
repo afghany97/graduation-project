@@ -18,7 +18,7 @@
         }
 
         label .sradio {
-            border: 2px solid #E21212;
+            border: 2px solid #1F2D3D;
             width: 22px;
             height: 22px;
             position: absolute;
@@ -33,8 +33,8 @@
         }
 
         input:checked + .sradio {
-            background: #E21212;
-            border-color: #E21212;
+            background: #1F2D3D;
+            border-color: #1F2D3D;
             color: #ffffff;
         }
     </style>
@@ -55,7 +55,7 @@
 
     <section class="poll">
 
-        <div class="container " style="border: 5px double #E21212; margin-top:100px ;margin-bottom:50px">
+        <div class="container ">
 
             <button id="up-button"><i class="fas fa-angle-up fa-lg"></i></button>
             <button id="down-button"><i class="fas fa-angle-down fa-lg"></i></button>

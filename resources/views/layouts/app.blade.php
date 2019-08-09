@@ -47,7 +47,7 @@
         <a class="navbar-brand" href="#">
             <img class="" src="{{asset('website/imgs/logo.png')}}" width="50" height="50" alt="HTI logo">
 
-            <a class="navbar-brand" href="#">HTI Management System</a>
+            <a class="navbar-brand" href="#" style="font-size:15px">Questionnaires And Complaints Management System For Hti Students</a>
         </a>
 
 
@@ -72,9 +72,6 @@
                     <a class="nav-link" href="{{route('complains.create')}}">Complains</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Result</a>
-                </li>
 
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
