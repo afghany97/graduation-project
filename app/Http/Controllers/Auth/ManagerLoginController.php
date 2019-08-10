@@ -57,7 +57,7 @@ class ManagerLoginController extends Controller
     {
         Auth::guard($this->guard)->logout();
 
-        return redirect()->route('manager.auth.login');
+        return redirect()->route('manager.auth.login.department_manager');
     }
 
     protected function username()

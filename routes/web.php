@@ -36,7 +36,9 @@ Route::resource('complains','ComplainsController');
 
 Route::prefix('managers')->group(function () {
 
-    Route::get('login', 'Auth\ManagerLoginController@login')->name('manager.auth.login');
+    Route::get('dean/login', 'Auth\ManagerLoginController@login')->name('manager.auth.login.dean');
+
+    Route::get('department-manager/login', 'Auth\ManagerLoginController@login')->name('manager.auth.login.department_manager');
 
     Route::post('login', 'Auth\ManagerLoginController@loginAdmin')->name('manager.auth.loginAdmin');
 
