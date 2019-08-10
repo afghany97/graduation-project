@@ -130,7 +130,8 @@
 
                                     <td>
 
-                                        <input type="radio" name="subject" value="{{$subject->name}}" {{$subject->isQuestionnaired() ? "disabled" : ""}}>
+                                        <input type="radio" name="subject"
+                                               value="{{$subject->name}}" {{$subject->isQuestionnaired() ? "disabled" : ""}}>
 
                                     </td>
 
@@ -143,27 +144,29 @@
                         </table>
 
                         <hr>
+                        <div class="buttons text-center">
+                            <div class="row">
+                                <div class="col-md-3"></div>
 
-                        <div class="row" style="float: right">
+                                <div class="col-md-2 col-sm-12">
+                                    <button class="btn btn-primary" type="submit" id="submit_btn">Git Questionnaire</button>
+                                </div>
 
-                            <div class="col-md-4">
 
-                                <button class="btn btn-danger" id="cancel_btn">Cancel</button>
+                                <div class="col-md-2 col-sm-12">
+
+                                    <a href="http://hti.edu.eg/en/student-results.aspx"
+                                       class="btn btn-secondary  {{\App\Subject::isAllQuestionnaired($subjects) ? "" : "dis"}}">show
+                                        result</a>
+
+                                </div>
+
+                                <div class="col-md-2 col-sm-12">
+                                    <button class="btn btn-danger" id="cancel_btn">Cancel</button>
+                                </div>
+                                <div class="col-md-3"></div>
 
                             </div>
-
-                            <div class="col-md-4">
-
-                                <a href="http://hti.edu.eg/en/student-results.aspx" class="btn btn-primary {{\App\Subject::isAllQuestionnaired($subjects) ? "" : "dis"}}" >show result</a>
-
-                            </div>
-
-                            <div class="col-md-4">
-
-                                <button class="btn btn-primary" type="submit" id="submit_btn">Git Questionnaire</button>
-
-                            </div>
-
                         </div>
 
                     </form>

@@ -149,9 +149,9 @@
                                 </div>
 
                             </div>
+                            <button class="btn btn-primary" style="margin-top: 10px">Login </button>
+                            <div style="clear: both"></div>
 
-
-                            <button class="btn btn-primary" style="float: right;">Login </button>
 
                         </form>
 

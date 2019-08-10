@@ -1,6 +1,6 @@
 body
 {
-    background: #f8f9fa;
+    background: #ecf0f5 !important;
 }
 
 
@@ -54,7 +54,7 @@ nav .navbar-brand .logo-color
 {
     background: #FFF;
     padding: 50px 40px;
-    color: #e21212;
+    color: #1F2D3D;
 }
 
 
@@ -64,12 +64,12 @@ nav .navbar-brand .logo-color
 .poll h2
 {
     margin-bottom: 50px;
-    text-decoration: underline;
+    
 }
 
 .poll .instruction
 {
-    border: 2px solid #e21212;
+    border: 2px solid #1F2D3D;
     border-radius: 15px;
     padding: 20px 15px;
     text-align: right;
@@ -97,19 +97,21 @@ nav .navbar-brand .logo-color
 {
     width: 20px;
     height: 20px;
-    color: #e21212;
+    color: #FFF;
     border-radius: 50%;
     font-size: 14px;
     display: inline-block;
     text-align: center;
     margin-left: 10px;
-    border: 1px solid #e21212;
+    border: 1px solid #1F2D3D;
+	background: #1F2D3D;
+	box-sizing: content-box;
 }
 
 /***************************************************/
 .poll .subject-data
 {
-    border: 2px solid #e21212;
+    border: 2px solid #1F2D3D;
     border-radius: 15px;
     padding: 20px 15px;
     text-align: right;
@@ -135,7 +137,7 @@ nav .navbar-brand .logo-color
 
 .poll .subject-data .row p .num
 {
-    color: #e21212;
+    color: #1F2D3D;
     font-size: 14px;
     display: inline-block;
     text-align: center;
@@ -162,52 +164,57 @@ nav .navbar-brand .logo-color
     text-align: right;
 }
 
-
-.poll-form .btn
+ label 
 {
-    margin-right: 20px;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;   
-    font-size: 12px;
-    padding: 0;
-    background: #fff;
-    border: 1px solid #e21212;
-    color: #e21212; 
-    font-size: 14px;
+	display: inline-block;
+	padding: 5px;
+	position: relative;
+	padding-left: 20px;
 }
 
-.poll-form .btn-secondary:not(:disabled):not(.disabled).active
+label input[type="radio"] 
 {
-    background: #e21212;
-    color: #FFF;
-    border: none;
+	opacity: 0;
+	position: absolute;
+	z-index: -1;
 }
 
-.poll-form .btn-group > .btn:not(:last-child):not(.dropdown-toggle)
+label .sradio
 {
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    
+	border: 2px solid #DDD;
+	background: #EEE;
+	color: #000;
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	overflow: hidden;
+	line-height: 1;
+	text-align: center;
+	border-radius: 100%;
+	font-size: 13pt;
+	left: 0;
+	top: 50%;
+	margin-top: -7.5px;
 }
 
-.poll-form .btn-group > .btn:not(:first-child)
+input:checked + .sradio
 {
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-    
+	background: #1F2D3D;
+	border-color: #1F2D3D;
+	color: #ffffff;
 }
+
 
 .poll-form textarea
 {
-    border: 1px solid #e21212;
+    border: 1px solid #1F2D3D;
     resize: none;
     width: 50%;
 }
 
 .poll-form hr
 {
-    background-color: #e21212
+    background-color: #1F2D3D
 }
 
 .poll-form #sub-button
@@ -215,11 +222,9 @@ nav .navbar-brand .logo-color
     display: block;
     margin:30px auto;
     width:200px;
-    /*background: #e21212;*/
     border: none;
     height: 40px;   
     font-size: 12px;
-    /*color: #fff; */
     font-size: 14px;
     border-radius: 5px;
     color: #fff;
@@ -311,7 +316,6 @@ nav .navbar-brand .logo-color
     
 
 /*end of poll section*/
-
 
 
 

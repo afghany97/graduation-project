@@ -85,13 +85,11 @@
 
             <div class="row">
 
-                <div class="offset-lg-4"></div>
-
-                <div class="col-lg-4  mobile-flip-card">
+                <div class="col-md-4 mx-auto">
 
                     <div class="login-form">
 
-                        <h2>Student Login</h2>
+                       <h2 class="text-center">Student Login</h2>
 
                         <form method="POST" action="{{ route('login') }}">
 
@@ -101,12 +99,9 @@
 
                                 <div class="row">
 
-                                    <div class="col-3">
+                                        <label for="username" class="col-sm-3 col-form-label">Username</label>
 
-                                        <p style="margin-top: 10px;font: bold 13px Verdana, Arial;
-    color: #555454;">Username</p>
-
-                                    </div>
+                                    
 
                                     <div class="col-9">
 
@@ -148,10 +143,11 @@
 
                                 </div>
 
+
                             </div>
 
-
-                            <button class="btn btn-primary" style="float: right;">Login </button>
+                            <button class="btn btn-primary" style="margin-top: 10px">Login </button>
+                            <div style="clear: both"></div>
 
                         </form>
 

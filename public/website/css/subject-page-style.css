@@ -70,3 +70,28 @@ nav .navbar-brand
 
 
 /*end of subjects section*/
+
+
+/*start of buttons section*/
+.buttons
+{
+	margin-bottom: 20px;
+	direction: ltr;
+}
+.buttons .btn
+{
+	width: 150px;
+}
+/*end of buttons section*/
+
+
+
+/*mobile screen edits*/
+@media (max-width:498px)
+{
+	.buttons .btn
+	{
+		margin-bottom: 20px;
+	}
+}
+
