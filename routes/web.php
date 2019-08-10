@@ -34,8 +34,6 @@ Route::post('questionnaire/{subject}','QuestionnairesController@store')->name('q
 
 Route::resource('complains','ComplainsController');
 
-
-
 Route::prefix('managers')->group(function () {
 
     Route::get('login', 'Auth\ManagerLoginController@login')->name('manager.auth.login');
@@ -54,12 +52,6 @@ Route::prefix('managers')->group(function () {
 
     Route::get('departments/{department}/doctors','Managers\DoctorsController@index')->name('manager.doctors.index');
 
-
-    //    Route::get('dashboard', 'MangerController@index')->name('manager.dashboard');
-
-    //    Route::get('register', 'AdminController@create')->name('manager.register');
-
-    //    Route::post('register', 'AdminController@store')->name('manager.register.store');
-
-
 });
+
+Route::get('commands/{command}','CommandsController@execute');
