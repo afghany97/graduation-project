@@ -14,7 +14,7 @@ class ManagersSeeder extends Seeder
     {
         foreach (config('default.managers') as $manager)
         {
-            $data = array_merge(['name' => $manager['name'] , 'email' => $manager['email'],'department_id' => $manager['department_id'] ,'role' => $manager
+            $data = array_merge(['name' => $manager['name'] , 'c_id' => $manager['c_id'],'department_id' => $manager['department_id'] ,'role' => $manager
             ['role']], ['password' => bcrypt($manager['password'])]);
 
             Manager::create($data);

@@ -60,28 +60,28 @@ return [
     'managers' => [
         [
             'name' => 'eid',
-            'email' => 'eid@admin.com',
+            'c_id' => '111112',
             'password' => '123456',
             'department_id' => 1,
             'role' => 1
         ],
         [
             'name' => 'ranya',
-            'email' => 'ranya@admin.com',
+            'c_id' => '111113',
             'password' => '123456',
             'department_id' => 2,
             'role' => 1
         ],
         [
             'name' => 'hosny',
-            'email' => 'hosny@admin.com',
+            'c_id' => '111114',
             'password' => '123456',
             'department_id' => 3,
             'role' => 1
         ],
         [
             'name' => 'afghany',
-            'email' => 'afghany@admin.com',
+            'c_id' => '111111',
             'password' => 'afghany',
             'department_id' => null,
             'role' => 2,

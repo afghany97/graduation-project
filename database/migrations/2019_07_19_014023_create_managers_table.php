@@ -17,7 +17,7 @@ class CreateManagersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->unsignedInteger('department_id')->nullable();
-            $table->string('email')->unique();
+            $table->integer('c_id')->unique();
             $table->enum('role',array_values(config('auth.roles')));
             $table->string('password');
             $table->rememberToken();

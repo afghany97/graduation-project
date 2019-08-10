@@ -11,7 +11,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Students Login</title>
+    <title>Managers Login</title>
 
     {!! Html::style("website/css/normalize.css") !!}
 
@@ -116,19 +116,19 @@
 
                                     <div class="col-9">
 
-                                        <input style="border-radius: 0 !important;" class="form-control" type="email"
-                                               id="username" name="email" value="{{ old('email') }}" required autofocus
+                                        <input style="border-radius: 0 !important;" class="form-control" type="text"
+                                               id="username" name="c_id" value="{{ old('c_id') }}" required autofocus
                                                maxlength="20"/>
 
                                     </div>
 
                                 </div>
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('c_id'))
 
                                     <span class="error-feedback" role="alert">
 
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('c_id') }}</strong>
 
                                     </span>
 

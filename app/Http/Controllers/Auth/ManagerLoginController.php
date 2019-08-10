@@ -32,11 +32,11 @@ class ManagerLoginController extends Controller
     public function loginAdmin(Request $request)
     {
         $this->validate($request, [
-            $this->username() => 'required|email',
+            $this->username() => 'required',
             'password' => 'required|min:6'
         ]);
 
-        if (Auth::guard($this->guard)->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+        if (Auth::guard($this->guard)->attempt(['c_id' => $request->c_id, 'password' => $request->password], $request->remember)) {
 
             if(Auth::guard($this->guard)->user()->role == config('auth.roles.department_manager'))
             {
@@ -62,6 +62,6 @@ class ManagerLoginController extends Controller
 
     protected function username()
     {
-        return 'email';
+        return 'c_id';
     }
 }
