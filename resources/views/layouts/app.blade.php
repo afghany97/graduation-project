@@ -20,7 +20,7 @@
     {!! Html::style('website/css/bootstrap.css') !!}
     {!! Html::style('website/css/all.min.css') !!}
     {!! Html::style('website/css/subject-page-style.css') !!}
-    {!! Html::style('css/mine.css') !!}
+    {!! Html::style('website/css/mine.css') !!}
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700i" rel="stylesheet">
 
@@ -47,7 +47,7 @@
         <a class="navbar-brand" href="#">
             <img class="" src="{{asset('website/imgs/logo.png')}}" width="50" height="50" alt="HTI logo">
 
-            <a class="navbar-brand" href="#" style="font-size:15px">Questionnaires And Complaints Management System For Hti Students</a>
+            <a class="navbar-brand brand-name" href="#">Questionnaire And Complain<br/> Managment System For HTI Students</a>
         </a>
 
 
@@ -129,6 +129,9 @@
 {{--{!! Html::script('website/js/bootstrap.js') !!}--}}
 {!! Html::script('website/js/all.min.js') !!}
 {!! Html::script('website/js/subject-page.js') !!}
+{!! Html::script('website/js/script.js') !!}
+
+
 @yield('footer')
 </body>
 </html>

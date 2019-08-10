@@ -7,58 +7,152 @@
 @endsection
 
 @section('content')
+    <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Main content -->
 
-    <section class="content-header">
+    <section class="subjects">
+        <section class="content container">
 
-        <h1>
+            <h2 class="text-center">أقسام المعهد</h2>
 
-             Departments
+            <div class="details">
 
-        </h1>
+                <div class="row">
 
-    </section>
+                    <div class="col-6">
 
-    <section class="content">
+                        <p>
+                            المعهد التكنولوجي العالي
 
-        @foreach($departments as $department)
 
-            <div class="box">
+                        </p>
 
-                <div class="box-header with-border">
+                    </div>
 
-                    <a href="{{route('manager.doctors.index',$department)}}">
+                    <div class="col-6">
 
-                        <h3 class="box-title">{{$department->name}}</h3>
+                        <p>
 
-                    </a>
-
-                    <div class="box-tools pull-right">
-
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-
-                                title="Collapse">
-
-                            <i class="fa fa-minus"></i></button>
-
-                        <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-
-                            <i class="fa fa-times"></i></button>
+                            التاريخ : <span>2019-08-07</span>
+                        </p>
 
                     </div>
 
                 </div>
 
-                <div class="box-body">
+                <hr/>
 
-                    Managed by Dr.{{$department->manager->name}}
+                <div class="row">
+
+                    <div class="col-md-6 col-sm-12">
+
+                        <p>العميد : <span>د/ عثمان</span></p>
+
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+
+                        <p>الفصل الدراسي : <span>may/aug</span></p>
+
+                    </div>
+
+
+                    <div class="col-md-6 col-sm-12">
+
+                        <p>الفرع : <span>العاشر من رمضان</span></p>
+
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+
+                        <p>السنه الدراسيه : <span>2019/2020</span></p>
+
+                    </div>
 
                 </div>
 
             </div>
 
-        @endforeach
+            <div class="row">
+
+                <div class="col-12">
+
+                    <form method="get" id="form">
+
+                        <table class="text-center mx-auto" border="1">
+
+                            <thead>
+
+                            <tr style="	background:#DDD;height: 60px;">
+                                <td>num</td>
+
+                                <td>Department</td>
+
+                                <td>Department Manager</td>
+
+
+                            </tr>
+
+                            </thead>
+
+                            <tbody>
+                            <?php $i=1 ?>
+                            @foreach($departments as $department)
+
+                            <tr>
+
+                                <td>
+
+                                    <p>{{$i++}}</p>
+
+                                </td>
+
+                                <td>
+
+
+                                    <p><a href="{{route('manager.doctors.index',$department)}}">{{$department->name}}</a></p>
+
+
+                                </td>
+
+                                <td>
+
+                                    <p><a href="#">Dr.{{$department->manager->name}}</a></p>
+
+                                </td>
+
+
+
+                            </tr>
+
+                            @endforeach
+
+
+
+
+                            </tbody>
+
+                        </table>
+
+
+
+                    </form>
+
+
+                </div>
+
+            </div>
+
+
+
+        </section>
+        <p class="Signature"></p>
+
 
     </section>
-
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 
 @endsection
