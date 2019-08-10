@@ -2,183 +2,126 @@
 
 <html>
 
-    <head>
+<head>
 
-        <meta charset="utf-8">
+    <meta charset="utf-8"/>
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
-        <meta name="csrf-token" content="{{csrf_token()}}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-        <title>Dashboard | @yield('title','Dashboard')</title>
+    <meta name="csrf-token" content="{{csrf_token()}}">
 
-        <!-- Tell the browser to be responsive to screen width -->
+    <title>Subjects</title>
 
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    @yield('header')
 
-        <!-- Bootstrap 3.3.7 -->
+    {!! Html::style('website/css/normalize.css') !!}
+    {!! Html::style('website/css/bootstrap.css') !!}
+    {!! Html::style('website/css/all.min.css') !!}
+    {!! Html::style('website/css/subject-page-style.css') !!}
+    {!! Html::style('website/css/mine.css') !!}
+    {!! Html::style('website/css/style.css') !!}
 
-        {!! Html::style('manager/bower_components/bootstrap/dist/css/bootstrap.min.css') !!}
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700i" rel="stylesheet">
 
-        <!-- Font Awesome -->
+    {!! Html::script('website/js/respond.min.js') !!}
 
-        {!! Html::style('manager/bower_components/font-awesome/css/font-awesome.min.css') !!}
+    <style>
+        .dis {
+            pointer-events: none;
+        }
+    </style>
 
-        <!-- Ionicons -->
+</head>
 
-        {!! Html::style('manager/bower_components/Ionicons/css/ionicons.min.css') !!}
+<body>
 
-        <!-- Theme style -->
+<!--start of navbar -->
 
-        {!! Html::style('manager/dist/css/AdminLTE.min.css') !!}
+<div id="app">
 
-        <!-- AdminLTE Skins. Choose a skin from the css/skins
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark fixed-top">
 
-                 folder instead of downloading all of them to reduce the load. -->
+        <div class="container">
+            <!--site logo -->
+            <a class="navbar-brand" href="#">
+                <img class="" src="{{asset('website/imgs/logo.png')}}" width="50" height="50" alt="HTI logo">
 
-        {!! Html::style('manager/dist/css/skins/_all-skins.min.css') !!}
+                <a class="navbar-brand brand-name" href="#">Questionnaire And Complain<br/> Managment System For HTI Students</a>
+            </a>
 
-        <!-- Morris chart -->
 
-        {!! Html::style('manager/bower_components/morris.js/morris.css') !!}
+            <!--navbar button in mobile screen -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hti-nav"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <!-- jvectormap -->
 
-        {!! Html::style('manager/bower_components/jvectormap/jquery-jvectormap.css') !!}
+            <!--navbar items-->
 
-        <!-- Date Picker -->
+            <div class="collapse navbar-collapse" id="hti-nav">
 
-        {!! Html::style('manager/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') !!}
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{  Auth::user()->name}} <span class="caret"></span>
+                        </a>
 
-        <!-- Daterange picker -->
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
 
-        {!! Html::style('manager/bower_components/bootstrap-daterangepicker/daterangepicker.css') !!}
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                  style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
 
-        <!-- bootstrap wysihtml5 - text editor -->
-
-        {!! Html::style('manager/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') !!}
-
-         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-
-        <!--[if lt IE 9]>
-
-            <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-
-            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
-        <![endif]-->
-
-        <!-- Google Font -->
-
-        <link rel="stylesheet"
-              href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-
-    </head>
-
-    <body class="hold-transition skin-blue sidebar-mini">
-
-        <div class="wrapper">
-
-            @include('managers.layouts._header')
-
-            <!-- Left side column. contains the logo and sidebar -->
-
-                @include('managers.layouts._sidebar')
-
-            <div class="content-wrapper">
-
-                @yield('content')
+                </ul>
 
             </div>
 
-            @include('managers.layouts._footer')
-
-            <div class="control-sidebar-bg"></div>
-
         </div>
+    </nav>
 
 
-    <!-- jQuery 3 -->
+    <!--end of navbar -->
 
-    {!! Html::script('manager/bower_components/jquery/dist/jquery.min.js') !!}
+    <!--start of subjects section -->
 
-    <script src=""></script>
 
-    <!-- jQuery UI 1.11.4 -->
+    @yield('content')
 
-    {!! Html::script('manager/bower_components/jquery-ui/jquery-ui.min.js') !!}
+    <flash-message message="{{session('flash')}}" class-name="{{session('class')}}"></flash-message>
 
-    <script src=""></script>
 
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    @include('layouts._errors')
 
-    <script>
+</div>
 
-        $.widget.bridge('uibutton', $.ui.button);
+<!--end of subjects section -->
 
-    </script>
+<!--page will be compatible with all browsers -->
 
-    <!-- Bootstrap 3.3.7 -->
+{!! Html::script('js/app.js') !!}
 
-    {!! Html::script('manager/bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
+<!--[if lt IE 9]>
+{!! Html::script('website/js/html5shiv.js') !!}
 
-    <!-- Morris.js charts -->
+<![endif]-->
+{{--{!! Html::script('website/js/jquery-3.3.1.min.js') !!}--}}
+{{--{!! Html::script('website/js/bootstrap.js') !!}--}}
+{!! Html::script('website/js/all.min.js') !!}
+{!! Html::script('website/js/subject-page.js') !!}
+{!! Html::script('website/js/script.js') !!}
 
-    {!! Html::script('manager/bower_components/raphael/raphael.min.js') !!}
-
-    {!! Html::script('manager/bower_components/morris.js/morris.min.js') !!}
-
-    <!-- Sparkline -->
-
-    {!! Html::script('manager/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js') !!}
-
-    <!-- jvectormap -->
-
-    {!! Html::script('manager/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') !!}
-
-    {!! Html::script('manager/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') !!}
-
-    <!-- jQuery Knob Chart -->
-
-    {!! Html::script('manager/bower_components/jquery-knob/dist/jquery.knob.min.js') !!}
-
-    <!-- daterangepicker -->
-
-    {!! Html::script('manager/bower_components/moment/min/moment.min.js') !!}
-
-    {!! Html::script('manager/bower_components/bootstrap-daterangepicker/daterangepicker.js') !!}
-
-    <!-- datepicker -->
-
-    {!! Html::script('manager/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') !!}
-
-    <!-- Bootstrap WYSIHTML5 -->
-
-    {!! Html::script('manager/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') !!}
-
-    <!-- Slimscroll -->
-
-    {!! Html::script('manager/bower_components/jquery-slimscroll/jquery.slimscroll.min.js') !!}
-
-    <!-- FastClick -->
-
-    {!! Html::script('manager/bower_components/fastclick/lib/fastclick.js') !!}
-
-    <!-- AdminLTE App -->
-
-    {!! Html::script('manager/dist/js/adminlte.min.js') !!}
-
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-
-    {!! Html::script('manager/dist/js/pages/dashboard.js') !!}
-
-    <!-- AdminLTE for demo purposes -->
-
-    {!! Html::script('manager/dist/js/demo.js') !!}
-
-    </body>
-
+@yield('footer')
+</body>
 </html>
-

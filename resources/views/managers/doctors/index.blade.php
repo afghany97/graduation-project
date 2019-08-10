@@ -8,56 +8,156 @@
 
 @section('content')
 
-    <section class="content-header">
+    <section class="subjects">
 
-        <h1>
+        <div class="container">
 
-            {{ucwords($department->name)}} Doctors
+            <h2 class="text-center">دكاترة القسم </h2>
 
-        </h1>
+            <div class="details">
 
-    </section>
+                <div class="row">
 
-    <section class="content">
+                    <div class="col-6">
 
-        @foreach($doctors as $doctor)
+                        <p>
+                            المعهد التكنولوجي العالي
 
-            <div class="box">
 
-                <div class="box-header with-border">
+                        </p>
 
-                    <a href="{{route('manager.subjects.index',$doctor)}}">
+                    </div>
 
-                        <h3 class="box-title">Dr {{$doctor->name}}</h3>
+                    <div class="col-6">
 
-                    </a>
+                        <p>
 
-                    <div class="box-tools pull-right">
-
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-
-                                title="Collapse">
-
-                            <i class="fa fa-minus"></i></button>
-
-                        <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-
-                            <i class="fa fa-times"></i></button>
+                            التاريخ : <span>2019-08-07</span>
+                        </p>
 
                     </div>
 
                 </div>
 
-                <div class="box-body">
+                <hr/>
 
-                    The average evaluation of Dr {{$doctor->name}} is {{$doctor->getAverageEvaluation()}} %
+                <div class="row">
+
+                    <div class="col-md-6 col-sm-12">
+
+                        <p>العميد : <span>د/ عثمان</span></p>
+
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+
+                        <p>الفصل الدراسي : <span>may/aug</span></p>
+
+                    </div>
+
+
+                    <div class="col-md-6 col-sm-12">
+
+                        <p> رئيس القسم : <span>Dr:{{ucwords($department->manager->name)}}</span></p>
+
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+
+                        <p>السنه الدراسيه : <span>2019/2020</span></p>
+
+                    </div>
 
                 </div>
 
             </div>
 
-        @endforeach
+            <div class="row">
+
+                <div class="col-12">
+
+                    <form method="get" id="form">
+
+                        <table class="text-center mx-auto" border="1">
+
+                            <thead>
+
+                            <tr class="head-of-table">
+                                <td>num</td>
+
+                                <td>Doctor</td>
+
+                                <td>Evaluation Average </td>
+
+                            </tr>
+
+                            </thead>
+
+                            <tbody>
+                            <?php $i=1 ?>
+                            @foreach($doctors as $doctor)
+                            <tr>
+
+                                <td>
+
+                                    <p>{{$i++}}</p>
+
+                                </td>
+
+                                <td>
+
+
+
+                                    <p> <a href="{{route('manager.subjects.index',$doctor)}}">
+
+                                            Dr:{{$doctor->name}}
+
+                                        </a></p>
+
+                                </td>
+
+                                <td>
+
+                                    <p><a href="#">{{$doctor->getAverageEvaluation()}} %</a></p>
+
+                                </td>
+
+
+
+                            </tr>
+                            @endforeach
+
+
+
+                            </tbody>
+
+                        </table>
+
+
+
+                    </form>
+
+
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="offset-5"></div>
+                <div class="col-sm-4">
+                    <button class="btn btn-primary" type="submit" id="print-button" style="margin-top: 20px;margin-bottom: 20px;margin-left: 10px;">print</button>
+                    <button class="btn btn-primary" type="submit" id="previous-button" style="margin-top: 20px;margin-bottom: 20px;margin-right: 10px;">back</button>
+                </div>
+
+                <div class="offset-3"></div>
+
+            </div>
+
+        </div>
 
     </section>
+
+<p class="Signature"></p>
+
 
 @endsection
