@@ -30,7 +30,7 @@
 
                         <div class="col-6">
 
-                            <p class="text-left">
+                            <p>
 
                                 التاريخ : <span>2019-08-07</span>
                             </p>
@@ -135,20 +135,20 @@
 
 
                         </div>
-                        <div class="row">
-                            <div class="offset-5"></div>
-                            <div class="col-sm-4">
-                                <button class="btn btn-primary" type="submit" id="print-button" style="margin-top: 20px;margin-bottom: 20px;margin-left: 10px;">print</button>
-                                <button class="btn btn-primary" type="submit" id="previous-button" style="margin-top: 20px;margin-bottom: 20px;margin-right: 10px;">back</button>
-                            </div>
 
-                            <div class="offset-3"></div>
-
-                        </div>
 
 
                     </div>
+                    <div class="row">
+                        <div class="offset-5"></div>
+                        <div class="col-sm-4">
+                            <button class="btn btn-primary" type="submit" id="print-button" style="margin-top: 20px;margin-bottom: 20px;margin-left: 10px;">print</button>
+                            <button class="btn btn-primary" type="submit" id="previous-button" style="margin-top: 20px;margin-bottom: 20px;margin-right: 10px;">back</button>
+                        </div>
 
+                        <div class="offset-3"></div>
+
+                    </div>
                 </div>
 
 
