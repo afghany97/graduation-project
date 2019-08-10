@@ -42,13 +42,13 @@ Route::prefix('managers')->group(function () {
 
     Route::post('logout', 'Auth\ManagerLoginController@logout')->name('manager.auth.logout');
 
-    Route::get('/department-manager', 'Managers\DepartmentManagerController@index')->name('manager.department_manager.dashboard');
+    Route::get('department-manager', 'Managers\DepartmentManagerController@index')->name('manager.department_manager.dashboard');
 
     Route::get('doctors/{doctor}/subjects','Managers\SubjectsController@index')->name('manager.subjects.index');
 
     Route::get('doctors/{doctor}/subjects/{subject}','Managers\SubjectsController@show')->name('manager.doctors.show');
 
-    Route::get('/chancellor', 'Managers\ChancellorController@index')->name('manager.chancellor.dashboard');
+    Route::get('chancellor', 'Managers\ChancellorController@index')->name('manager.chancellor.dashboard');
 
     Route::get('departments/{department}/doctors','Managers\DoctorsController@index')->name('manager.doctors.index');
 

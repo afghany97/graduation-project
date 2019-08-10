@@ -47,7 +47,7 @@
         <a class="navbar-brand" href="#">
             <img class="" src="{{asset('website/imgs/logo.png')}}" width="50" height="50" alt="HTI logo">
 
-            <a class="navbar-brand" href="#" style="font-size:15px">Questionnaires And Complaints Management System For Hti Students</a>
+            <a class="navbar-brand" href="{{route('home')}}" style="font-size:15px">Questionnaires And Complaints Management System For Hti Students</a>
         </a>
 
 
