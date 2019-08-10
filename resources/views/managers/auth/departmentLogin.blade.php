@@ -11,7 +11,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Managers Login</title>
+    <title>Department Manager Login</title>
 
     {!! Html::style("website/css/normalize.css") !!}
 
@@ -99,7 +99,7 @@
 
                         <h2>Managers Login</h2>
 
-                        <form method="POST" action="{{ route('manager.auth.loginAdmin') }}">
+                        <form method="POST" action="{{ route('manager.auth.loginDepartment') }}">
 
                             @csrf
 

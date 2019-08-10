@@ -11,7 +11,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Students Login</title>
+    <title>Dean Login</title>
 
     {!! Html::style("website/css/normalize.css") !!}
 
@@ -74,6 +74,8 @@
                     <a class="nav-link" href="{{route('manager.auth.login.dean')}}">Dean Login</a>
                 </li>
 
+
+
             </ul>
 
         </div>
@@ -90,13 +92,15 @@
 
             <div class="row">
 
-                <div class="col-md-4 mx-auto">
+                <div class="offset-lg-4"></div>
+
+                <div class="col-lg-4  mobile-flip-card">
 
                     <div class="login-form">
 
-                       <h2 class="text-center">Student Login</h2>
+                        <h2>Managers Login</h2>
 
-                        <form method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="{{ route('manager.auth.loginDean') }}">
 
                             @csrf
 
@@ -104,15 +108,18 @@
 
                                 <div class="row">
 
-                                        <label for="username" class="col-sm-3 col-form-label">Username</label>
+                                    <div class="col-3">
 
-                                    
+                                        <p style="margin-top: 10px;font: bold 13px Verdana, Arial;
+    color: #555454;">Username</p>
+
+                                    </div>
 
                                     <div class="col-9">
 
                                         <input style="border-radius: 0 !important;" class="form-control" type="text"
                                                id="username" name="c_id" value="{{ old('c_id') }}" required autofocus
-                                               maxlength="8"/>
+                                               maxlength="20"/>
 
                                     </div>
 
@@ -148,11 +155,10 @@
 
                                 </div>
 
-
                             </div>
-
                             <button class="btn btn-primary" style="margin-top: 10px">Login </button>
                             <div style="clear: both"></div>
+
 
                         </form>
 
