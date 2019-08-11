@@ -58,7 +58,7 @@
 
                         <div class="col-md-6 col-sm-12">
 
-                            <p> رئيس القسم : <span>Dr:{{ucwords($department->manager->name)}}</span></p>
+                            <p> رئيس القسم : <span>Dr {{ucwords($department->manager->name)}}</span></p>
                         </div>
 
                         <div class="col-md-6 col-sm-12">
@@ -79,7 +79,7 @@
                                     <thead>
 
                                     <tr class="head-of-table">
-                                        <td>num</td>
+                                        <td>No</td>
 
                                         <td>Doctor</td>
 
@@ -106,7 +106,7 @@
 
                                                 <p> <a href="{{route('manager.subjects.index',$doctor)}}">
 
-                                                        Dr:{{$doctor->name}}
+                                                        Dr {{$doctor->name}}
 
                                                     </a></p>
 

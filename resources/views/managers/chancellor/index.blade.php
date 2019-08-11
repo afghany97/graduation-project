@@ -85,7 +85,7 @@
                             <thead>
 
                             <tr style="	background:#DDD;height: 60px;">
-                                <td>num</td>
+                                <td>No</td>
 
                                 <td>Department</td>
 
@@ -118,7 +118,7 @@
 
                                 <td>
 
-                                    <p><a href="#">Dr.{{$department->manager->name}}</a></p>
+                                    <p><a href="#">Dr {{$department->manager->name}}</a></p>
 
                                 </td>
 

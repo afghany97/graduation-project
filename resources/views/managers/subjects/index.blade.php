@@ -58,7 +58,7 @@
 
                     <div class="col-md-6 col-sm-12">
 
-                        <p> اسم الدكتور : <span>Dr:{{ucwords($doctor->name)}}</span></p>
+                        <p> اسم الدكتور : <span>Dr {{ucwords($doctor->name)}}</span></p>
 
                     </div>
 
@@ -83,7 +83,7 @@
                             <thead>
 
                             <tr class="head-of-table">
-                                <td>num</td>
+                                <td>No</td>
 
                                 <td colspan="2">Subject</td>
 
