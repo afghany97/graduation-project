@@ -18,7 +18,7 @@ class CreateComplainsTable extends Migration
             $table->unsignedInteger('department_id');
             $table->string('type');
             $table->string('topic');
-            $table->string('description');
+            $table->text('description');
             $table->timestamps();
         });
     }

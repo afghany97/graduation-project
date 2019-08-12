@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Managers;
 
 use App\Http\Controllers\Controller;
 
-class MangerController extends Controller
+class ManagerController extends Controller
 {
     /**
-     * MangerController constructor.
+     * ManagerController constructor.
      */
     public function __construct()
     {

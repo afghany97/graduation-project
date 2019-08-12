@@ -20,7 +20,7 @@
     {!! Html::style('website/css/bootstrap.css') !!}
     {!! Html::style('website/css/all.min.css') !!}
     {!! Html::style('website/css/subject-page-style.css') !!}
-    {!! Html::style('website/css/mine.css') !!}
+    {!! Html::style('css/mine.css') !!}
     {!! Html::style('website/css/style.css') !!}
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700i" rel="stylesheet">
@@ -64,6 +64,11 @@
             <div class="collapse navbar-collapse" id="hti-nav">
 
                 <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('manager.complains.index')}}">Complains</a>
+                    </li>
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

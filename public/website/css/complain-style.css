@@ -1,0 +1,94 @@
+/*start navbar*/
+.navbar
+{
+    background-color: #1F2D3D !important;
+
+}
+
+nav .navbar-brand
+{
+
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px
+}
+
+@media (min-width:1024px)
+{
+    nav ul li
+    {
+        margin-right: 20px;
+    }
+
+}
+/*end navbar*/
+
+
+
+
+
+/*start of complains section*/
+
+.details
+{
+	text-align: right;
+	direction: rtl
+}
+
+.complains
+{
+    margin-top:76px;
+    padding-top: 30px;
+ 
+}
+
+
+
+.complains h2
+{
+
+    color: #FFF;
+    background: rgba(0,0,0,0.4);
+    padding: 10px;
+    width: 250px;
+    display: block;
+    margin: 0px auto 50px;
+    border-radius: 5px;
+}
+
+.complains .content p
+{
+	display: inline
+}
+
+/*end of complains section*/
+
+
+
+
+
+@media print
+{
+	nav
+	{
+		display: none;
+	}
+	
+	.complains h2
+	{
+		background-color: transparent;
+		color: #000;
+	}
+	
+	.show-details
+	{
+		display: none;
+	}
+	
+	
+}
+
+
+
+
+

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Managers;
 use App\Department;
 use App\Manager;
 
-class ChancellorController extends MangerController
+class ChancellorController extends ManagerController
 {
     public function index()
     {

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Managers;
 
 use App\Department;
 
-class DoctorsController extends MangerController
+class DoctorsController extends ManagerController
 {
     public function index(Department $department)
     {

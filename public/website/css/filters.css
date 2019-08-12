@@ -1,0 +1,23 @@
+.filters
+{
+    direction: ltr;
+    margin-top: 50px;
+}
+
+.filters button
+{
+    float: left;
+    margin-left: 50px
+}
+
+@media (max-width:767px)
+{
+    .filters button
+    {
+        margin-left: 0px;
+        width: 100%;
+    }
+
+}
+
+

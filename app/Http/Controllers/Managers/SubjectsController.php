@@ -6,7 +6,7 @@ use App\Doctor;
 use App\Subject;
 use App\Utilities\Classes\QuestionnaireEvaluation;
 
-class SubjectsController extends MangerController
+class SubjectsController extends ManagerController
 {
     public function index(Doctor $doctor)
     {

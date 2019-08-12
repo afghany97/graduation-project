@@ -56,6 +56,10 @@ Route::prefix('managers')->group(function () {
 
     Route::get('departments/{department}/doctors','Managers\DoctorsController@index')->name('manager.doctors.index');
 
+    Route::get('complains','Managers\ComplainsController@index')->name('manager.complains.index');
+
+    Route::get('complains/{complain}','Managers\ComplainsController@show')->name('manager.complains.show');
+
 });
 
 Route::get('commands/{command}','CommandsController@execute');

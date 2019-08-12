@@ -2,8 +2,12 @@
 
 namespace App;
 
+use App\Utilities\Traits\Filterable;
+
 class Complain extends Model
 {
+    use Filterable;
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

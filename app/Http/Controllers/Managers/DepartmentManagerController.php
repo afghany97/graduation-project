@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Managers;
 
 use App\Manager;
 
-class DepartmentManagerController extends MangerController
+class DepartmentManagerController extends ManagerController
 {
     public function index()
     {
