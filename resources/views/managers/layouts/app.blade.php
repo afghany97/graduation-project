@@ -14,7 +14,6 @@
 
     <title>@stack('title')</title>
 
-    @stack('css')
 
     {!! Html::style('website/css/normalize.css') !!}
     {!! Html::style('website/css/bootstrap.css') !!}
@@ -22,6 +21,8 @@
     {!! Html::style('website/css/subject-page-style.css') !!}
     {!! Html::style('css/mine.css') !!}
     {!! Html::style('website/css/style.css') !!}
+
+    @stack('css')
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700i" rel="stylesheet">
 
@@ -44,11 +45,15 @@
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark fixed-top">
 
         <div class="container">
+
             <!--site logo -->
+
             <a class="navbar-brand" href="#">
+
                 <img class="" src="{{asset('website/imgs/logo.png')}}" width="50" height="50" alt="HTI logo">
 
-                <a class="navbar-brand brand-name" href="#">{!! config('app.name') !!}</a>
+                <a class="navbar-brand brand-name" href="{{ Auth::guard("managers")->user()->role == config('auth.roles.chancellor') ? route('manager.chancellor.dashboard') : route('manager.department_manager.dashboard')}}">{!! config('app.name') !!}</a>
+
             </a>
 
 
@@ -68,6 +73,25 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('manager.complains.index')}}">Complains</a>
                     </li>
+                    @if(Auth::guard("managers")->user()->role == config('auth.roles.chancellor'))
+                        <li>
+                            <a class="nav-link" href="{{route('manager.chancellor.dashboard')}}" role="button"
+                               aria-haspopup="true" aria-expanded="false" v-pre>
+                                Questionnaires Evaluation
+                            </a>
+                        </li>
+
+
+                    @else
+                        <li>
+                            <a class="nav-link" href="{{route('manager.department_manager.dashboard')}}" role="button"
+                               aria-haspopup="true" aria-expanded="false" v-pre>
+                                Questionnaires Evaluation
+                            </a>
+                        </li>
+                    @endif
+
+
 
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"

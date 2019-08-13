@@ -23,26 +23,20 @@ nav .navbar-brand
 }
 /*end navbar*/
 
-
-
-
-
 /*start of complains section*/
 
 .details
 {
-	text-align: right;
-	direction: rtl
+    text-align: right;
+    direction: rtl
 }
 
 .complains
 {
     margin-top:76px;
     padding-top: 30px;
- 
+
 }
-
-
 
 .complains h2
 {
@@ -58,37 +52,28 @@ nav .navbar-brand
 
 .complains .content p
 {
-	display: inline
+    display: inline
 }
 
 /*end of complains section*/
 
-
-
-
-
 @media print
 {
-	nav
-	{
-		display: none;
-	}
-	
-	.complains h2
-	{
-		background-color: transparent;
-		color: #000;
-	}
-	
-	.show-details
-	{
-		display: none;
-	}
-	
-	
+    nav
+    {
+        display: none;
+    }
+
+    .complains h2
+    {
+        background-color: transparent;
+        color: #000;
+    }
+
+    .show-details
+    {
+        display: none;
+    }
+
+
 }
-
-
-
-
-

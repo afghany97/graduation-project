@@ -97,7 +97,7 @@
 
                     <div class="login-form">
 
-                        <h2>Department Manager Login</h2>
+                        <h2 class="text-center">Department Manager Login</h2>
 
                         <form method="POST" action="{{ route('manager.auth.loginDepartment') }}">
 
