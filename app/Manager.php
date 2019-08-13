@@ -43,4 +43,9 @@ class Manager extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    public function isDean()
+    {
+        return $this->role == config('auth.roles.chancellor');
+    }
 }

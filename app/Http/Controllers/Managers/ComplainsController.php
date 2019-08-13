@@ -9,7 +9,7 @@ class ComplainsController extends ManagerController
 {
     public function index(ComplainsFilters $filters)
     {
-        $complains = Complain::filter($filters)->get();
+        $complains = user()->isDean() ? Complain::filter($filters)->get() : user()->department->complains()->filter($filters)->get();
 
         return view('managers.complains.index',compact('complains'));
     }
