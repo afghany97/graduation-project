@@ -50,7 +50,7 @@ class QuestionnaireEvaluation
             foreach (config('questionnaire_rules') as $rule) {
                 $result[$attribute . '_' . config('questionnaire_rules_translation')[$rule]] =
 
-                    percentage(Questionnaire::where($attribute, $rule)->where('subject_id', $this->subject->id)->where('doctor_id', $this->doctor)->count(), $this->total);
+                    percentage(Questionnaire::where('subject_id', $this->subject->id)->where('doctor_id', $this->doctor)->where($attribute, $rule)->count(), $this->total);
             }
         }
 
@@ -74,7 +74,7 @@ class QuestionnaireEvaluation
                     $$name = 0;
 
                     foreach ($categoryAttributes as $attribute) {
-                        $$name += Questionnaire::where($attribute, $rule)->where('subject_id', $this->subject->id)->where('doctor_id', $this->doctor)->count();
+                        $$name += Questionnaire::where('subject_id', $this->subject->id)->where('doctor_id', $this->doctor)->where($attribute, $rule)->count();
                     }
 
                     $result[$name] = percentage(
@@ -98,9 +98,7 @@ class QuestionnaireEvaluation
 
     public function doctorEvaluation()
     {
-
         $result = $this->categoriesRules();
-
 
         $output = [];
 
