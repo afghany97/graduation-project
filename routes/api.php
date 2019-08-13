@@ -37,7 +37,9 @@ Route::group(['namespace' => 'Api'],function (){
 
     Route::group(['namespace' => 'Managers','prefix' => 'managers'],function (){
 
-        Route::post('login', 'AuthController@login');
+        Route::post('login/dean', 'AuthController@deanLogin');
+
+        Route::post('login/department-manager', 'AuthController@departmentLogin');
 
         Route::get('chancellor', 'ChancellorController@index');
 
