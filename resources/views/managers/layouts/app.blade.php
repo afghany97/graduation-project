@@ -14,7 +14,7 @@
 
     <title>Subjects</title>
 
-    @yield('header')
+
 
     {!! Html::style('website/css/normalize.css') !!}
     {!! Html::style('website/css/bootstrap.css') !!}
@@ -22,7 +22,7 @@
     {!! Html::style('website/css/subject-page-style.css') !!}
     {!! Html::style('website/css/mine.css') !!}
     {!! Html::style('website/css/style.css') !!}
-
+    @yield('header')
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700i" rel="stylesheet">
 
     {!! Html::script('website/js/respond.min.js') !!}
@@ -47,8 +47,15 @@
             <!--site logo -->
             <a class="navbar-brand" href="#">
                 <img class="" src="{{asset('website/imgs/logo.png')}}" width="50" height="50" alt="HTI logo">
+                @if(Auth::guard("managers")->user()->role == config('auth.roles.chancellor'))
+                    <a class="navbar-brand brand-name" href="{{route('manager.chancellor.dashboard')}}">Questionnaire
+                        And Complain<br/> Managment System For HTI Students</a>
+                @else
+                    <a class="navbar-brand brand-name" href="{{route('manager.department_manager.dashboard')}}">Questionnaire
+                        And Complain<br/> Managment System For HTI Students</a>
 
-                <a class="navbar-brand brand-name" href="#">Questionnaire And Complain<br/> Managment System For HTI Students</a>
+                @endif
+
             </a>
 
 
@@ -64,6 +71,32 @@
             <div class="collapse navbar-collapse" id="hti-nav">
 
                 <ul class="navbar-nav ml-auto">
+
+                    @if(Auth::guard("managers")->user()->role == config('auth.roles.chancellor'))
+                        <li>
+                            <a class="nav-link" href="{{route('manager.chancellor.dashboard')}}" role="button"
+                               aria-haspopup="true" aria-expanded="false" v-pre>
+                                Questionnaires Evaluation
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="nav-link" href="{{route('manager.complains.index')}}" role="button"
+                               aria-haspopup="true" aria-expanded="false" v-pre>
+                                complains
+                            </a>
+                        </li>
+                    @else
+                        <li>
+                            <a class="nav-link" href="{{route('manager.department_manager.dashboard')}}" role="button"
+                               aria-haspopup="true" aria-expanded="false" v-pre>
+                                Questionnaires Evaluation
+                            </a>
+                        </li>
+                    @endif
+
+
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

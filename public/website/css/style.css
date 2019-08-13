@@ -24,6 +24,29 @@ nav .navbar-brand
 /*end navbar*/
 
 
+/*filters*/
+
+.filters {
+    direction: ltr;
+    margin-top: 50px;
+}
+
+.filters button {
+    float: left;
+    margin-left: 50px
+}
+
+@media (max-width: 767px) {
+    .filters button {
+        margin-left: 0px;
+        width: 100%;
+    }
+
+}
+
+/*end of filters*/
+
+
 
 
 
@@ -97,23 +120,23 @@ nav .navbar-brand
 	{
 		display: none;
 	}
-	
-	#print-button,#previous-button
+
+    #print-button, #previous-button, .filters
 	{
 		display: none;
 	}
 
-    .Signature
-    {
+    .Signature {
+
         font-size: 25px;
         margin-right: 70%;
         margin-top:450px;
         margin-left:50px;
     }
-
+	
 	.Signature:before
 	{
-		content: ":التوقيع";
+        content: "التوقيع";
 
 	}
 

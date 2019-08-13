@@ -1,0 +1,116 @@
+/*start navbar*/
+.navbar {
+    background-color: #1F2D3D !important;
+
+}
+
+nav .navbar-brand {
+
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px
+}
+
+@media (min-width: 1024px) {
+    nav ul li {
+        margin-right: 20px;
+    }
+
+}
+
+/*end navbar*/
+
+
+/*start of complains section*/
+
+
+.complains h2 {
+
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    width: 250px;
+    display: block;
+    margin: 0px auto 50px;
+    border-radius: 5px;
+}
+
+.details {
+    text-align: right;
+    direction: rtl
+}
+
+.complains {
+    margin-top: 76px;
+    padding-top: 30px;
+
+}
+
+
+.complains .content {
+    margin-top: 50px
+}
+
+.complains .content .col-sm-12 {
+    margin-bottom: 15px;
+    border: 1px solid #DDD;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+.complains .content .label {
+    font-weight: bold;
+    margin-right: 15px
+}
+
+.complains .content .description .value {
+    margin-left: 50px;
+}
+
+/*end of complains section*/
+
+
+@media print {
+    nav {
+        display: none;
+    }
+
+    .complains h2 {
+        background-color: transparent;
+        color: #000;
+    }
+
+    .show-details {
+        display: none;
+    }
+
+
+    #print-button, #previous-button {
+        display: none;
+    }
+
+    .Signature {
+
+        font-size: 25px;
+        margin-right: 70%;
+        margin-top: 450px;
+        margin-left: 50px;
+    }
+
+    .Signature:before {
+        content: "التوقيع";
+
+    }
+
+    .complains .content .description .value {
+        margin-left: 0px;
+    }
+
+
+}
+
+
+
+
+
