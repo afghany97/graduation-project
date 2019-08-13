@@ -24,7 +24,7 @@ class ManagersLoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|email',
+            'c_id' => 'required|numeric',
             'password' => 'required|string'
         ];
     }

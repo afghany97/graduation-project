@@ -11,7 +11,7 @@ class AuthController extends ApiController
 
     public function login(ManagersLoginRequest $request)
     {
-        if ( $token = auth($this->guard)->attempt(['email' => request('email'), 'password' => request('password')])) {
+        if ( $token = auth($this->guard)->attempt(['c_id' => request('c_id'), 'password' => request('password')])) {
 
             $manager = auth($this->guard)->user();
 
