@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
-@section('header')
+@push('title')
+
+    {{$subject->name}} Questionnaire
+
+@endpush
+
+@push('css')
 
     {!! Html::style('website/css/poll-page-style.css') !!}
     <style>
@@ -49,7 +55,8 @@
         window.subject = <?= json_encode(['subject' => $subject]); ?>;
 
     </script>
-@endsection
+
+@endpush
 
 @section('content')
 
@@ -314,7 +321,7 @@
 
 @endsection
 
-@section('footer')
+@push('js')
 
     {!! Html::script('website/js/poll-page.js') !!}
 
@@ -322,4 +329,4 @@
 
     {!! Html::script('website/js/questionnaires-submit-button.js') !!}
 
-@endsection
+@endpush

@@ -1,10 +1,10 @@
 @extends('managers.layouts.app')
 
-@section('title')
+@push('title')
 
     Departments
 
-@endsection
+@endpush
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->

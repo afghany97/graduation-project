@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
-@section('content')
+@push('title')
 
+    Subjects
+
+@endpush
+
+@section('content')
 
     <section class="subjects">
 
@@ -181,8 +186,8 @@
 
 @endsection
 
-@section('footer')
+@push('js')
 
     {!! Html::script('website/js/subjects-form.js') !!}
 
-@endsection
+@endpush

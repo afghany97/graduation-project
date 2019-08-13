@@ -1,16 +1,16 @@
 @extends('managers.layouts.app')
 
-@section('title')
+@push('title')
 
     Complains
 
-@endsection
+@endpush
 
-@section('header')
+@push('css')
 
     <link rel="stylesheet" href="{{asset('website/css/complain-style.css')}}">
 
-@endsection
+@endpush
 
 @section('content')
 

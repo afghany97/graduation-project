@@ -12,9 +12,9 @@
 
     <meta name="csrf-token" content="{{csrf_token()}}">
 
-    <title>Subjects</title>
+    <title>@stack('title')</title>
 
-    @yield('header')
+    @stack('css')
 
     {!! Html::style('website/css/normalize.css') !!}
     {!! Html::style('website/css/bootstrap.css') !!}
@@ -48,7 +48,7 @@
             <a class="navbar-brand" href="#">
                 <img class="" src="{{asset('website/imgs/logo.png')}}" width="50" height="50" alt="HTI logo">
 
-                <a class="navbar-brand brand-name" href="#">Questionnaire And Complain<br/> Managment System For HTI Students</a>
+                <a class="navbar-brand brand-name" href="#">{!! config('app.name') !!}</a>
             </a>
 
 
@@ -127,6 +127,6 @@
 {!! Html::script('website/js/subject-page.js') !!}
 {!! Html::script('website/js/script.js') !!}
 
-@yield('footer')
+@stack('js')
 </body>
 </html>

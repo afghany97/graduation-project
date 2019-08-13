@@ -1,5 +1,12 @@
 @extends('layouts.app')
-@section('header')
+
+@push('title')
+
+    Create Complain
+
+@endpush
+
+@push('css')
 
     {!! Html::style('website/css/hover.css') !!}
 
@@ -8,9 +15,9 @@
     {!! Html::style('website/css/complain-page-style.css') !!}
 
 
-@endsection
-@section('content')
+@endpush
 
+@section('content')
 
     <section class="complain">
 
@@ -124,12 +131,13 @@
     </section>
 @endsection
 
-@section('footer')
+@push('js')
+
     {!! Html::script('website/js/wow.min.js') !!}
 
     {!! Html::script('website/js/complain-page.js') !!}
 
-@endsection
+@endpush
 
 
 

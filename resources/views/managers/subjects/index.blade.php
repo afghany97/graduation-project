@@ -1,10 +1,10 @@
 @extends('managers.layouts.app')
 
-@section('title')
+@push('title')
 
     {{ucwords($doctor->name)}} Subjects
 
-@endsection
+@endpush
 
 @section('content')
 
