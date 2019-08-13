@@ -167,6 +167,8 @@ return [
          */
 
         Laravel\Passport\PassportServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -229,6 +231,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];
