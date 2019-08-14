@@ -1,6 +1,6 @@
 <?php
 
-use App\Subject;
+use App\Department;
 use Faker\Generator as Faker;
 
 /*
@@ -14,11 +14,9 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(Subject::class, function (Faker $faker) {
+$factory->define(Department::class, function (Faker $faker) {
     return [
         'name' => $faker->unique()->name,
-        'code' => $faker->postcode,
-        'units' => $faker->numberBetween(1,4),
-        'department_id' => 1,
+        'manager_id' => $faker->randomNumber()
     ];
 });

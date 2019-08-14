@@ -134,63 +134,54 @@ return [
             'name' => 'OOP',
             'code' => 'csc 220',
             'units' => 4,
-            'image' => 'images/subjects/default.jpg',
             'department_id' => 1
         ],
         [
             'name' => 'DS',
             'code' => 'csc 210',
             'units' => 3,
-            'image' => 'images/subjects/default.jpg',
             'department_id' => 1
         ],
         [
             'name' => 'os',
             'code' => 'csc 310',
             'units' => 3,
-            'image' => 'images/subjects/default.jpg',
             'department_id' => 1
         ],
         [
             'name' => 'DSS',
             'code' => 'INF 222',
             'units' => 3,
-            'image' => 'images/subjects/default.jpg',
             'department_id' => 1
         ],
         [
             'name' => 'software 1',
             'code' => 'csc 320',
             'units' => 4,
-            'image' => 'images/subjects/default.jpg',
             'department_id' => 1
         ],
         [
             'name' => 'software 2',
             'code' => 'csc 414',
             'units' => 4,
-            'image' => 'images/subjects/default.jpg',
             'department_id' => 1
         ],
         [
             'name' => 'computer network',
             'code' => 'csc 221',
             'units' => 3,
-            'image' => 'images/subjects/default.jpg',
             'department_id' => 1
         ],
         [
             'name' => 'system expert',
             'code' => 'csc 420',
             'units' => 3,
-            'image' => 'images/subjects/default.jpg',
             'department_id' => 1
         ],
         [
             'name' => 'Database',
             'code' => 'INF 410',
             'units' => 4,
-            'image' => 'images/subjects/default.jpg',
             'department_id' => 1
         ],
     ],

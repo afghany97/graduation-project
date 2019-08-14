@@ -19,7 +19,6 @@ class CreateSubjectsTable extends Migration
             $table->string('name')->unique();
             $table->string('code')->unique();
             $table->integer('units');
-            $table->string('image');
             $table->timestamps();
 
             $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
