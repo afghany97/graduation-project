@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Str;
+use App\Assistant;
 use Faker\Generator as Faker;
 
 /*
@@ -14,16 +14,12 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
+$factory->define(\App\Complain::class, function (Faker $faker) {
     return [
-
-//        'id' => $faker->name->Null(),
-        'c_id' => $faker->unique()->randomNumber(8),
-        'name' => $faker->name,
-        'gpa' => $faker->numberBetween(1,4),
-        'email_verified_at' => now(),
         'department_id' => factory(\App\Department::class)->create()->id,
-        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
-        'remember_token' => Str::random(10),
+        'user_id' => factory(\App\User::class)->create()->id,
+        'topic' => $faker->sentence,
+        'type' => array_random(config('complain.types')),
+        'description' => $faker->paragraph
     ];
 });

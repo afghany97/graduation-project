@@ -16,4 +16,13 @@ class Complain extends Model
     {
         return $this->belongsTo(Department::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

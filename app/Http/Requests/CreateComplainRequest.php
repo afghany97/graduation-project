@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Http\FormRequest;
 
-class ComplainsRequest extends Request
+class CreateComplainRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

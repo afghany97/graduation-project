@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Complain;
 use App\Department;
-use App\Http\Requests\ComplainsRequest;
+use App\Http\Requests\CreateComplainRequest;
 
 class ComplainsController extends Controller
 {
+    /**
+     * ComplainsController constructor.
+     */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function create()
     {
@@ -19,9 +26,9 @@ class ComplainsController extends Controller
     }
 
 
-    public function store(ComplainsRequest $request)
+    public function store(CreateComplainRequest $request)
     {
-        Complain::create(dataFromRequest(['department_id','type','topic','description']));
+        auth()->user()->complains()->create(dataFromRequest(['department_id','type','topic','description']));
 
         flash()->success('Complain Created Successfully');
 

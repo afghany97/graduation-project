@@ -15,6 +15,7 @@ class CreateComplainsTable extends Migration
     {
         Schema::create('complains', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
             $table->unsignedInteger('department_id');
             $table->enum('type',['individual','collective']);
             $table->string('topic');
