@@ -90,7 +90,7 @@
 
                                                        name="topic" aria-describedby="problemTopic"
 
-                                                       placeholder="Problem Topic" required>
+                                                       placeholder="Problem Topic" required maxlength="30">
                                             </div>
 
                                         </div>

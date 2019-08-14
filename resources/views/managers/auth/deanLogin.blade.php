@@ -119,7 +119,7 @@
 
                                         <input style="border-radius: 0 !important;" class="form-control" type="text"
                                                id="username" name="c_id" value="{{ old('c_id') }}" required autofocus
-                                               maxlength="20"/>
+                                               maxlength="8"/>
 
                                     </div>
 
