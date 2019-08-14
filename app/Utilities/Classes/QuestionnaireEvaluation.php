@@ -2,7 +2,6 @@
 
 namespace App\Utilities\Classes;
 
-use App\Doctor;
 use App\Questionnaire;
 use App\Subject;
 
@@ -26,6 +25,9 @@ class QuestionnaireEvaluation
      * @param Subject $subject
      */
 
+    private $questionnaires;
+
+
     public function __construct(Subject $subject,$doctor)
     {
         $this->doctor = $doctor;
@@ -40,6 +42,8 @@ class QuestionnaireEvaluation
             $this->total = 1;
 
         }
+
+        $this->questionnaires = Questionnaire::where('subject_id',$this->subject->id)->where('doctor_id',$this->doctor)->get();
     }
 
     public function attributesRules()
@@ -50,7 +54,9 @@ class QuestionnaireEvaluation
             foreach (config('questionnaire_rules') as $rule) {
                 $result[$attribute . '_' . config('questionnaire_rules_translation')[$rule]] =
 
-                    percentage(Questionnaire::where('subject_id', $this->subject->id)->where('doctor_id', $this->doctor)->where($attribute, $rule)->count(), $this->total);
+                    percentage(count($this->where($attribute,$rule)), $this->total);
+
+//                    percentage(Questionnaire::where('subject_id', $this->subject->id)->where('doctor_id', $this->doctor)->where($attribute, $rule)->count(), $this->total);
             }
         }
 
@@ -74,7 +80,9 @@ class QuestionnaireEvaluation
                     $$name = 0;
 
                     foreach ($categoryAttributes as $attribute) {
-                        $$name += Questionnaire::where('subject_id', $this->subject->id)->where('doctor_id', $this->doctor)->where($attribute, $rule)->count();
+
+                        $$name += count($this->where($attribute,$rule));
+
                     }
 
                     $result[$name] = percentage(
@@ -135,5 +143,21 @@ class QuestionnaireEvaluation
     public function calculate()
     {
         return array_merge($this->attributesRules(), $this->categoriesRules(), $this->doctorEvaluation());
+    }
+
+    public function where($key,$value)
+    {
+        $result = [];
+
+        foreach ($this->questionnaires as $questionnaire){
+
+            if($questionnaire->$key == $value){
+
+                $result [] = $questionnaire;
+            }
+
+        }
+
+        return collect($result);
     }
 }
