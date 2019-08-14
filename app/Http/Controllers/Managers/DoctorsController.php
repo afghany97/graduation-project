@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Managers;
 
-
 use App\Department;
 
 class DoctorsController extends ManagerController

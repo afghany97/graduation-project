@@ -52,15 +52,13 @@ class QuestionnairesController extends Controller
 
             return back()->withErrors("this subject was questionnaired before");
 
-        $attributes = array_merge(['subject_id', 'doctor_id', 'assistant_id'], Questionnaire::attributes());
+        auth()->user()->questionnaires()->create(
 
-        $questionnaire = auth()->user()->questionnaires()->create(
-
-            dataFromRequest($attributes)
+            dataFromRequest(array_merge(['subject_id', 'doctor_id', 'assistant_id'], Questionnaire::attributes()))
 
         );
 
-        flash()->success("Questionnaire");
+        flash()->success("Subject Questionnaire Created Successfully");
 
         return redirect()->route('home');
 
