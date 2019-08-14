@@ -64,12 +64,12 @@
 
             <ul class="navbar-nav ml-auto">
 
-                <li class="nav-item active">
+                <li class="nav-item {{session('student-active') == 'subjects' ? 'active' : ''}}">
                     <a class="nav-link" href="{{route('subjects.index')}}">Subjects <span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('complains.create')}}">Complains</a>
+                    <a class="nav-link {{session('student-active') == 'complains' ? 'active' : ''}}" href="{{route('complains.create')}}">Complains</a>
                 </li>
 
 

@@ -71,7 +71,7 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('manager.auth.login.dean')}}">Dean Login</a>
+                    <a class="nav-link active" href="{{route('manager.auth.login.dean')}}">Dean Login</a>
                 </li>
 
 

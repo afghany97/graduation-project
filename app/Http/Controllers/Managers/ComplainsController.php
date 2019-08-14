@@ -11,11 +11,15 @@ class ComplainsController extends ManagerController
     {
         $complains = user()->isDean() ? Complain::filter($filters)->get() : user()->department->complains()->filter($filters)->get();
 
+        session()->put('manager-active','complains');
+
         return view('managers.complains.index',compact('complains'));
     }
 
     public function show(Complain $complain)
     {
+        session()->put('manager-active','complains');
+
         return view('managers.complains.show',compact('complain'));
     }
 }

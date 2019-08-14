@@ -62,7 +62,7 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('login')}}">Student Login</a>
+                    <a class="nav-link active" href="{{route('login')}}">Student Login</a>
                 </li>
 
                 <li class="nav-item">

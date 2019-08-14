@@ -14,6 +14,8 @@ class DepartmentManagerController extends ManagerController
 
         $doctors = $department->doctors;
 
+        session()->forget('manager-active');
+
         return view('managers.department_manager.index',compact('doctors','department'));
     }
 }

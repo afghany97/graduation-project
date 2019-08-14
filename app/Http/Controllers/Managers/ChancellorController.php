@@ -13,6 +13,8 @@ class ChancellorController extends ManagerController
 
         $departments = Department::all()->load('doctors');
 
+        session()->forget('manager-active');
+
         return view('managers.chancellor.index',compact('departments'));
     }
 }

@@ -23,6 +23,8 @@ class SubjectsController extends Controller
 
         $subjects = $student->subjects()->get();
 
+        session()->put('student-active','subjects');
+
         return view('home', compact('subjects','student'));
     }
 }

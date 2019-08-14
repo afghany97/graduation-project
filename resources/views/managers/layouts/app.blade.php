@@ -71,27 +71,8 @@
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('manager.complains.index')}}">Complains</a>
+                        <a class="nav-link {{session('manager-active') == 'complains' ? 'active' : ''}}" href="{{route('manager.complains.index')}}">Complains</a>
                     </li>
-                    @if(Auth::guard("managers")->user()->role == config('auth.roles.chancellor'))
-                        <li>
-                            <a class="nav-link" href="{{route('manager.chancellor.dashboard')}}" role="button"
-                               aria-haspopup="true" aria-expanded="false" v-pre>
-                                Questionnaires Evaluation
-                            </a>
-                        </li>
-
-
-                    @else
-                        <li>
-                            <a class="nav-link" href="{{route('manager.department_manager.dashboard')}}" role="button"
-                               aria-haspopup="true" aria-expanded="false" v-pre>
-                                Questionnaires Evaluation
-                            </a>
-                        </li>
-                    @endif
-
-
 
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"

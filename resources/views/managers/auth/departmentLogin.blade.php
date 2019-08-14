@@ -66,7 +66,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('manager.auth.login.department_manager')}}">Department Manager Login</a>
+                    <a class="nav-link active" href="{{route('manager.auth.login.department_manager')}}">Department Manager Login</a>
                 </li>
 
 

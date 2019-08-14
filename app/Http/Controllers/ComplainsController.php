@@ -13,6 +13,8 @@ class ComplainsController extends Controller
     {
         $departments = Department::all();
 
+        session()->put('student-active','complains');
+
         return view('complains.create',compact('departments'));
     }
 
