@@ -89,7 +89,7 @@
 
                                 <td>Evaluation Average </td>
 
-                                <td></td>
+                                <td class="show-details"></td>
 
 
                             </tr>
@@ -126,7 +126,7 @@
 
                                 </td>
 
-                                <td>
+                                <td class="show-details">
 
                                     <p><a href="{{route('manager.doctors.show',[$doctor,$subject])}}" style="text-decoration: underline; color: blue">show details</a></p>
 
