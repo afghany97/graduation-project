@@ -33,7 +33,7 @@ class QuestionnairesController extends ApiController
 
         if($subject->isQuestionnaired())
 
-            return $this->responseWithError(['message' => 'this subject was questionnaired before']);
+            return $this->setStatus(400)->responseWithError(['message' => 'this subject was questionnaired before']);
 
         $attributes = array_merge(['subject_id','doctor_id','assistant_id'], Questionnaire::attributes());
 
