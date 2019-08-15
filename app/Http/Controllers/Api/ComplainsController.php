@@ -3,22 +3,24 @@
 namespace App\Http\Controllers\Api;
 
 use App\Complain;
-use App\Department;
 use App\Http\Requests\Api\ComplainsRequest;
 
 class ComplainsController extends ApiController
 {
+    /**
+     * QuestionnairesController constructor.
+     */
+
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
     public function store(ComplainsRequest $request)
     {
-        $complain = Complain::create(dataFromRequest(['department_id','type','topic','description']));
+        $complain = Complain::create(array_merge(['user_id' => auth()->id()],dataFromRequest(['department_id','type','topic','description'])));
 
         return $this->created(compact('complain'));
     }
 
-    public function show(Department $department)
-    {
-        $complains = $department->complains;
-
-        return $this->fetched(compact('complains'));
-    }
 }
