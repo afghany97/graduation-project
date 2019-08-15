@@ -63,3 +63,5 @@ Route::prefix('managers')->group(function () {
 });
 
 Route::get('commands/{command}','CommandsController@execute');
+
+Route::get('clear','CommandsController@clear');

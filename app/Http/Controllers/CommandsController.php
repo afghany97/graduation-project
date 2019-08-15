@@ -31,4 +31,13 @@ class CommandsController extends Controller
 
         return compact('result','output','exitCode');
     }
+
+    public function clear()
+    {
+        Artisan::call('view:clear');
+
+        Artisan::call('cache:clear');
+
+        Artisan::call('config:clear');
+    }
 }
