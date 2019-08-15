@@ -53,3 +53,26 @@ body
 		float: right;
 	}
 }
+
+.navbar
+{
+	background-color: #1F2D3D !important;
+
+}
+
+nav .navbar-brand
+{
+
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: 2px
+}
+
+@media (min-width:1024px)
+{
+	nav ul li
+	{
+		margin-right: 20px;
+	}
+
+}

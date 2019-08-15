@@ -17,11 +17,11 @@
 
     {!! Html::style("website/css/all.min.css") !!}
 
-    {!! Html::style("website/css/login-style.css") !!}
-
-    {!! Html::style("website/css/bootstrap.css") !!}
+        {!! Html::style("website/css/bootstrap.css") !!}
 
     {!! Html::style("css/mine.css") !!}
+
+    {!! Html::style("website/css/login-style.css") !!}
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700i" rel="stylesheet">
 
