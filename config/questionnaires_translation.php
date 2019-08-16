@@ -9,7 +9,7 @@ return [
     'lectures' => 'المحاضرات',
     'doctor' => 'المحاضر',
     'doctor_assistant' => 'عضو هيئه التدريس',
-    'evolution_system' =>'نطام التقويم',
+    'evolution_system' => 'نظام التقويم',
     'factories_and_workshops' => 'المعامل و الورش',
     'stands_and_rooms' => 'المدرجات و قاعات التدريس',
     'others' => 'اخرى',
