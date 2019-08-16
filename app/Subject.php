@@ -94,12 +94,11 @@ class Subject extends Model
         return $this->belongsTo(Department::class);
     }
 
+
     public function getAverageEvaluation($doctor)
     {
-        $keys = ['opinions_about_course','targeted_learning_outcomes','lectures',];
-        $evaluation = (new QuestionnaireEvaluation($this,$doctor))->categoriesRules();
-
-        return (int)round(array_sum(array_intersect_key($evaluation,array_flip($keys))) / count($keys));
+        $evaluation = (new QuestionnaireEvaluation($this, $doctor))->doctorEvaluation()['avg'];
+        return $evaluation;
     }
 
     public static function isAllQuestionnaired(Collection $subjects)
