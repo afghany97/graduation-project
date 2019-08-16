@@ -65,8 +65,8 @@ class QuestionnaireEvaluation
 
     public function categoriesRules()
     {
-        if (!$this->questionnaires == null) {
-            $result = [];
+
+        $result = [];
 
             foreach (config('questionnaires') as $category => $categoryAttributes) {
                 $temp = 0;
@@ -103,7 +103,7 @@ class QuestionnaireEvaluation
 
             }
             return $result;
-        };
+
     }
 
     public function doctorEvaluation()

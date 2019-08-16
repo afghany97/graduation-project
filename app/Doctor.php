@@ -47,7 +47,12 @@ class Doctor extends Model
             $doctor=$subject->pivot->doctor_id;
             $total += (new QuestionnaireEvaluation($subject,$doctor))->doctorEvaluation()['avg'];
         }
-        return (int)round($total / $this->subjects->unique()->count());
+//            dd($this->questionnaires);
+        $array = array();
+        foreach ($this->questionnaires as $id) {
+            $array[] = $id->subject_id;
+        }
+        return (int)round($total / count(array_unique($array)));
     }
 
 }
