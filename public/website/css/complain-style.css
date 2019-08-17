@@ -23,7 +23,20 @@ nav .navbar-brand
 }
 /*end navbar*/
 
+
 /*start of complains section*/
+
+
+.complains h2 {
+
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    width: 250px;
+    display: block;
+    margin: 0px auto 50px;
+    border-radius: 5px;
+}
 
 .details
 {
@@ -38,42 +51,67 @@ nav .navbar-brand
 
 }
 
-.complains h2
-{
 
-    color: #FFF;
-    background: rgba(0,0,0,0.4);
+.complains .content {
+    margin-top: 50px
+}
+
+.complains .content .col-sm-12 {
+    margin-bottom: 15px;
+    border: 1px solid #DDD;
     padding: 10px;
-    width: 250px;
-    display: block;
-    margin: 0px auto 50px;
     border-radius: 5px;
+
 }
 
-.complains .content p
-{
-    display: inline
+.complains .content .label {
+    font-weight: bold;
+    margin-right: 15px
 }
 
+.complains .content .description .value {
+    margin-left: 50px;
+}
 /*end of complains section*/
+
 
 @media print
 {
-    nav
-    {
+    nav {
         display: none;
     }
 
-    .complains h2
-    {
+    .complains h2 {
         background-color: transparent;
         color: #000;
     }
 
-    .show-details
-    {
+    .show-details {
         display: none;
     }
 
 
+    #print-button, #previous-button {
+        display: none;
+    }
+
+    .Signature {
+
+        font-size: 25px;
+        margin-right: 70%;
+        margin-top: 300px;
+        margin-left: 50px;
+    }
+
+    .Signature:before {
+        content: "التوقيع";
+
+    }
+
+
 }
+
+
+
+
+
