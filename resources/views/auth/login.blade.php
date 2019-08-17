@@ -17,7 +17,7 @@
 
     {!! Html::style("website/css/all.min.css") !!}
 
-        {!! Html::style("website/css/bootstrap.css") !!}
+    {!! Html::style("website/css/bootstrap.css") !!}
 
     {!! Html::style("css/mine.css") !!}
 
@@ -37,7 +37,7 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar navbar-dark  fixed-top">
 
     <div class="container">
         <!--site logo -->

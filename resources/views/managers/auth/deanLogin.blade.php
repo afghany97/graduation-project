@@ -33,11 +33,12 @@
     <![endif]-->
 
     {!! Html::script("website/js/respond.min.js") !!}
+
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar navbar-dark fixed-top">
 
     <div class="container">
         <!--site logo -->
