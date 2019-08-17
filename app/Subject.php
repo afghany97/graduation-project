@@ -98,6 +98,11 @@ class Subject extends Model
     public function getAverageEvaluation($doctor)
     {
         $evaluation = (new QuestionnaireEvaluation($this, $doctor))->doctorEvaluation()['avg'];
+
+        $this->relations = [];
+
+        $this->with = [];
+
         return $evaluation;
     }
 
