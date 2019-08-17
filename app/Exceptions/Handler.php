@@ -7,6 +7,7 @@ use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -56,6 +57,39 @@ class Handler extends ExceptionHandler
         if($exception instanceof ModelNotFoundException)
 
             return (new ApiController())->notFound();
+
+        if ($exception instanceof UnauthorizedHttpException) {
+
+            $preException = $exception->getPrevious();
+
+            if ($preException instanceof
+
+                \Tymon\JWTAuth\Exceptions\TokenExpiredException) {
+
+                return (new ApiController())->setStatus(401)->responseWithError(['message' =>'Token Expired']);
+
+
+            } else if ($preException instanceof
+
+                \Tymon\JWTAuth\Exceptions\TokenInvalidException) {
+
+                return (new ApiController())->setStatus(401)->responseWithError(['message' =>'Invalid Token']);
+
+
+            } else if ($preException instanceof
+
+                \Tymon\JWTAuth\Exceptions\TokenBlacklistedException) {
+
+                return (new ApiController())->setStatus(401)->responseWithError(['message' =>'Token BlackedListed']);
+
+            }
+
+            if ($exception->getMessage() === 'Token not provided') {
+
+                return (new ApiController())->setStatus(401)->responseWithError(['message' =>'Token Not Provided']);
+
+            }
+        }
 
         return parent::render($request, $exception);
     }
