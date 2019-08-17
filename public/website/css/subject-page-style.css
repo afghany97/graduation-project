@@ -25,7 +25,6 @@ nav .navbar-brand
 
 
 
-
 /*start of subjects section*/
 
 .subjects
@@ -94,3 +93,12 @@ nav .navbar-brand
 	}
 }
 
+
+/*print media*/
+
+@media print {
+    .subjects {
+        margin-top: 0;
+    }
+
+}

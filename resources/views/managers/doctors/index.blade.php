@@ -107,8 +107,7 @@
                                 <td>
 
 
-
-                                    <p> <a href="{{route('manager.subjects.index',$doctor)}}">
+                                    <p><a href="{{route('manager.subjects.index',[$department,$doctor])}}">
 
                                             Dr {{$doctor->name}}
 
@@ -145,8 +144,14 @@
             <div class="row">
                 <div class="offset-5"></div>
                 <div class="col-sm-4">
-                    <button class="btn btn-primary" type="submit" id="print-button" style="margin-top: 20px;margin-bottom: 20px;margin-left: 10px;">print</button>
-                    <button class="btn btn-primary" type="submit" id="previous-button" style="margin-top: 20px;margin-bottom: 20px;margin-right: 10px;">back</button>
+                    <button class="btn btn-primary" type="submit" id="print-button"
+                            style="margin-top: 20px;margin-bottom: 20px;margin-left: 10px;">Print
+                    </button>
+                    <a class="link" href="{{route('manager.chancellor.dashboard')}}">
+                        <button class="btn btn-primary" type="submit" id="previous-button"
+                                style="margin-top: 20px;margin-bottom: 20px;margin-right: 10px;">Back
+                        </button>
+                    </a>
                 </div>
 
                 <div class="offset-3"></div>

@@ -103,8 +103,7 @@
                                             <td>
 
 
-
-                                                <p> <a href="{{route('manager.subjects.index',$doctor)}}">
+                                                <p><a href="{{route('manager.subjects.index',[$department,$doctor])}}">
 
                                                         Dr {{$doctor->name}}
 

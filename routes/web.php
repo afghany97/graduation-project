@@ -48,7 +48,7 @@ Route::prefix('managers')->group(function () {
 
     Route::get('department-manager', 'Managers\DepartmentManagerController@index')->name('manager.department_manager.dashboard');
 
-    Route::get('doctors/{doctor}/subjects','Managers\SubjectsController@index')->name('manager.subjects.index');
+    Route::get('departments/{department}/doctors/{doctor}/subjects', 'Managers\SubjectsController@index')->name('manager.subjects.index');
 
     Route::get('doctors/{doctor}/subjects/{subject}','Managers\SubjectsController@show')->name('manager.doctors.show');
 

@@ -191,12 +191,13 @@
                 <div class="col-sm-4">
 
                     <button class="btn btn-primary" type="submit" id="print-button"
-                            style="margin-top: 20px;margin-bottom: 20px;margin-left: 10px;">print
+                            style="margin-top: 20px;margin-bottom: 20px;margin-left: 10px;">Print
                     </button>
-
-                    <button class="btn btn-primary" type="submit" id="previous-button"
-                            style="margin-top: 20px;margin-bottom: 20px;margin-right: 10px;">back
-                    </button>
+                    <a class="link" href="{{route('manager.chancellor.dashboard')}}">
+                        <button class="btn btn-primary" type="button" id="previous-button"
+                                style="margin-top: 20px;margin-bottom: 20px;margin-right: 10px;">Back
+                        </button>
+                    </a>
 
                 </div>
 

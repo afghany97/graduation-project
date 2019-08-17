@@ -128,8 +128,14 @@
         <div class="row">
             <div class="offset-5"></div>
             <div class="col-sm-4">
-                <button class="btn btn-primary" type="submit" id="print-button" style="margin-top: 20px;margin-bottom: 20px;margin-left: 10px;">print</button>
-                <button class="btn btn-primary" type="submit" id="previous-button" style="margin-top: 20px;margin-bottom: 20px;margin-right: 10px;">back</button>
+                <button class="btn btn-primary" type="submit" id="print-button"
+                        style="margin-top: 20px;margin-bottom: 20px;margin-left: 10px;">Print
+                </button>
+                <a class="link" href="{{url()->previous()}}">
+                    <button class="btn btn-primary" type="submit" id="previous-button"
+                            style="margin-top: 20px;margin-bottom: 20px;margin-right: 10px;">Back
+                    </button>
+                </a>
             </div>
 
             <div class="offset-3"></div>
