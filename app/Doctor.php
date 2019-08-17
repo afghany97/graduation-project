@@ -52,6 +52,10 @@ class Doctor extends Model
         foreach ($this->questionnaires as $id) {
             $array[] = $id->subject_id;
         }
+
+        $this->relations = [];
+        $this->with = [];
+
         return (int)round($total / count(array_unique($array)));
     }
 
