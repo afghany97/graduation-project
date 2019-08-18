@@ -10,7 +10,12 @@ class SubjectsController extends ManagersApiController
 {
     public function index(Doctor $doctor)
     {
-        $subjects = $doctor->subjects;
+        $subjects = $doctor->subjects->unique();
+
+        foreach ($subjects as $subject){
+
+            $subject->avg = $subject->getAverageEvaluation($doctor->id);
+        }
 
         return $this->fetched(compact('subjects','doctor'));
     }

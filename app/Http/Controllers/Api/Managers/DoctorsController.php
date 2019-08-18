@@ -14,7 +14,13 @@ class DoctorsController extends ManagersApiController
 
             $doctors = $department->doctors;
 
-            return $this->fetched(compact('department','doctors'));
+            foreach ($doctors as $doctor){
+
+                $doctor->avg = $doctor->getAverageEvaluation();
+
+            }
+
+            return $this->fetched(compact('department'));
 
         } else {
 
