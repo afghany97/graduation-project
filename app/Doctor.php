@@ -56,10 +56,15 @@ class Doctor extends Model
             $array[] = $id->subject_id;
         }
 
-        $this->relations = [];
-        $this->with = [];
+        if (!empty($array)) {
+            $this->relations = [];
+            $this->with = [];
 
-        return (int)round($total / count(array_unique($array)));
+            return (int)round($total / count(array_unique($array)));
+        } else {
+            return 0;
+        }
+
     }
 
 }

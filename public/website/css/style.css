@@ -139,9 +139,9 @@ nav .navbar-brand
     .Signature {
 
         font-size: 25px;
-        margin-right: 70%;
-        margin-top: 300px;
-        margin-left:50px;
+        position: absolute;
+        bottom: 25%;
+        left: 10%;
     }
 	
 	.Signature:before

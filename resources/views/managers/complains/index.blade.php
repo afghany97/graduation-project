@@ -131,9 +131,9 @@
 
                             <td>Type</td>
 
-                            <td>Topic</td>
+                            <td>Department Name</td>
 
-                            <td>Description</td>
+                            <td>Topic</td>
 
                         </tr>
 
@@ -161,13 +161,13 @@
 
                                 <td>
 
-                                    <a href="{{route('manager.complains.show',$complain)}}">{{str_limit($complain->topic,20)}}</a>
+                                    <a href="{{route('manager.complains.show',$complain)}}">{{$complain->department->name}}</a>
 
                                 </td>
 
                                 <td>
 
-                                    <a href="{{route('manager.complains.show',$complain)}}">{{str_limit($complain->description,100)}}</a>
+                                    <a href="{{route('manager.complains.show',$complain)}}">{{$complain->topic}}</a>
 
                                 </td>
 
