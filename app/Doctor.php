@@ -3,9 +3,12 @@
 namespace App;
 
 use App\Utilities\Classes\QuestionnaireEvaluation;
+use App\Utilities\Traits\Filterable;
 
 class Doctor extends Model
 {
+    use Filterable;
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */

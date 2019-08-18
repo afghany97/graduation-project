@@ -68,6 +68,35 @@
                         </div>
 
                     </div>
+
+                    <div class="filters">
+
+                        <form>
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <input type="text" class="form-control" name="name" placeholder="search by doctor name">
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-4">
+
+                                    <button class="btn btn-primary" type="submit">Search</button>
+
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
                     <div class="row">
 
                         <div class="col-12">

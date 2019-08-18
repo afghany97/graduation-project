@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers\Managers;
 
+use App\Doctor;
 use App\Manager;
+use App\Utilities\Filters\DoctorsFilters;
 
 class DepartmentManagerController extends ManagerController
 {
-    public function index()
+    public function index(DoctorsFilters $filters)
     {
         $this->authorize('isDepartmentManager',new Manager);
 
         $department = user()->department;
 
-        $doctors = $department->doctors;
+        $doctors = $department->doctors()->filter($filters)->get();
 
         session()->forget('manager-active');
 
