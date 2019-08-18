@@ -161,7 +161,7 @@
                                 <div class="col-md-2 col-sm-12">
 
                                     <a href="http://hti.edu.eg/en/student-results.aspx"
-                                       class="btn btn-secondary  {{\App\Subject::isAllQuestionnaired($subjects) ? "" : "dis"}}">show
+                                       class="btn {{\App\Subject::isAllQuestionnaired($subjects) ? "btn-primary" : "btn-secondary dis"}}">show
                                         result</a>
 
                                 </div>
