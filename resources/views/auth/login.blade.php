@@ -108,7 +108,7 @@
 
                                     
 
-                                    <div class="col-9">
+                                    <div class="col-sm-9">
 
                                         <input style="border-radius: 0 !important;" class="form-control" type="text"
                                                id="username" name="c_id" value="{{ old('c_id') }}" required autofocus
@@ -131,14 +131,14 @@
                             </div>
                             <div class="row">
 
-                                <div class="col-3">
+                                <div class="col-sm-3">
 
                                     <p style="margin-top: 10px;font: bold 13px Verdana, Arial;
     color: #555454;">Password</p>
 
                                 </div>
 
-                                <div class="col-9">
+                                <div class="col-sm-9">
 
                                     <input style="border-radius: 0 !important;" type="password" id="password" name="password"
 
